@@ -1,0 +1,54 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Created at:</strong>
+  <%= @wedding.created_at %>
+</p>
+
+<p>
+  <strong>Updated at:</strong>
+  <%= @wedding.updated_at %>
+</p>
+
+<p>
+  <strong>Nombre1:</strong>
+  <%= @wedding.nombre1 %>
+</p>
+
+<p>
+  <strong>Nombre2:</strong>
+  <%= @wedding.nombre2 %>
+</p>
+
+<p>
+  <strong>Fecha matri:</strong>
+  <%= @wedding.fecha_matri %>
+</p>
+
+<p>
+  <strong>Celular:</strong>
+  <%= @wedding.celular %>
+</p>
+
+<p>
+  <strong>Mail:</strong>
+  <%= @wedding.mail %>
+</p>
+
+<p>
+  <strong>Origen:</strong>
+  <%= @wedding.origen %>
+</p>
+
+<p>
+  <strong>Url vals:</strong>
+  <%= @wedding.url_vals %>
+</p>
+
+<p>
+  <strong>Comentarios:</strong>
+  <%= @wedding.comentarios %>
+</p>
+
+<%= link_to 'Edit', edit_wedding_path(@wedding) %> |
+<%= link_to 'Back', weddings_path %>

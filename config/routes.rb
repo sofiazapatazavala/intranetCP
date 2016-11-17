@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :weddings
   devise_for :users
   get 'hola/index'
 

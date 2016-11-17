@@ -1,0 +1,67 @@
+<%= form_for(wedding) do |f| %>
+  <% if wedding.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(wedding.errors.count, "error") %> prohibited this wedding from being saved:</h2>
+
+      <ul>
+      <% wedding.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :created_at %>
+    <%= f.datetime_select :created_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :updated_at %>
+    <%= f.datetime_select :updated_at %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre1 %>
+    <%= f.text_field :nombre1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre2 %>
+    <%= f.text_field :nombre2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :fecha_matri %>
+    <%= f.date_select :fecha_matri %>
+  </div>
+
+  <div class="field">
+    <%= f.label :celular %>
+    <%= f.number_field :celular %>
+  </div>
+
+  <div class="field">
+    <%= f.label :mail %>
+    <%= f.text_field :mail %>
+  </div>
+
+  <div class="field">
+    <%= f.label :origen %>
+    <%= f.text_field :origen %>
+  </div>
+
+  <div class="field">
+    <%= f.label :url_vals %>
+    <%= f.text_field :url_vals %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comentarios %>
+    <%= f.text_area :comentarios %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
