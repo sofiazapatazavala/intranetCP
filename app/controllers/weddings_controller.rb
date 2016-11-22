@@ -1,4 +1,5 @@
 class WeddingsController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_wedding, only: [:show, :edit, :update, :destroy]
 
   # GET /weddings

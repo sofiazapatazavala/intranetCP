@@ -9,7 +9,8 @@ Rails.application.routes.draw do
     resources :weddings, path: 'matrimonios'
   end
 
-  devise_for :users
+  devise_for :users, controllers: { registrations: "registrations"}
+  
   get 'hola/index'
 
   root 'hola#index'
