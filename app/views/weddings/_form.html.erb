@@ -11,57 +11,94 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :created_at %>
-    <%= f.datetime_select :created_at %>
+  <%# <div class="field">
+    <%= f.label :created_at
+    <%= f.datetime_select :created_at
   </div>
 
   <div class="field">
-    <%= f.label :updated_at %>
-    <%= f.datetime_select :updated_at %>
+    <%= f.label :updated_at
+    <%= f.datetime_select :updated_at
+  </div>
+  %>
+
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="field">
+          <%= f.label :nombre1 %>
+          <%= f.text_field :nombre1 %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="field">
+          <%= f.label :apellido1 %>
+          <%= f.text_field :apellido1 %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="field">
+          <%= f.label :nombre2 %>
+          <%= f.text_field :nombre2 %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="field">
+          <%= f.label :apellido2 %>
+          <%= f.text_field :apellido2 %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="field">
+          <%= f.label :fecha_matri %>
+          <%= f.date_select :fecha_matri %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="field">
+          <%= f.label :celular %>
+          <%= f.number_field :celular %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="field">
+          <%= f.label :mail %>
+          <%= f.text_field :mail %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="field">
+          <%= f.label :origen %>
+          <%= f.text_field :origen %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="field">
+          <%= f.label :url_vals %>
+          <%= f.text_field :url_vals %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <div class="field">
+          <%= f.label :comentarios %>
+          <%= f.text_area :comentarios %>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field">
-    <%= f.label :nombre1 %>
-    <%= f.text_field :nombre1 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :nombre2 %>
-    <%= f.text_field :nombre2 %>
-  </div>
-
-  <div class="field">
-    <%= f.label :fecha_matri %>
-    <%= f.date_select :fecha_matri %>
-  </div>
-
-  <div class="field">
-    <%= f.label :celular %>
-    <%= f.number_field :celular %>
-  </div>
-
-  <div class="field">
-    <%= f.label :mail %>
-    <%= f.text_field :mail %>
-  </div>
-
-  <div class="field">
-    <%= f.label :origen %>
-    <%= f.text_field :origen %>
-  </div>
-
-  <div class="field">
-    <%= f.label :url_vals %>
-    <%= f.text_field :url_vals %>
-  </div>
-
-  <div class="field">
-    <%= f.label :comentarios %>
-    <%= f.text_area :comentarios %>
-  </div>
-
-  <div class="actions">
-    <%= f.submit %>
-  </div>
 <% end %>

@@ -1,5 +1,9 @@
 Rails.application.routes.draw do
-  resources :weddings
+#  resources :weddings
+  scope(path_names: { new: 'nuevo', edit: 'editar' }) do
+    resources :weddings, path: 'matrimonios'
+  end
+
   devise_for :users
   get 'hola/index'
 
