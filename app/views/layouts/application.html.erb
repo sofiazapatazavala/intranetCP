@@ -19,32 +19,14 @@
       <div class="row">
         <div class="col-xs-12">
           <div class="row">
-            <div class="col-md-12" style="background-color: #CCC;">
-              <div class="collapse" id="exCollapsingNavbar">
-                <div class="row">
-                  <div class="col-md-2 p-a-1">
-                    <a href="<%= weddings_path %>"><%= image_tag 'novias.png', :class => "img-fluid my-1 mx-auto d-block" %></a>
-                    <p class="text-xs-center">Matrimonios</p>
-                  </div>
-                  <div class="col-md-2 p-a-1">
-                    <a href="<%= lessons_path %>"><%= image_tag 'clases.png', :class => "img-fluid my-1 mx-auto d-block" %></a>
-                    <p class="text-xs-center">Clases</p>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div class="row">
-            <div class="col-md-1">
-              <nav class="navbar my-2">
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#exCollapsingNavbar">
-                  &#9776;
-                </button>
-
-              </nav>
-            </div>
             <div class="col-md-2">
               <a href="<%= root_path %>"><%= image_tag 'logo.png', :class => "img-fluid my-1" %></a>
+            </div>
+            <div class="col-md-1">
+              <a href="<%= weddings_path %>"><%= image_tag 'novias.png', :class => "img-fluid my-1 mx-auto d-block" %></a>
+            </div>
+            <div class="col-md-1">
+              <a href="<%= lessons_path %>"><%= image_tag 'clases.png', :class => "img-fluid my-1 mx-auto d-block" %></a>
             </div>
           </div>
         </div>
