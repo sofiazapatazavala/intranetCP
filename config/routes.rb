@@ -1,6 +1,10 @@
 Rails.application.routes.draw do
-  resources :lessons
+#  resources :lessons
 #  resources :weddings
+  scope(path_names: { new: 'nueva', edit: 'editar' }) do
+    resources :lessons, path: 'clases'
+  end
+
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
     resources :weddings, path: 'matrimonios'
   end
