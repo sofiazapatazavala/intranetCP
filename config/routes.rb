@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :lessons
 #  resources :weddings
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
     resources :weddings, path: 'matrimonios'
