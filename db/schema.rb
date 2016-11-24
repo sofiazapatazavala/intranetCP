@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161240145951) do
+ActiveRecord::Schema.define(version: 20161124145951) do
 
   create_table "lessons", force: :cascade do |t|
     t.date     "fecha"
