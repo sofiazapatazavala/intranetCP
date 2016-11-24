@@ -47,7 +47,7 @@ ActiveRecord::Schema.define(version: 20161124145951) do
     t.string   "nombre1"
     t.string   "nombre2"
     t.date     "fecha_matri"
-    t.string   "celular",     limit: 15
+    t.string   "celular"
     t.string   "mail"
     t.string   "origen"
     t.string   "url_vals"
