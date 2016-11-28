@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :fecha %>
-    <%= f.date_select :fecha %>
+    <%= f.date_select :fecha, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :titulo %>
-    <%= f.text_field :titulo %>
+    <%= f.text_field :titulo, class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :notas %>
-    <%= f.text_area :notas %>
+    <%= f.text_area :notas, class: "form-control" %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Registrar notas de clase', :class => 'btn btn-block btn-primary' %>
   </div>
 <% end %>

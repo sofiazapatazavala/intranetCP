@@ -1,54 +1,116 @@
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Created at:</strong>
-  <%= @wedding.created_at %>
-</p>
+<%
+#
+#<p>
+#  <strong>Created at:</strong>
+#  <%= @wedding.created_at %
+#</p>
+#
+#<p>
+#  <strong>Updated at:</strong>
+#  <%= @wedding.updated_at %
+#</p>
 
-<p>
-  <strong>Updated at:</strong>
-  <%= @wedding.updated_at %>
-</p>
+%>
 
-<p>
-  <strong>Nombre1:</strong>
-  <%= @wedding.nombre1 %>
-</p>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <p>Novia:</p>
+        <p class="lead"><%= @wedding.nombre1 %> <%= @wedding.apellido1 %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <p>Novio:</p>
+        <p class="lead"><%= @wedding.nombre2 %> <%= @wedding.apellido2 %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-sm-6 col-lg-3">
+    <div class="card">
+      <div class="card-block">
+        <p>Fecha de matrimonio:</p>
+        <p class="lead"><%= @wedding.fecha_matri %></p>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Nombre2:</strong>
-  <%= @wedding.nombre2 %>
-</p>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card">
+      <div class="card-block">
+        <p>Correo:</p>
+        <p class="lead"><%= @wedding.mail %></p>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Fecha matri:</strong>
-  <%= @wedding.fecha_matri %>
-</p>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card">
+      <div class="card-block">
+        <p>Teléfono:</p>
+        <p class="lead"><%= @wedding.celular %></p>
+      </div>
+    </div>
+  </div>
 
-<p>
-  <strong>Celular:</strong>
-  <%= @wedding.celular %>
-</p>
-
-<p>
-  <strong>Mail:</strong>
-  <%= @wedding.mail %>
-</p>
-
-<p>
-  <strong>Origen:</strong>
-  <%= @wedding.origen %>
-</p>
-
-<p>
-  <strong>Url vals:</strong>
-  <%= @wedding.url_vals %>
-</p>
-
-<p>
-  <strong>Comentarios:</strong>
-  <%= @wedding.comentarios %>
-</p>
-
-<%= link_to 'Edit', edit_wedding_path(@wedding) %> |
-<%= link_to 'Back', weddings_path %>
+  <div class="col-sm-6 col-lg-3">
+    <div class="card">
+      <div class="card-block">
+        <p>Origen:</p>
+        <p class="lead"><%= @wedding.origen %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-8">
+    <div class="card">
+      <div class="card-block">
+        Vals:
+        <embed src="https://www.youtube.com/oembed?url=<%= @wedding.url_vals %>">
+        <small>A implementarse próximamente.</small>
+      </div>
+      <div class="card-block">
+        Comentarios:
+        <%= @wedding.comentarios %>
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <h2>Bitácora</h2>
+    <p>Próximamente, la edición será desde esta ventana.</p>
+    <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary" %>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-block">
+        Datos financieros: Próximamente
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-block">
+        Próximas clases: Próximamente
+      </div>
+    </div>
+  </div>
+  <div class="col-md-4">
+    <div class="card">
+      <div class="card-block">
+        Acciones para novios:
+        <p><%= link_to 'Edit', edit_wedding_path(@wedding), class: "btn btn-block btn-secondary" %></p>
+        <p><%= link_to 'Back', weddings_path, class: "btn btn-block btn-secondary" %></p>
+      </div>
+    </div>
+  </div>
+</div>

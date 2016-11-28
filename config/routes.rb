@@ -10,10 +10,11 @@ Rails.application.routes.draw do
   end
 
   devise_for :users, controllers: { registrations: "registrations"}
-  
-  get 'hola/index'
 
-  root 'hola#index'
+  get 'hola/index'
+  get 'hola/portada'
+
+  root 'hola#portada'
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end

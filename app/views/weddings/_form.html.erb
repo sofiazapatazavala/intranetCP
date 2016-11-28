@@ -22,91 +22,119 @@
   </div>
   %>
 
-  <div class="container">
+
     <div class="row">
       <div class="col-sm-6">
-        <div class="field">
-          <%= f.label :nombre1 %>
-          <%= f.text_field :nombre1 %>
+        <p>Datos de la novia</p>
+        <div class="field form-group">
+          <%# f.label :nombre1 %>
+          <%= f.text_field :nombre1, class: 'form-control', placeholder: 'Nombre de la novia' %>
         </div>
-      </div>
-      <div class="col-sm-6">
-        <div class="field">
-          <%= f.label :apellido1 %>
-          <%= f.text_field :apellido1 %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-6">
-        <div class="field">
-          <%= f.label :nombre2 %>
-          <%= f.text_field :nombre2 %>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :apellido1, class: 'form-control', placeholder: 'Apellido de la novia' %>
         </div>
       </div>
       <div class="col-sm-6">
-        <div class="field">
-          <%= f.label :apellido2 %>
-          <%= f.text_field :apellido2 %>
+        <p>Datos del novio</p>
+        <div class="field form-group">
+          <%# f.label :nombre2 %>
+          <%= f.text_field :nombre2, class: 'form-control', placeholder: 'Nombre del novio' %>
+        </div>
+        <div class="field form-group">
+          <%# f.label :apellido2 %>
+          <%= f.text_field :apellido2, class: 'form-control', placeholder: 'Apellido del novio' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field">
-          <%= f.label :fecha_matri %>
-          <%= f.date_select :fecha_matri %>
+        <div class="field form-group">
+          <%# f.label :fecha_matri %>
+          <p>Fecha del Matrimonio:</p>
+          <%= f.date_select :fecha_matri, class: 'form-control' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field">
-          <%= f.label :celular %>
-          <%= f.number_field :celular %>
+        <div class="field form-group">
+          <%# f.label :celular %>
+          <%= f.number_field :celular, class: 'form-control', placeholder: 'Número de teléfono', type: 'tel' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field">
-          <%= f.label :mail %>
-          <%= f.text_field :mail %>
+        <div class="field form-group">
+          <%# f.label :mail %>
+          <%= f.text_field :mail, class: 'form-control', placeholder: 'Correo electrónico', type: 'email' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field">
-          <%= f.label :origen %>
-          <%= f.text_field :origen %>
+        <div class="field form-group">
+          <%# f.label :origen %>
+          <%# f.text_field :origen %>
+
+          <label for="form_origen">¿Cómo se enteraron de la Academia?</label><br>
+          <select id="form_origen" name="form[origen]" class="form-control" >
+          <option value="No especifica" selected="selected">
+          Seleccionar uno:
+          </option>
+          <option value="Google" >
+            Google
+          </option>
+          <option value="Recomendación de un amigo" >
+            Recomendación de un amigo
+          </option>
+          <option value="Portal web de matrimonios" >
+            Portal web de matrimonios
+          </option>
+          <option value="Redes sociales" >
+            Redes sociales
+          </option>
+          <option value="Publicación en revistas" >
+            Publicación en revistas
+          </option>
+          <option value="Convenio institución" >
+            Convenio institución
+          </option>
+          <option value="Tienda comercial" >
+            Tienda comercial
+          </option>
+          <option value="Otro" >
+            Otro
+          </option>
+          </select>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field">
-          <%= f.label :url_vals %>
-          <%= f.text_field :url_vals %>
+        <div class="field form-group">
+          <%# f.label :url_vals %>
+          <%= f.text_field :url_vals, class: 'form-control', placeholder: '¿Tienen un vals? Pegar link de YouTube', type: 'url' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field">
+        <div class="field form-group">
           <%= f.label :comentarios %>
-          <%= f.text_area :comentarios %>
+          <%= f.text_area :comentarios, class: 'form-control', placeholder: '(Pueden agregarse más adelante)' %>
         </div>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
         <div class="actions">
-          <%= f.submit %>
+          <%= f.submit 'Inscribir matrimonio', :class => 'btn btn-block btn-primary' %>
+          <%# Debe arreglarse esto, una vez implementado el I18n %>
         </div>
       </div>
     </div>
 
-  </div>
 
 <% end %>
