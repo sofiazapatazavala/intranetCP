@@ -1,0 +1,15 @@
+<div class="card">
+  <div class="card-block">
+    <p class="lead">Agenda de hoy</p>
+    <%= calendar number_of_days: 2, events: @meetings do |date, meetings| %>
+      <%= date %>
+
+      <% meetings.each do |meeting| %>
+        <div>
+          <%= meeting.titulo %>
+        </div>
+      <% end %>
+
+    <% end %>
+  </div>
+</div>

@@ -31,9 +31,13 @@ gem 'jbuilder', '~> 2.5'
 # Use Capistrano for deployment
 # gem 'capistrano-rails', group: :development
 
+# Devise para controlar las sesiones
 gem 'devise'
+# Bootstrap para el diseño base
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0.alpha5'
+# Calendario de clases
+gem "simple_calendar", "~> 2.0"
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

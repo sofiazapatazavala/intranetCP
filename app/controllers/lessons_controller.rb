@@ -8,6 +8,11 @@ class LessonsController < ApplicationController
     @lessons = Lesson.all
   end
 
+  # Agenda
+  def agenda
+    @meetings = Lesson.all
+  end
+
   # GET /lessons/1
   # GET /lessons/1.json
   def show
@@ -70,6 +75,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:fecha, :titulo, :notas, :wedding_id)
+      params.require(:lesson).permit(:fecha, :titulo, :notas, :wedding_id, :start_time, :end_time)
     end
 end

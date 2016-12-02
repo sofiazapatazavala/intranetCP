@@ -27,6 +27,13 @@
     <%= f.text_area :notas, class: "form-control" %>
   </div>
 
+  <div class="field form-group">
+    <%= f.datetime_select :start_time %>
+  </div>
+  <div class="field form-group">
+    <%= f.datetime_select :end_time %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Registrar notas de clase', :class => 'btn btn-block btn-primary' %>
   </div>

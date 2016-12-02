@@ -13,6 +13,7 @@ Rails.application.routes.draw do
 
   get 'hola/index'
   get 'hola/portada'
+  get 'agenda' => 'lessons#agenda'
 
   root 'hola#portada'
 
