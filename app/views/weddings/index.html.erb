@@ -33,7 +33,7 @@
         <td><%= wedding.url_vals %></td>
         <td><%= wedding.comentarios %></td>
         <td><%= link_to 'Ver', wedding, class: "btn btn-block btn-info" %></td><%# i18n!! %>
-        <td><%= link_to 'Editar', edit_wedding_path(wedding), class: "btn btn-block btn-warning" %></td>
+        <td><%= link_to 'Editar', edit_wedding_path(wedding), class: "btn btn-block btn-primary" %></td>
         <td><%= link_to 'Borrar', wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
       </tr>
     <% end %>

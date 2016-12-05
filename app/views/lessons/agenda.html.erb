@@ -1,12 +1,12 @@
 <div class="card">
   <div class="card-block">
-    <p class="lead">Agenda de hoy</p>
-    <%= calendar number_of_days: 2, events: @meetings do |date, meetings| %>
+    <p class="lead">Agenda semanal</p>
+    <%= week_calendar events: @meetings do |date, meetings| %>
       <%= date %>
 
       <% meetings.each do |meeting| %>
         <div>
-          <%= meeting.titulo %>
+          <%= meeting.titulo %> <%= meeting.start_time %>
         </div>
       <% end %>
 

@@ -11,18 +11,6 @@
     </div>
   <% end %>
 
-  <%# <div class="field">
-    <%= f.label :created_at
-    <%= f.datetime_select :created_at
-  </div>
-
-  <div class="field">
-    <%= f.label :updated_at
-    <%= f.datetime_select :updated_at
-  </div>
-  %>
-
-
     <div class="row">
       <div class="col-sm-6">
         <p>Datos de la novia</p>
@@ -34,6 +22,14 @@
           <%# f.label :apellido1 %>
           <%= f.text_field :apellido1, class: 'form-control', placeholder: 'Apellido de la novia' %>
         </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :telefono_novia, class: 'form-control', placeholder: 'Teléfono de la novia' %>
+        </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :email_novia, class: 'form-control', placeholder: 'E-mail de la novia' %>
+        </div>
       </div>
       <div class="col-sm-6">
         <p>Datos del novio</p>
@@ -44,6 +40,68 @@
         <div class="field form-group">
           <%# f.label :apellido2 %>
           <%= f.text_field :apellido2, class: 'form-control', placeholder: 'Apellido del novio' %>
+        </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :telefono_novio, class: 'form-control', placeholder: 'Teléfono del novio' %>
+        </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :email_novio, class: 'form-control', placeholder: 'E-mail del novio' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p></p>
+        <p>
+          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+            ¿Necesitas agregar a más personas?
+          </button>
+        </p>
+        <div class="collapse" id="collapseExample">
+          <div class="row">
+            <div class="col-sm-6">
+              <div class="card card-block">
+                <div class="field form-group">
+                  <%= f.text_field :nombre3, class: 'form-control', placeholder: 'Nombre de la tercera persona' %>
+                </div>
+                <div class="field form-group">
+                  <%= f.text_field :apellido3, class: 'form-control', placeholder: 'Apellido de la tercera persona' %>
+                </div>
+              </div>
+            </div>
+            <div class="col-sm-6">
+              <div class="card card-block">
+                <div class="field form-group">
+                  <%= f.text_field :nombre4, class: 'form-control', placeholder: 'Nombre de la cuarta persona' %>
+                </div>
+                <div class="field form-group">
+                  <%= f.text_field :apellido4, class: 'form-control', placeholder: 'Apellido de la cuarta persona' %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <p>¿La persona que hizo el contacto no es la novia ni el novio?</p>
+        <div class="field form-group">
+          <%= f.text_field :nombre_contacto, class: 'form-control', placeholder: 'Nombre y apellido del contacto' %>
+        </div>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-6">
+        <div class="field form-group">
+          <%= f.number_field :celular, class: 'form-control', placeholder: 'Número de teléfono', type: 'tel' %>
+        </div>
+      </div>
+      <div class="col-sm-6">
+        <div class="field form-group">
+          <%= f.text_field :mail, class: 'form-control', placeholder: 'Correo electrónico', type: 'email' %>
         </div>
       </div>
     </div>
@@ -58,56 +116,8 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <div class="field form-group">
-          <%# f.label :celular %>
-          <%= f.number_field :celular, class: 'form-control', placeholder: 'Número de teléfono', type: 'tel' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="field form-group">
-          <%# f.label :mail %>
-          <%= f.text_field :mail, class: 'form-control', placeholder: 'Correo electrónico', type: 'email' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="field form-group">
-          <%# f.label :origen %>
-          <%# f.text_field :origen %>
-
-          <label for="form_origen">¿Cómo se enteraron de la Academia?</label><br>
-          <select id="form_origen" name="form[origen]" class="form-control" >
-          <option value="No especifica" selected="selected">
-          Seleccionar uno:
-          </option>
-          <option value="Google" >
-            Google
-          </option>
-          <option value="Recomendación de un amigo" >
-            Recomendación de un amigo
-          </option>
-          <option value="Portal web de matrimonios" >
-            Portal web de matrimonios
-          </option>
-          <option value="Redes sociales" >
-            Redes sociales
-          </option>
-          <option value="Publicación en revistas" >
-            Publicación en revistas
-          </option>
-          <option value="Convenio institución" >
-            Convenio institución
-          </option>
-          <option value="Tienda comercial" >
-            Tienda comercial
-          </option>
-          <option value="Otro" >
-            Otro
-          </option>
-          </select>
+        <div class="field form-group origen">
+          <%= f.text_field :origen, class: 'form-control', placeholder: '¿Cómo se enteraron de la academia?' %>
         </div>
       </div>
     </div>
@@ -115,7 +125,7 @@
       <div class="col-sm-12">
         <div class="field form-group">
           <%# f.label :url_vals %>
-          <%= f.text_field :url_vals, class: 'form-control', placeholder: '¿Tienen un vals? Pegar link de YouTube', type: 'url' %>
+          <%= f.text_field :tipo_descuento, class: 'form-control', placeholder: '¿Tienen un descuento? Indicar aquí' %>
         </div>
       </div>
     </div>

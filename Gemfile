@@ -36,8 +36,14 @@ gem 'devise'
 # Bootstrap para el diseño base
 gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0.alpha5'
-# Calendario de clases
+# Simple Calendar para el calendario de clases
 gem "simple_calendar", "~> 2.0"
+# Filterrific para implementar filtros a los matrimonios
+gem "filterrific"
+# Carrierwave para manejar la subida de archivos (fotos y videos)
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+# Soporte oEmbed con ruby-oembed
+# gem 'ruby-oembed'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

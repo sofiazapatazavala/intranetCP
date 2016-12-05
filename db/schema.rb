@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161202144343) do
+ActiveRecord::Schema.define(version: 20161205130624) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -45,18 +45,28 @@ ActiveRecord::Schema.define(version: 20161202144343) do
   end
 
   create_table "weddings", force: :cascade do |t|
-    t.datetime "created_at",             null: false
-    t.datetime "updated_at",             null: false
+    t.datetime "created_at",                 null: false
+    t.datetime "updated_at",                 null: false
     t.string   "nombre1"
     t.string   "nombre2"
     t.date     "fecha_matri"
-    t.string   "celular",     limit: 15
+    t.string   "celular",         limit: 15
     t.string   "mail"
     t.string   "origen"
     t.string   "url_vals"
     t.text     "comentarios"
     t.string   "apellido1"
     t.string   "apellido2"
+    t.string   "nombre3"
+    t.string   "apellido3"
+    t.string   "nombre4"
+    t.string   "apellido4"
+    t.string   "nombre_contacto"
+    t.string   "telefono_novio"
+    t.string   "telefono_novia"
+    t.string   "email_novio"
+    t.string   "email_novia"
+    t.string   "tipo_descuento"
   end
 
 end

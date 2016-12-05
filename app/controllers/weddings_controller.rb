@@ -71,6 +71,6 @@ class WeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
-      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :apellido1, :apellido2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios)
+      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :apellido1, :apellido2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios, :nombre3, :apellido3, :nombre4, :apellido4, :nombre_contacto, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento)
     end
 end
