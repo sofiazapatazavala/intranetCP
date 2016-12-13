@@ -2,5 +2,8 @@
 
 <%= render 'form', wedding: @wedding %>
 
-<%= link_to 'Show', @wedding %> |
-<%= link_to 'Back', weddings_path %>
+<p><small>Otras acciones (no guardan los cambios realizados):</small></p>
+<div class="btn-group mb-1" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar matrimonio', @wedding, class: "btn btn-secondary", role: "button" %>
+  <%= link_to 'Volver a lista', weddings_path, class: "btn btn-secondary", role: "button" %>
+</div>

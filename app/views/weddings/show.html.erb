@@ -78,8 +78,9 @@
   <div class="col-md-8">
     <div class="card">
       <div class="card-block">
-        Vals: Próximamente.
+        <p class="lead">Diseño de Piso</p>
       </div>
+      <%= image_tag @wedding.floordesign, class: "img-fluid" %>
       <div class="card-block">
         Comentarios:
         <%= @wedding.comentarios %>
@@ -88,7 +89,6 @@
   </div>
   <div class="col-md-4">
     <h2>Bitácora</h2>
-    <p>Próximamente, la edición será desde esta ventana.</p>
     <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary" %>
   </div>
 </div>

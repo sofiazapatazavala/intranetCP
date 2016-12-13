@@ -41,7 +41,9 @@ gem "simple_calendar", "~> 2.0"
 # Filterrific para implementar filtros a los matrimonios
 gem "filterrific"
 # Carrierwave para manejar la subida de archivos (fotos y videos)
-gem 'carrierwave', '>= 1.0.0.rc', '< 2.0'
+gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierwave'
+# fog-aws para dejar los archivos subidos en S3
+gem 'fog-aws'
 # Soporte oEmbed con ruby-oembed
 # gem 'ruby-oembed'
 
