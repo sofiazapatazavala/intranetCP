@@ -40,6 +40,9 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem "simple_calendar", "~> 2.0"
 # Filterrific para implementar filtros a los matrimonios
 gem "filterrific"
+# Will Paginate porque Filterrific la necesita para hacer su magia
+gem 'will_paginate'
+gem 'will_paginate-bootstrap'
 # Carrierwave para manejar la subida de archivos (fotos y videos)
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierwave'
 # fog-aws para dejar los archivos subidos en S3

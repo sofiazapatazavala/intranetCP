@@ -1,3 +1,26 @@
+<div class="row my-1">
+  <div class="col-sm-6">
+    <h3>Matrimonio:</h3>
+    <p class="lead"><%= @wedding.nombre1 %> <%= @wedding.apellido1 %> y <%= @wedding.nombre2 %> <%= @wedding.apellido2 %></p>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%= link_to '✏ Editar', edit_wedding_path(@wedding), class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%= link_to '⬅ Volver', weddings_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
 <p id="notice"><%= notice %></p>
 
 <%
@@ -21,8 +44,10 @@
         <p>Novia:</p>
         <p class="lead"><%= @wedding.nombre1 %> <%= @wedding.apellido1 %></p>
         <%# Mostrar link al teléfono y mail de novia, novio y contacto %>
-        <p class="lead"><a href="mailto:"<%= @wedding.email_novia %>"><%= @wedding.email_novia %></a></p>
-        <p class="lead"><a href="tel:"<%= @wedding.telefono_novia %>"><%= @wedding.telefono_novia %></a></p>
+        <p class="lead"><%= mail_to @wedding.email_novia %></p>
+        <p class="lead"><%= link_to @wedding.telefono_novia, "tel:#{@wedding.telefono_novia}" %></p>
+        <p class="lead"><%= @wedding.rut_novia %></p>
+        <p class="lead"><%= @wedding.instagram_novia %></p>
       </div>
     </div>
   </div>
@@ -31,8 +56,8 @@
       <div class="card-block">
         <p>Novio:</p>
         <p class="lead"><%= @wedding.nombre2 %> <%= @wedding.apellido2 %></p>
-        <p class="lead"><%= @wedding.email_novio %></p>
-        <p class="lead"><%= @wedding.telefono_novio %></p>
+        <p class="lead"><%= mail_to @wedding.email_novio %></p>
+        <p class="lead"><%= link_to @wedding.telefono_novio, "tel:#{@wedding.telefono_novio}" %></p>
       </div>
     </div>
   </div>
@@ -75,7 +100,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-md-8">
+  <div class="col-md-12">
     <div class="card">
       <div class="card-block">
         <p class="lead">Diseño de Piso</p>
@@ -87,32 +112,19 @@
       </div>
     </div>
   </div>
-  <div class="col-md-4">
-    <h2>Bitácora</h2>
-    <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary" %>
-  </div>
 </div>
 <div class="row">
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="card">
       <div class="card-block">
         Datos financieros: Próximamente
       </div>
     </div>
   </div>
-  <div class="col-md-4">
+  <div class="col-md-6">
     <div class="card">
       <div class="card-block">
         Próximas clases: Próximamente
-      </div>
-    </div>
-  </div>
-  <div class="col-md-4">
-    <div class="card">
-      <div class="card-block">
-        Acciones para novios:
-        <p><%= link_to 'Edit', edit_wedding_path(@wedding), class: "btn btn-block btn-secondary" %></p>
-        <p><%= link_to 'Back', weddings_path, class: "btn btn-block btn-secondary" %></p>
       </div>
     </div>
   </div>

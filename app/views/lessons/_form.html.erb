@@ -11,9 +11,16 @@
     </div>
   <% end %>
 
-  <%= f.text_field :wedding_id, class: "hidden" %>
+  <div class="alert alert-info alert-dismissible fade in" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    Estás guardando una clase para <strong><%= lesson.wedding.nombre1 %> <%= lesson.wedding.apellido1 %> y <%= lesson.wedding.nombre2 %> <%= lesson.wedding.apellido2 %></strong>. Si es que no corresponde, te recomendamos volver a <%= link_to 'la página de matrimonios', weddings_path %>.
+  </div>
+  <%= f.text_field :wedding_id, class: "hidden-xs-up" %>
   <div class="field form-group">
-    <%= f.label :fecha %>
+    <%# f.label :fecha %>
+    Fecha de inscripción:
     <%= f.date_select :fecha, class: "form-control" %>
   </div>
 

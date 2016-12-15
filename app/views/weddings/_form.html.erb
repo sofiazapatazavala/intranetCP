@@ -30,6 +30,14 @@
           <%# f.label :apellido1 %>
           <%= f.text_field :email_novia, class: 'form-control', placeholder: 'E-mail de la novia' %>
         </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :rut_novia, class: 'form-control', placeholder: 'RUT de la novia' %>
+        </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :instagram_novia, class: 'form-control', placeholder: 'Cuenta en Instagram de la novia (URL)', type: "url" %>
+        </div>
       </div>
       <div class="col-sm-6">
         <p>Datos del novio</p>
@@ -48,6 +56,10 @@
         <div class="field form-group">
           <%# f.label :apellido1 %>
           <%= f.text_field :email_novio, class: 'form-control', placeholder: 'E-mail del novio' %>
+        </div>
+        <div class="field form-group">
+          <%# f.label :apellido1 %>
+          <%= f.text_field :rut_novia, class: 'form-control', placeholder: 'RUT del novio' %>
         </div>
       </div>
     </div>
@@ -87,7 +99,7 @@
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <p>¿La persona que hizo el contacto no es la novia ni el novio?</p>
+        <p class="lead">¿La persona que hizo el contacto no es la novia ni el novio?</p>
         <div class="field form-group">
           <%= f.text_field :nombre_contacto, class: 'form-control', placeholder: 'Nombre y apellido del contacto' %>
         </div>

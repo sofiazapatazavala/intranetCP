@@ -8,7 +8,7 @@ class WeddingsController < ApplicationController
   #  @weddings = Wedding.all
 
   # Initialize filterrific with the following params:
-  # * `Student` is the ActiveRecord based model class.
+  # * `Wedding` is the ActiveRecord based model class.
   # * `params[:filterrific]` are any params submitted via web request.
   #   If they are blank, filterrific will try params persisted in the session
   #   next. If those are blank, too, filterrific will use the model's default
@@ -34,14 +34,12 @@ class WeddingsController < ApplicationController
   @filterrific = initialize_filterrific(
     Wedding,
     params[:filterrific],
-    select_options: {
-    # sorted_by: Wedding.options_for_sorted_by
-    },
-    persistence_id: 'shared_key',
+    select_options: { },
+    persistence_id: '',
     default_filter_params: {},
     available_filters: [],
   ) or return
-  # Get an ActiveRecord::Relation for all students that match the filter settings.
+  # Get an ActiveRecord::Relation for all Weddings that match the filter settings.
   # You can paginate with will_paginate or kaminari.
   # NOTE: filterrific_find returns an ActiveRecord Relation that can be
   # chained with other scopes to further narrow down the scope of the list,
@@ -126,6 +124,6 @@ class WeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
-      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :apellido1, :apellido2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios, :nombre3, :apellido3, :nombre4, :apellido4, :nombre_contacto, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign)
+      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :apellido1, :apellido2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios, :nombre3, :apellido3, :nombre4, :apellido4, :nombre_contacto, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia)
     end
 end
