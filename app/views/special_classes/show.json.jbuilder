@@ -1,0 +1,1 @@
+json.partial! "special_classes/special_class", special_class: @special_class

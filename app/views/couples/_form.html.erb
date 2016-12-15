@@ -1,0 +1,57 @@
+<%= form_for(couple) do |f| %>
+  <% if couple.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(couple.errors.count, "error") %> prohibited this couple from being saved:</h2>
+
+      <ul>
+      <% couple.errors.full_messages.each do |message| %>
+        <li><%= message %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :nombre1 %>
+    <%= f.text_field :nombre1 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :nombre2 %>
+    <%= f.text_field :nombre2 %>
+  </div>
+
+  <div class="field">
+    <%= f.label :contacto %>
+    <%= f.text_field :contacto %>
+  </div>
+
+  <div class="field">
+    <%= f.label :email %>
+    <%= f.text_field :email %>
+  </div>
+
+  <div class="field">
+    <%= f.label :telefono %>
+    <%= f.text_field :telefono %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comoseenteraron %>
+    <%= f.text_field :comoseenteraron %>
+  </div>
+
+  <div class="field">
+    <%= f.label :descuento %>
+    <%= f.text_field :descuento %>
+  </div>
+
+  <div class="field">
+    <%= f.label :comentarios %>
+    <%= f.text_field :comentarios %>
+  </div>
+
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>

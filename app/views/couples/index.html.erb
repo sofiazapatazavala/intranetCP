@@ -1,0 +1,41 @@
+<p id="notice"><%= notice %></p>
+
+<h1>Couples</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Nombre1</th>
+      <th>Nombre2</th>
+      <th>Contacto</th>
+      <th>Email</th>
+      <th>Telefono</th>
+      <th>Comoseenteraron</th>
+      <th>Descuento</th>
+      <th>Comentarios</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @couples.each do |couple| %>
+      <tr>
+        <td><%= couple.nombre1 %></td>
+        <td><%= couple.nombre2 %></td>
+        <td><%= couple.contacto %></td>
+        <td><%= couple.email %></td>
+        <td><%= couple.telefono %></td>
+        <td><%= couple.comoseenteraron %></td>
+        <td><%= couple.descuento %></td>
+        <td><%= couple.comentarios %></td>
+        <td><%= link_to 'Show', couple %></td>
+        <td><%= link_to 'Edit', edit_couple_path(couple) %></td>
+        <td><%= link_to 'Destroy', couple, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Couple', new_couple_path %>

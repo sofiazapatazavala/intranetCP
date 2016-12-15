@@ -1,4 +1,8 @@
 Rails.application.routes.draw do
+  resources :couples
+  resources :special_classes
+  resources :courses
+  resources :students
 #  resources :lessons
 #  resources :weddings
   scope(path_names: { new: 'nueva', edit: 'editar' }) do

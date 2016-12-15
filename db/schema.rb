@@ -10,10 +10,31 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161214195345) do
+ActiveRecord::Schema.define(version: 20161215203125) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "couples", force: :cascade do |t|
+    t.string   "nombre1"
+    t.string   "nombre2"
+    t.string   "contacto"
+    t.string   "email"
+    t.string   "telefono"
+    t.string   "comoseenteraron"
+    t.string   "descuento"
+    t.string   "comentarios"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "courses", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "estilo"
+    t.string   "edades"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "lessons", force: :cascade do |t|
     t.date     "fecha"
@@ -25,6 +46,34 @@ ActiveRecord::Schema.define(version: 20161214195345) do
     t.datetime "start_time"
     t.datetime "end_time"
     t.index ["wedding_id"], name: "index_lessons_on_wedding_id", using: :btree
+  end
+
+  create_table "special_classes", force: :cascade do |t|
+    t.string   "nombre1"
+    t.string   "nombre2"
+    t.string   "nombre3"
+    t.string   "nombre4"
+    t.string   "nombre5"
+    t.string   "nombre6"
+    t.string   "contacto"
+    t.string   "email"
+    t.string   "telefono"
+    t.string   "comoseenteraron"
+    t.string   "descuento"
+    t.string   "comentarios"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+  end
+
+  create_table "students", force: :cascade do |t|
+    t.string   "nombre"
+    t.string   "telefono"
+    t.string   "email"
+    t.string   "comoseenteraron"
+    t.string   "descuento"
+    t.string   "comentarios"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
   end
 
   create_table "users", force: :cascade do |t|

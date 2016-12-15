@@ -1,0 +1,44 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre1:</strong>
+  <%= @couple.nombre1 %>
+</p>
+
+<p>
+  <strong>Nombre2:</strong>
+  <%= @couple.nombre2 %>
+</p>
+
+<p>
+  <strong>Contacto:</strong>
+  <%= @couple.contacto %>
+</p>
+
+<p>
+  <strong>Email:</strong>
+  <%= @couple.email %>
+</p>
+
+<p>
+  <strong>Telefono:</strong>
+  <%= @couple.telefono %>
+</p>
+
+<p>
+  <strong>Comoseenteraron:</strong>
+  <%= @couple.comoseenteraron %>
+</p>
+
+<p>
+  <strong>Descuento:</strong>
+  <%= @couple.descuento %>
+</p>
+
+<p>
+  <strong>Comentarios:</strong>
+  <%= @couple.comentarios %>
+</p>
+
+<%= link_to 'Edit', edit_couple_path(@couple) %> |
+<%= link_to 'Back', couples_path %>

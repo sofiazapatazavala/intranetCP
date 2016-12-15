@@ -3,12 +3,10 @@
     <div class="card">
       <div class="card-block">
         <p class="lead">¿Qué quieres hacer?</p>
-        <div class="row">
-          <div class="col-md-4">
-            <%= image_tag 'nuevos-novios.png', :class => "img-fluid my-1 mx-auto d-block" %>
-            <p class="text-xs-center"><a href="<%= new_wedding_path %>">Registar <strong>novios</strong></a></p>
-          </div>
-        </div>
+        <%= link_to "Registrar nuevo matrimonio", new_wedding_path, class: "btn btn-block btn-outline-primary", role: "button" %>
+        <hr>
+        <%= link_to "Registrar alumna de curso", new_student_path, class: "btn btn-block btn-outline-primary", role: "button" %>
+        <%= link_to "Registrar nuevo curso", new_course_path, class: "btn btn-block btn-secondary", role: "button" %>
       </div>
     </div>
   </div>

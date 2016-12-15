@@ -1,0 +1,1 @@
+json.array! @special_classes, partial: 'special_classes/special_class', as: :special_class
