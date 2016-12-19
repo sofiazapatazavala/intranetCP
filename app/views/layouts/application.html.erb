@@ -7,6 +7,11 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <!-- Meta tags para el funcionamiento como web app en iOS -->
+    <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
+    <meta name="apple-mobile-web-app-title" content="Constanza Prieto">
+    <meta name="apple-mobile-web-app-capable" content="yes">
+
     <%= csrf_meta_tags %>
 
     <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
@@ -38,7 +43,7 @@
                       <li class="nav-item"><%= link_to 'Agenda', agenda_path, class: "nav-link" %></li>
                       <li class="nav-item"><%= link_to 'Cursos', courses_path, class: "nav-link" %></li>
                       <li class="nav-item"><%= link_to 'Alumnas', students_path, class: "nav-link" %></li>
-                      <li class="nav-item float-lg-right"><%= link_to 'Cerrar Sesión', destroy_user_session_path, class: "btn btn-outline-danger", role: "button" %></li>
+                      <li class="nav-item float-lg-right"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-outline-danger", role: "button" %></li>
                       <%
                       #<li class="nav-item dropdown">
                       #  <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
