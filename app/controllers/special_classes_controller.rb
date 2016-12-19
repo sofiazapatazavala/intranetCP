@@ -1,4 +1,5 @@
 class SpecialClassesController < ApplicationController
+  before_action :authenticate_user!
   before_action :set_special_class, only: [:show, :edit, :update, :destroy]
 
   # GET /special_classes

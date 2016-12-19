@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219144457) do
+ActiveRecord::Schema.define(version: 20161219195910) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -26,6 +26,9 @@ ActiveRecord::Schema.define(version: 20161219144457) do
     t.string   "comentarios"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "bloggable_type"
+    t.integer  "bloggable_id"
+    t.index ["bloggable_type", "bloggable_id"], name: "index_couples_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
   create_table "courses", force: :cascade do |t|
@@ -64,6 +67,9 @@ ActiveRecord::Schema.define(version: 20161219144457) do
     t.string   "comentarios"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
+    t.string   "bloggable_type"
+    t.integer  "bloggable_id"
+    t.index ["bloggable_type", "bloggable_id"], name: "index_special_classes_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
   create_table "students", force: :cascade do |t|
@@ -121,6 +127,9 @@ ActiveRecord::Schema.define(version: 20161219144457) do
     t.string   "rut_novia"
     t.string   "rut_novio"
     t.string   "instagram_novia"
+    t.string   "bloggable_type"
+    t.integer  "bloggable_id"
+    t.index ["bloggable_type", "bloggable_id"], name: "index_weddings_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
 end

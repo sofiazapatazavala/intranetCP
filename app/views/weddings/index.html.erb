@@ -19,13 +19,19 @@
   <div class="col-xs-12">
     <div class="card">
       <div class="card-block">
+        <p class="lead">Pronto aquí: búsqueda</p>
+      </div>
+    </div>
+    <div class="card">
+      <div class="card-block">
         <%= form_for_filterrific @filterrific do |f| %>
         <div class="form-group">
           <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
           <%= f.text_field(
             :search_query,
-            class: 'filterrific-periodically-observed form-control',
-            placeholder: '[En construcción] Búsqueda según nombre, apellido o e-mail de la novia'
+            class: 'filterrific-periodically-observed form-control form-control-lg',
+            placeholder: '[En construcción] Búsqueda instantánea según nombre de la novia o el novio',
+            disabled: true,
           ) %>
         </div>
 

@@ -2,7 +2,7 @@ class Wedding < ApplicationRecord
 # will_paginate
 self.per_page = 2
 # Relación para las clases
-  has_many :lessons
+  has_many :lessons, as: :bloggable
 # Configura el uploader del diseño de piso
   mount_uploader :floordesign, DisenoDePisoUploader
 # Filterrific para los matris
