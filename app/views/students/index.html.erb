@@ -1,14 +1,21 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Students</h1>
+<div class="row my-1">
+  <div class="col-xs-8">
+    <h3>Alumnas</h3>
+  </div>
+  <div class="col-xs-4">
+    <%= link_to '➕ Nueva', new_student_path, class: "btn btn-block btn-primary", role: "button"  %>
+  </div>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
       <th>Telefono</th>
       <th>Email</th>
-      <th>Comoseenteraron</th>
+      <th>¿Cómo se enteró de la academia?</th>
       <th>Descuento</th>
       <th>Comentarios</th>
       <th colspan="3"></th>
@@ -24,9 +31,9 @@
         <td><%= student.comoseenteraron %></td>
         <td><%= student.descuento %></td>
         <td><%= student.comentarios %></td>
-        <td><%= link_to 'Show', student %></td>
-        <td><%= link_to 'Edit', edit_student_path(student) %></td>
-        <td><%= link_to 'Destroy', student, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', student, class: "btn btn-block btn-info" %></td>
+        <td><%= link_to 'Editar', edit_student_path(student), class: "btn btn-block btn-primary" %></td>
+        <td><%= link_to 'Borrar', student, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -34,4 +41,4 @@
 
 <br>
 
-<%= link_to 'New Student', new_student_path %>
+<%= link_to 'Inscribir nueva alumna', new_student_path, class: "btn btn-block btn-secondary my-1", role: "button" %>

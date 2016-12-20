@@ -20,7 +20,8 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    @lesson = Lesson.new(wedding_id: cookies[:bodaasociada])
+  @lesson = Lesson.new
+  #  @lesson = Lesson.new(wedding_id: cookies[:bodaasociada])
   end
 
   # GET /lessons/1/edit

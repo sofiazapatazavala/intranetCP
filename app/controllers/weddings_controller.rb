@@ -64,7 +64,7 @@ class WeddingsController < ApplicationController
   # GET /weddings/1
   # GET /weddings/1.json
   def show
-    cookies[:bodaasociada] = @wedding.id
+  #  cookies[:asociacion] = @wedding.id
   end
 
   # GET /weddings/new

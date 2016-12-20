@@ -11,19 +11,11 @@
     </div>
   <% end %>
 
-<% if persisted? %>
-<div class="card">
-  <div class="card-block">
-    <p><strong>HOLI.</strong> Ves esto porque estás editando una clase (y no creándola).</p>
-  </div>
-</div>
-<% end %>
-
   <div class="alert alert-info alert-dismissible fade in" role="alert">
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    Estás guardando una clase para <strong><%= lesson.wedding.nombre1 %> <%= lesson.wedding.apellido1 %> y <%= lesson.wedding.nombre2 %> <%= lesson.wedding.apellido2 %></strong>. Si es que no corresponde, te recomendamos volver a <%= link_to 'la página de matrimonios', weddings_path %>.
+    Estás guardando una clase para <strong><%= lesson.bloggable.nombre1 %> y <%= lesson.bloggable.nombre2 %></strong>. Si es que no corresponde, te recomendamos volver donde corresponda.
   </div>
   <%= f.text_field :wedding_id, class: "hidden-xs-up" %>
   <div class="field form-group">

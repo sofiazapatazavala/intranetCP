@@ -26,9 +26,6 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.string   "comentarios"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "bloggable_type"
-    t.integer  "bloggable_id"
-    t.index ["bloggable_type", "bloggable_id"], name: "index_couples_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
   create_table "courses", force: :cascade do |t|
@@ -43,12 +40,15 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.date     "fecha"
     t.string   "titulo"
     t.text     "notas"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
+    t.datetime "created_at",     null: false
+    t.datetime "updated_at",     null: false
     t.integer  "wedding_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "video"
+    t.string   "bloggable_type"
+    t.integer  "bloggable_id"
+    t.index ["bloggable_type", "bloggable_id"], name: "index_lessons_on_bloggable_type_and_bloggable_id", using: :btree
     t.index ["wedding_id"], name: "index_lessons_on_wedding_id", using: :btree
   end
 
@@ -67,9 +67,6 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.string   "comentarios"
     t.datetime "created_at",      null: false
     t.datetime "updated_at",      null: false
-    t.string   "bloggable_type"
-    t.integer  "bloggable_id"
-    t.index ["bloggable_type", "bloggable_id"], name: "index_special_classes_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
   create_table "students", force: :cascade do |t|
@@ -127,9 +124,6 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.string   "rut_novia"
     t.string   "rut_novio"
     t.string   "instagram_novia"
-    t.string   "bloggable_type"
-    t.integer  "bloggable_id"
-    t.index ["bloggable_type", "bloggable_id"], name: "index_weddings_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
 end

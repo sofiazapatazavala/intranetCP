@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Special Classes</h1>
+<div class="row my-1">
+  <div class="col-xs-8">
+    <h3>Clases Particulares</h3>
+  </div>
+  <div class="col-xs-4">
+    <%= link_to '➕ Nueva', new_special_class_path, class: "btn btn-block btn-primary", role: "button"  %>
+  </div>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre1</th>
@@ -36,9 +43,9 @@
         <td><%= special_class.comoseenteraron %></td>
         <td><%= special_class.descuento %></td>
         <td><%= special_class.comentarios %></td>
-        <td><%= link_to 'Show', special_class %></td>
-        <td><%= link_to 'Edit', edit_special_class_path(special_class) %></td>
-        <td><%= link_to 'Destroy', special_class, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', special_class, class: "btn btn-block btn-info" %></td>
+        <td><%= link_to 'Editar', edit_special_class_path(special_class), class: "btn btn-block btn-primary" %></td>
+        <td><%= link_to 'Borrar', special_class, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -46,4 +53,4 @@
 
 <br>
 
-<%= link_to 'New Special Class', new_special_class_path %>
+<%= link_to 'New Special Class', new_special_class_path, class: "btn btn-block btn-secondary my-1", role: "button" %>

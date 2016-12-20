@@ -1,8 +1,15 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Courses</h1>
+<div class="row my-1">
+  <div class="col-xs-8">
+    <h3>Cursos</h3>
+  </div>
+  <div class="col-xs-4">
+    <%= link_to '➕ Nuevo', new_course_path, class: "btn btn-block btn-primary", role: "button"  %>
+  </div>
+</div>
 
-<table>
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -18,9 +25,9 @@
         <td><%= course.nombre %></td>
         <td><%= course.estilo %></td>
         <td><%= course.edades %></td>
-        <td><%= link_to 'Show', course %></td>
-        <td><%= link_to 'Edit', edit_course_path(course) %></td>
-        <td><%= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', course, class: "btn btn-block btn-info" %></td>
+        <td><%= link_to 'Editar', edit_course_path(course), class: "btn btn-block btn-primary" %></td>
+        <td><%= link_to 'Borrar', course, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
       </tr>
     <% end %>
   </tbody>
@@ -28,4 +35,4 @@
 
 <br>
 
-<%= link_to 'New Course', new_course_path %>
+<%= link_to 'New Course', new_course_path, class: "btn btn-block btn-secondary my-1", role: "button" %>
