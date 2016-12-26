@@ -6,8 +6,8 @@
 
       <% meetings.each do |meeting| %>
         <div>
-          <p><%= meeting.wedding.nombre1 %> <%= meeting.wedding.apellido1 %> y <%= meeting.wedding.nombre2 %> <%= meeting.wedding.apellido2 %></p>
-          <p class="lead"><%= meeting.start_time %></p>
+          <p class="lead"><a href="<%= edit_meeting_path(meeting) %>"><%= meeting.bloggable.nombre1 %> y <%= meeting.bloggable.nombre2 %></a></p>
+          <p><%= meeting.start_time %></p>
         </div>
       <% end %>
 

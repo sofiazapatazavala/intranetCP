@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161219195910) do
+ActiveRecord::Schema.define(version: 20161223150323) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,8 +48,18 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.string   "video"
     t.string   "bloggable_type"
     t.integer  "bloggable_id"
+    t.boolean  "clasepagada"
     t.index ["bloggable_type", "bloggable_id"], name: "index_lessons_on_bloggable_type_and_bloggable_id", using: :btree
     t.index ["wedding_id"], name: "index_lessons_on_wedding_id", using: :btree
+  end
+
+  create_table "pg_search_documents", force: :cascade do |t|
+    t.text     "content"
+    t.string   "searchable_type"
+    t.integer  "searchable_id"
+    t.datetime "created_at",      null: false
+    t.datetime "updated_at",      null: false
+    t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable_type_and_searchable_id", using: :btree
   end
 
   create_table "special_classes", force: :cascade do |t|
@@ -108,12 +118,6 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.string   "origen"
     t.string   "url_vals"
     t.text     "comentarios"
-    t.string   "apellido1"
-    t.string   "apellido2"
-    t.string   "nombre3"
-    t.string   "apellido3"
-    t.string   "nombre4"
-    t.string   "apellido4"
     t.string   "nombre_contacto"
     t.string   "telefono_novio"
     t.string   "telefono_novia"
@@ -124,6 +128,7 @@ ActiveRecord::Schema.define(version: 20161219195910) do
     t.string   "rut_novia"
     t.string   "rut_novio"
     t.string   "instagram_novia"
+    t.text     "maspersonas"
   end
 
 end

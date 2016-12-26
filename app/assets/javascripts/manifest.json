@@ -1,0 +1,20 @@
+{
+  "short_name": "Constanza Prieto",
+  "name": "Constanza Prieto",
+  "icons": [
+    {
+      "src": "images/apple-touch-icon.png",
+      "type": "image/png",
+      "sizes": "180x180"
+    },
+    {
+      "src": "launcher-icon.png",
+      "type": "image/png",
+      "sizes": "192x192"
+    }
+  ],
+  "start_url": "/",
+  "background_color": "#B21F87",
+  "theme_color": "#B21F87",
+  "display": "standalone"
+}

@@ -38,6 +38,8 @@ gem 'sprockets-rails'
 gem 'bootstrap', '~> 4.0.0.alpha5'
 # Simple Calendar para el calendario de clases
 gem "simple_calendar", "~> 2.0"
+# Búsqueda en la DB
+gem "pg_search"
 # Filterrific para implementar filtros a los matrimonios
 gem "filterrific"
 # Will Paginate porque Filterrific la necesita para hacer su magia

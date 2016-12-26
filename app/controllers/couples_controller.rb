@@ -11,6 +11,9 @@ class CouplesController < ApplicationController
   # GET /couples/1
   # GET /couples/1.json
   def show
+  # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda.
+    cookies[:id_blog] = @couple.id
+    cookies[:tipo_blog] = "Couple"
   end
 
   # GET /couples/new

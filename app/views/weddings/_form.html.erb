@@ -20,10 +20,6 @@
         </div>
         <div class="field form-group">
           <%# f.label :apellido1 %>
-          <%= f.text_field :apellido1, class: 'form-control', placeholder: 'Apellido de la novia' %>
-        </div>
-        <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :telefono_novia, class: 'form-control', placeholder: 'Teléfono de la novia' %>
         </div>
         <div class="field form-group">
@@ -44,10 +40,6 @@
         <div class="field form-group">
           <%# f.label :nombre2 %>
           <%= f.text_field :nombre2, class: 'form-control', placeholder: 'Nombre del novio' %>
-        </div>
-        <div class="field form-group">
-          <%# f.label :apellido2 %>
-          <%= f.text_field :apellido2, class: 'form-control', placeholder: 'Apellido del novio' %>
         </div>
         <div class="field form-group">
           <%# f.label :apellido1 %>
@@ -73,23 +65,10 @@
         </p>
         <div class="collapse" id="collapseExample">
           <div class="row">
-            <div class="col-sm-6">
+            <div class="col-sm-12">
               <div class="card card-block">
                 <div class="field form-group">
-                  <%= f.text_field :nombre3, class: 'form-control', placeholder: 'Nombre de la tercera persona' %>
-                </div>
-                <div class="field form-group">
-                  <%= f.text_field :apellido3, class: 'form-control', placeholder: 'Apellido de la tercera persona' %>
-                </div>
-              </div>
-            </div>
-            <div class="col-sm-6">
-              <div class="card card-block">
-                <div class="field form-group">
-                  <%= f.text_field :nombre4, class: 'form-control', placeholder: 'Nombre de la cuarta persona' %>
-                </div>
-                <div class="field form-group">
-                  <%= f.text_field :apellido4, class: 'form-control', placeholder: 'Apellido de la cuarta persona' %>
+                  <%= f.text_area :maspersonas, class: 'form-control', placeholder: 'Agrega a las personas que sean necesarias.' %>
                 </div>
               </div>
             </div>

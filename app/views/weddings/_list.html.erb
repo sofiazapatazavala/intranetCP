@@ -7,7 +7,6 @@
       <table class="table">
         <tr>
           <th>Nombre de la novia</th>
-          <th>Apellido de la novia</th>
           <th>E-mail de la novia</th>
           <th>Teléfono de la novia</th>
           <th></th>
@@ -15,7 +14,6 @@
         <% weddings.each do |wedding| %>
         <tr>
           <td><%= link_to(wedding.nombre1, wedding_path(wedding)) %></td>
-          <td><%= wedding.apellido1 %></td>
           <td><%= wedding.email_novia %></td>
           <td><%= wedding.telefono_novia %></td>
           <td><%= link_to 'Ver', wedding, class: "btn btn-block btn-info" %></td>

@@ -64,7 +64,9 @@ class WeddingsController < ApplicationController
   # GET /weddings/1
   # GET /weddings/1.json
   def show
-  #  cookies[:asociacion] = @wedding.id
+  # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda. 
+    cookies[:id_blog] = @wedding.id
+    cookies[:tipo_blog] = "Wedding"
   end
 
   # GET /weddings/new
@@ -124,6 +126,6 @@ class WeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
-      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :apellido1, :apellido2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios, :nombre3, :apellido3, :nombre4, :apellido4, :nombre_contacto, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia)
+      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios, :nombre_contacto, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia, :maspersonas)
     end
 end

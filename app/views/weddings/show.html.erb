@@ -1,7 +1,7 @@
 <div class="row my-1">
   <div class="col-sm-6">
     <h3>Matrimonio:</h3>
-    <p class="lead"><%= @wedding.nombre1 %> <%= @wedding.apellido1 %> y <%= @wedding.nombre2 %> <%= @wedding.apellido2 %></p>
+    <p class="lead"><%= @wedding.nombre1 %> y <%= @wedding.nombre2 %></p>
   </div>
   <div class="col-sm-6">
     <div class="row">
@@ -42,7 +42,7 @@
     <div class="card">
       <div class="card-block">
         <p>Novia:</p>
-        <p class="lead"><%= @wedding.nombre1 %> <%= @wedding.apellido1 %></p>
+        <p class="lead"><%= @wedding.nombre1 %></p>
         <%# Mostrar link al teléfono y mail de novia, novio y contacto %>
         <p class="lead"><%= mail_to @wedding.email_novia %></p>
         <p class="lead"><%= link_to @wedding.telefono_novia, "tel:#{@wedding.telefono_novia}" %></p>
@@ -55,7 +55,7 @@
     <div class="card">
       <div class="card-block">
         <p>Novio:</p>
-        <p class="lead"><%= @wedding.nombre2 %> <%= @wedding.apellido2 %></p>
+        <p class="lead"><%= @wedding.nombre2 %></p>
         <p class="lead"><%= mail_to @wedding.email_novio %></p>
         <p class="lead"><%= link_to @wedding.telefono_novio, "tel:#{@wedding.telefono_novio}" %></p>
       </div>

@@ -11,6 +11,8 @@
     <%= favicon_link_tag 'apple-touch-icon.png', rel: 'apple-touch-icon', type: 'image/png' %>
     <meta name="apple-mobile-web-app-title" content="Constanza Prieto">
     <meta name="apple-mobile-web-app-capable" content="yes">
+    <!-- manifest.json para Android -->
+    <%= tag(:link, rel: 'manifest', href: asset_url('manifest.json')) %>
 
     <%= csrf_meta_tags %>
 

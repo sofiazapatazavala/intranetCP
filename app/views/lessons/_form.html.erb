@@ -15,9 +15,10 @@
     <button type="button" class="close" data-dismiss="alert" aria-label="Close">
       <span aria-hidden="true">&times;</span>
     </button>
-    Estás guardando una clase para <strong><%= lesson.bloggable.nombre1 %> y <%= lesson.bloggable.nombre2 %></strong>. Si es que no corresponde, te recomendamos volver donde corresponda.
+    Estás trabajando con un <strong><%= cookies[:tipo_blog] %></strong> de <strong><%= lesson.bloggable.nombre1 %></strong>. Si no está correcto, vuelve donde corresponda.
   </div>
-  <%= f.text_field :wedding_id, class: "hidden-xs-up" %>
+  <%= f.text_field :bloggable_type, class: "hidden-xs-up" %>
+  <%= f.text_field :bloggable_id, class: "hidden-xs-up" %>
   <div class="field form-group">
     <%# f.label :fecha %>
     Fecha de inscripción:

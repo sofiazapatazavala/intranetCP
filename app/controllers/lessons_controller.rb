@@ -20,8 +20,8 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-  @lesson = Lesson.new
-  #  @lesson = Lesson.new(wedding_id: cookies[:bodaasociada])
+    #@lesson = Lesson.new
+    @lesson = Lesson.new(bloggable_id: cookies[:id_blog], bloggable_type: cookies[:tipo_blog])
   end
 
   # GET /lessons/1/edit
@@ -76,6 +76,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:fecha, :titulo, :notas, :wedding_id, :start_time, :end_time, :video)
+      params.require(:lesson).permit(:fecha, :titulo, :notas, :start_time, :end_time, :video, :bloggable_type, :bloggable_id, :clasepagada)
     end
 end

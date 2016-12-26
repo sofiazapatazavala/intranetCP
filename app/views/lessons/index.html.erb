@@ -15,7 +15,7 @@
       <th>Fecha</th>
       <th>Titulo</th>
       <th>Notas</th>
-      <th>Matrimonio</th>
+      <th>¿Para qué persona?</th>
       <th colspan="3"></th>
     </tr>
   </thead>
@@ -26,7 +26,7 @@
         <td><%= lesson.fecha %></td>
         <td><%= lesson.titulo %></td>
         <td><%= lesson.notas %></td>
-        <td><%= lesson.wedding.nombre1 %> <%= lesson.wedding.apellido1 %> y <%= lesson.wedding.nombre2 %> <%= lesson.wedding.apellido2 %></td>
+        <td><% if lesson.bloggable_type == "Wedding" %>Matrimonio de <% end %><%= lesson.bloggable.nombre1 %></td>
         <td><%= link_to 'Ver', lesson, class: "btn btn-block btn-info" %></td>
         <td><%= link_to 'Editar', edit_lesson_path(lesson), class: "btn btn-block btn-primary" %></td>
         <td><%= link_to 'Borrar', lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>

@@ -11,6 +11,9 @@ class SpecialClassesController < ApplicationController
   # GET /special_classes/1
   # GET /special_classes/1.json
   def show
+  # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda.
+    cookies[:id_blog] = @special_class.id
+    cookies[:tipo_blog] = "Special class"
   end
 
   # GET /special_classes/new
