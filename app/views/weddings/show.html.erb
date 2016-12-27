@@ -1,15 +1,18 @@
 <div class="row my-1">
-  <div class="col-sm-6">
+  <div class="col-md-4">
     <h3>Matrimonio:</h3>
     <p class="lead"><%= @wedding.nombre1 %> y <%= @wedding.nombre2 %></p>
   </div>
-  <div class="col-sm-6">
+  <div class="col-md-8">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
+        <p><%= link_to '⬅ Volver', weddings_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      </div>
+      <div class="col-sm-4">
         <p><%= link_to '✏ Editar', edit_wedding_path(@wedding), class: "btn btn-block btn-warning", role: "button" %></p>
       </div>
-      <div class="col-sm-6">
-        <p><%= link_to '⬅ Volver', weddings_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      <div class="col-sm-4">
+        <p><%= link_to '🗑 Borrar', wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
       </div>
     </div>
     <div class="row">
@@ -49,7 +52,7 @@
   </div>
 </div>
 <div class="row">
-  <div class="col-sm-6 col-lg-3">
+  <div class="col-sm-6 col-lg-4">
     <div class="card">
       <div class="card-block">
         <p>Fecha de matrimonio:</p>
@@ -58,7 +61,7 @@
     </div>
   </div>
 
-  <div class="col-sm-6 col-lg-3">
+  <div class="col-sm-6 col-lg-4">
     <div class="card">
       <div class="card-block">
         <p>Correo:</p>
@@ -67,7 +70,7 @@
     </div>
   </div>
 
-  <div class="col-sm-6 col-lg-3">
+  <div class="col-sm-6 col-lg-4">
     <div class="card">
       <div class="card-block">
         <p>Teléfono:</p>
@@ -76,14 +79,7 @@
     </div>
   </div>
 
-  <div class="col-sm-6 col-lg-3">
-    <div class="card">
-      <div class="card-block">
-        <p>Origen:</p>
-        <p class="lead"><%= @wedding.origen %></p>
-      </div>
-    </div>
-  </div>
+
 </div>
 <div class="row">
   <div class="col-md-12">
