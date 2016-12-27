@@ -119,12 +119,20 @@
               <tr>
                 <th>Clase</th>
                 <th>Hora</th>
+                <th>¿Está pagada?</th>
                 <th colspan="2"></th>
               </tr>
               <% @wedding.lessons.each do |lesson| %>
               <tr>
                 <td><%= lesson.titulo %></td>
                 <td><%= lesson.start_time %></td>
+                <td>
+                  <% if lesson.clasepagada == true %>
+                  Sí
+                  <% else %>
+                  No
+                  <% end %>
+                </td>
                 <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
                 <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-primary", role: "button" %></td>
               </tr>
