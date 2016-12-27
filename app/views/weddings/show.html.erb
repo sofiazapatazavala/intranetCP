@@ -12,7 +12,7 @@
         <p><%= link_to '✏ Editar', edit_wedding_path(@wedding), class: "btn btn-block btn-warning", role: "button" %></p>
       </div>
       <div class="col-sm-4">
-        <p><%= link_to '🗑 Borrar', wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
+        <p><%= link_to '🗑 Borrar', @wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
       </div>
     </div>
     <div class="row">
