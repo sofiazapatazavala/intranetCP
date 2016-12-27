@@ -13,7 +13,7 @@ class SpecialClassesController < ApplicationController
   def show
   # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda.
     cookies[:id_blog] = @special_class.id
-    cookies[:tipo_blog] = "Special Class"
+    cookies[:tipo_blog] = "SpecialClass"
   end
 
   # GET /special_classes/new
