@@ -27,7 +27,7 @@
         <td><%= lesson.fecha %></td>
         <td><%= lesson.titulo %></td>
         <td><%= lesson.notas %></td>
-        <td><% if lesson.bloggable_type == "Wedding" %>Matrimonio de <% end %><%= lesson.bloggable.nombre1 %></td>
+        <td><% if lesson.bloggable_type == "Wedding" %>Matrimonio de <% end %><%# lesson.bloggable.nombre1 %></td>
         <td><%= link_to 'Ver', lesson, class: "btn btn-block btn-info" %></td>
         <td><%= link_to 'Editar', edit_lesson_path(lesson), class: "btn btn-block btn-primary" %></td>
         <td><%= link_to 'Borrar', lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
