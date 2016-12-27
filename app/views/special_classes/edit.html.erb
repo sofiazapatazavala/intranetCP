@@ -1,6 +1,10 @@
-<h1>Editing Special Class</h1>
+<h3 class="my-1">Editar clase particular</h3>
+<hr>
 
 <%= render 'form', special_class: @special_class %>
 
-<%= link_to 'Show', @special_class %> |
-<%= link_to 'Back', special_classes_path %>
+<p><small>Otras acciones (no guardan los cambios realizados):</small></p>
+<div class="btn-group mb-1" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar ficha', @special_class, class: "btn btn-secondary", role: "button" %>
+  <%= link_to 'Volver a lista', special_classes_path, class: "btn btn-secondary", role: "button" %>
+</div>

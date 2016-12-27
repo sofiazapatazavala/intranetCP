@@ -11,22 +11,22 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre %>
-    <%= f.text_field :nombre %>
+  <div class="field form-group">
+    <%# f.label :nombre %>
+    <%= f.text_field :nombre, class: 'form-control', placeholder: 'Nombre del curso' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :estilo %>
-    <%= f.text_field :estilo %>
+    <%= f.text_field :estilo, class: 'form-control', placeholder: 'Estilo del curso' %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :edades %>
-    <%= f.text_field :edades %>
+    <%= f.text_field :edades, class: 'form-control', placeholder: 'Edades del curso' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Inscribir curso', :class => 'btn btn-block btn-primary' %>
   </div>
 <% end %>

@@ -1,6 +1,10 @@
-<h1>Editing Course</h1>
+<h3 class="my-1">Editar curso</h3>
+<hr>
 
 <%= render 'form', course: @course %>
 
-<%= link_to 'Show', @course %> |
-<%= link_to 'Back', courses_path %>
+<p><small>Otras acciones (no guardan los cambios realizados):</small></p>
+<div class="btn-group mb-1" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar curso', @course, class: "btn btn-secondary", role: "button" %>
+  <%= link_to 'Volver a lista', courses_path, class: "btn btn-secondary", role: "button" %>
+</div>

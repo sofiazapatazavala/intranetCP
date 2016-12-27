@@ -11,47 +11,47 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :nombre1 %>
-    <%= f.text_field :nombre1 %>
+  <div class="field form-group">
+    <%# f.label :nombre1 %>
+    <%= f.text_field :nombre1, class: 'form-control', placeholder: 'Nombre de la 1° persona' %>
   </div>
 
-  <div class="field">
-    <%= f.label :nombre2 %>
-    <%= f.text_field :nombre2 %>
+  <div class="field form-group">
+    <%# f.label :nombre2 %>
+    <%= f.text_field :nombre2, class: 'form-control', placeholder: 'Nombre de la 2° persona' %>
   </div>
 
-  <div class="field">
-    <%= f.label :contacto %>
-    <%= f.text_field :contacto %>
+  <div class="field form-group">
+    <%# f.label :contacto %>
+    <%= f.text_field :contacto, class: 'form-control', placeholder: 'Nombre del contacto, si es un tercero' %>
   </div>
 
-  <div class="field">
-    <%= f.label :email %>
-    <%= f.text_field :email %>
+  <div class="field form-group">
+    <%# f.label :email %>
+    <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail de contacto', type: "email" %>
   </div>
 
-  <div class="field">
-    <%= f.label :telefono %>
-    <%= f.text_field :telefono %>
+  <div class="field form-group">
+    <%# f.label :telefono %>
+    <%= f.text_field :telefono, class: 'form-control', placeholder: 'Teléfono de contacto', type: 'tel' %>
   </div>
 
-  <div class="field">
-    <%= f.label :comoseenteraron %>
-    <%= f.text_field :comoseenteraron %>
+  <div class="field form-group">
+    <%# f.label :comoseenteraron %>
+    <%= f.text_field :comoseenteraron, class: 'form-control', placeholder: '¿Cómo se enteraron de la academia?' %>
   </div>
 
-  <div class="field">
-    <%= f.label :descuento %>
-    <%= f.text_field :descuento %>
+  <div class="field form-group">
+    <%# f.label :descuento %>
+    <%= f.text_field :descuento, class: 'form-control', placeholder: '¿Tienen un descuento? Indicar aquí.' %>
   </div>
 
-  <div class="field">
-    <%= f.label :comentarios %>
-    <%= f.text_field :comentarios %>
+  <div class="field form-group">
+    <%# f.label :comentarios %>
+    <%= f.text_field :comentarios, class: 'form-control', placeholder: '¿Comentarios sobre la pareja? Indicar aquí.' %>
   </div>
 
   <div class="actions">
-    <%= f.submit %>
+    <%= f.submit 'Inscribir baile en pareja', :class => 'btn btn-block btn-primary' %>
   </div>
 <% end %>

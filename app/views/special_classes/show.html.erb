@@ -1,64 +1,74 @@
+<div class="row my-1">
+  <div class="col-sm-6">
+    <h3>Clase particular:</h3>
+    <p class="lead"><%= @special_class.nombre1 %></p>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%= link_to '✏ Editar', edit_special_class_path(@special_class), class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%= link_to '⬅ Volver', special_classes_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre1:</strong>
-  <%= @special_class.nombre1 %>
-</p>
 
-<p>
-  <strong>Nombre2:</strong>
-  <%= @special_class.nombre2 %>
-</p>
+<ul class="list-group">
+  <li class="list-group-item">1° persona: <strong><%= @special_class.nombre1 %></strong></li>
+  <li class="list-group-item">2° persona: <strong><%= @special_class.nombre2 %></strong></li>
+  <li class="list-group-item">3° persona: <strong><%= @special_class.nombre3 %></strong></li>
+  <li class="list-group-item">4° persona: <strong><%= @special_class.nombre4 %></strong></li>
+  <li class="list-group-item">5° persona: <strong><%= @special_class.nombre5 %></strong></li>
+  <li class="list-group-item">6° persona: <strong><%= @special_class.nombre6 %></strong></li>
+  <li class="list-group-item">Contacto (de ser un tercero): <%= @special_class.contacto %></li>
+  <li class="list-group-item">E-mail de contacto: <%= @special_class.email %></li>
+  <li class="list-group-item">Teléfono de contacto: <%= @special_class.telefono %></li>
+</ul>
 
-<p>
-  <strong>Nombre3:</strong>
-  <%= @special_class.nombre3 %>
-</p>
-
-<p>
-  <strong>Nombre4:</strong>
-  <%= @special_class.nombre4 %>
-</p>
-
-<p>
-  <strong>Nombre5:</strong>
-  <%= @special_class.nombre5 %>
-</p>
-
-<p>
-  <strong>Nombre6:</strong>
-  <%= @special_class.nombre6 %>
-</p>
-
-<p>
-  <strong>Contacto:</strong>
-  <%= @special_class.contacto %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @special_class.email %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @special_class.telefono %>
-</p>
-
-<p>
-  <strong>Comoseenteraron:</strong>
-  <%= @special_class.comoseenteraron %>
-</p>
-
-<p>
-  <strong>Descuento:</strong>
-  <%= @special_class.descuento %>
-</p>
-
-<p>
-  <strong>Comentarios:</strong>
-  <%= @special_class.comentarios %>
-</p>
-
-<%= link_to 'Edit', edit_special_class_path(@special_class) %> |
-<%= link_to 'Back', special_classes_path %>
+<button class="btn btn-outline-warning btn-md btn-block my-1" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">
+  Mostrar más información
+</button>
+<div class="collapse" id="colapsarInfo">
+  <ul class="list-group">
+    <li class="list-group-item">¿Cómo se enteraron de la Academia?: <%= @special_class.comoseenteraron %></li>
+    <li class="list-group-item">Descuento: <%= @special_class.descuento %></li>
+    <li class="list-group-item">Comentarios: <%= @special_class.comentarios %></li>
+  </ul>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-block">
+          <h4>Información sobre clases</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Clase</th>
+                <th>Hora</th>
+                <th colspan="2"></th>
+              </tr>
+              <% @special_class.lessons.each do |lesson| %>
+              <tr>
+                <td><%= lesson.titulo %></td>
+                <td><%= lesson.start_time %></td>
+                <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
+                <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-primary", role: "button" %></td>
+              </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

@@ -1,6 +1,10 @@
-<h1>Editing Couple</h1>
+<h3 class="my-1">Editar baile en pareja</h3>
+<hr>
 
 <%= render 'form', couple: @couple %>
 
-<%= link_to 'Show', @couple %> |
-<%= link_to 'Back', couples_path %>
+<p><small>Otras acciones (no guardan los cambios realizados):</small></p>
+<div class="btn-group mb-1" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar ficha', @couple, class: "btn btn-secondary", role: "button" %>
+  <%= link_to 'Volver a lista', couples_path, class: "btn btn-secondary", role: "button" %>
+</div>

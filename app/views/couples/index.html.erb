@@ -9,15 +9,16 @@
   </div>
 </div>
 
+<div class="table-responsive">
 <table class="table">
   <thead>
     <tr>
-      <th>Nombre1</th>
-      <th>Nombre2</th>
-      <th>Contacto</th>
-      <th>Email</th>
+      <th>Nombre 1° persona</th>
+      <th>Nombre 2° persona</th>
+      <th>Contacto (si es un tercero)</th>
+      <th>E-mail</th>
       <th>Telefono</th>
-      <th>Comoseenteraron</th>
+      <th>¿Cómo se enteró de la academia?</th>
       <th>Descuento</th>
       <th>Comentarios</th>
       <th colspan="3"></th>
@@ -37,12 +38,13 @@
         <td><%= couple.comentarios %></td>
         <td><%= link_to 'Ver', couple, class: "btn btn-block btn-info" %></td>
         <td><%= link_to 'Editar', edit_couple_path(couple), class: "btn btn-block btn-primary" %></td>
-        <td><%= link_to 'Borrar', couple, class: "btn btn-block btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Borrar', couple, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
 <br>
 
-<%= link_to 'New Couple', new_couple_path, class: "btn btn-block btn-secondary my-1", role: "button" %>
+<%= link_to 'Inscribir nueva pareja', new_couple_path, class: "btn btn-block btn-secondary my-1", role: "button" %>

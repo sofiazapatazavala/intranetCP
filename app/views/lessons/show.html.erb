@@ -1,19 +1,53 @@
+<div class="row my-1">
+  <div class="col-sm-6">
+    <h3>Clase:</h3>
+    <p class="lead"><%= @lesson.bloggable.nombre1 %></strong></p>
+    <small>Registrada el día <%= @lesson.fecha %></small>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%= link_to '✏ Editar', edit_lesson_path(@lesson), class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%= link_to '⬅ Volver', lessons_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to 'Borrar', @lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+      </div>
+    </div>
+  </div>
+</div>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Fecha:</strong>
-  <%= @lesson.fecha %>
-</p>
-
-<p>
-  <strong>Titulo:</strong>
-  <%= @lesson.titulo %>
-</p>
-
-<p>
-  <strong>Notas:</strong>
-  <%= @lesson.notas %>
-</p>
-
-<%= link_to 'Edit', edit_lesson_path(@lesson) %> |
-<%= link_to 'Back', lessons_path %>
+<div class="row">
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <p>Inicio:</p>
+        <p class="lead"><%= @lesson.start_time %></p>
+      </div>
+    </div>
+  </div>
+  <div class="col-sm-6">
+    <div class="card">
+      <div class="card-block">
+        <p>Término:</p>
+        <p class="lead"><%= @lesson.end_time %></p>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col-xs-12">
+    <div class="card">
+      <div class="card-block">
+        <h4><%= @lesson.titulo %></h4>
+        <%= @lesson.notas %>
+      </div>
+    </div>
+  </div>
+</div>

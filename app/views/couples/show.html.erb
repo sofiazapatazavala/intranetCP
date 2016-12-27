@@ -1,44 +1,69 @@
+<div class="row my-1">
+  <div class="col-sm-6">
+    <h3>Baile en pareja:</h3>
+    <p class="lead"><%= @couple.nombre1 %> y <%= @couple.nombre2 %></p>
+  </div>
+  <div class="col-sm-6">
+    <div class="row">
+      <div class="col-sm-6">
+        <p><%= link_to '✏ Editar', edit_couple_path(@couple), class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-sm-6">
+        <p><%= link_to '⬅ Volver', couples_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre1:</strong>
-  <%= @couple.nombre1 %>
-</p>
+<ul class="list-group">
+  <li class="list-group-item">1° persona: <strong><%= @couple.nombre1 %></strong></li>
+  <li class="list-group-item">2° persona: <strong><%= @couple.nombre2 %></strong></li>
+  <li class="list-group-item">Contacto (de ser un tercero): <%= @couple.contacto %></li>
+  <li class="list-group-item">E-mail de contacto: <%= @couple.email %></li>
+  <li class="list-group-item">Teléfono de contacto: <%= @couple.telefono %></li>
+</ul>
 
-<p>
-  <strong>Nombre2:</strong>
-  <%= @couple.nombre2 %>
-</p>
-
-<p>
-  <strong>Contacto:</strong>
-  <%= @couple.contacto %>
-</p>
-
-<p>
-  <strong>Email:</strong>
-  <%= @couple.email %>
-</p>
-
-<p>
-  <strong>Telefono:</strong>
-  <%= @couple.telefono %>
-</p>
-
-<p>
-  <strong>Comoseenteraron:</strong>
-  <%= @couple.comoseenteraron %>
-</p>
-
-<p>
-  <strong>Descuento:</strong>
-  <%= @couple.descuento %>
-</p>
-
-<p>
-  <strong>Comentarios:</strong>
-  <%= @couple.comentarios %>
-</p>
-
-<%= link_to 'Edit', edit_couple_path(@couple) %> |
-<%= link_to 'Back', couples_path %>
+<button class="btn btn-outline-warning btn-md btn-block my-1" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">
+  Mostrar más información
+</button>
+<div class="collapse" id="colapsarInfo">
+  <ul class="list-group">
+    <li class="list-group-item">¿Cómo se enteraron de la Academia?: <%= @couple.comoseenteraron %></li>
+    <li class="list-group-item">Descuento: <%= @couple.descuento %></li>
+    <li class="list-group-item">Comentarios: <%= @couple.comentarios %></li>
+  </ul>
+  <div class="row">
+    <div class="col-xs-12">
+      <div class="card">
+        <div class="card-block">
+          <h4>Información sobre clases</h4>
+          <div class="table-responsive">
+            <table class="table">
+              <tr>
+                <th>Clase</th>
+                <th>Hora</th>
+                <th colspan="2"></th>
+              </tr>
+              <% @couple.lessons.each do |lesson| %>
+              <tr>
+                <td><%= lesson.titulo %></td>
+                <td><%= lesson.start_time %></td>
+                <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
+                <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-primary", role: "button" %></td>
+              </tr>
+              <% end %>
+            </table>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>

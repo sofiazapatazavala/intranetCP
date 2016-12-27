@@ -17,43 +17,69 @@
     </button>
     Estás trabajando con un <strong><%= cookies[:tipo_blog] %></strong> de <strong><%= lesson.bloggable.nombre1 %></strong>. Si no está correcto, vuelve donde corresponda.
   </div>
-  <%= f.text_field :bloggable_type, class: "hidden-xs-up" %>
-  <%= f.text_field :bloggable_id, class: "hidden-xs-up" %>
-  <div class="field form-group">
-    <%# f.label :fecha %>
-    Fecha de inscripción:
-    <%= f.date_select :fecha, class: "form-control" %>
+
+  <div class="card">
+    <div class="card-block">
+      <p class="lead">¿Qué vas a hacer?</p>
+      <div class="row">
+        <div class="col-md-6">
+          <button class="btn btn-outline-info btn-md btn-block" type="button" data-toggle="collapse" data-target="#colapsarAgenda" aria-expanded="false" aria-controls="colapsarAgenda">
+            Agendar esta clase
+          </button>
+        </div>
+        <div class="col-md-6">
+          <button class="btn btn-outline-success btn-md btn-block" type="button" data-toggle="collapse" data-target="#colapsarNotas" aria-expanded="false" aria-controls="colapsarNotas">
+            Agregar sus notas
+          </button>
+        </div>
+      </div>
+    </div>
   </div>
 
-  <div class="field form-group">
-    <%= f.label :titulo %>
-    <%= f.text_field :titulo, class: "form-control" %>
+  <div class="collapse" id="colapsarAgenda">
+    <div class="card card-block">
+      <%= f.text_field :bloggable_type, class: "hidden-xs-up" %>
+      <%= f.text_field :bloggable_id, class: "hidden-xs-up" %>
+      <div class="field form-group">
+        <%# f.label :fecha %>
+        Fecha de inscripción:
+        <%= f.date_select :fecha, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <p>Hora de inicio</p>
+        <%= f.datetime_select :start_time %>
+      </div>
+      <div class="field form-group">
+        <p>Hora de término</p>
+        <%= f.datetime_select :end_time %>
+      </div>
+      <div class="field form-group">
+        <p>¿La clase está pagada?</p>
+        <%= select_tag(:clasepagada, options_for_select([['Sí', true], ['No', false]], false), class: "form-control") %>
+      </div>
+    </div>
   </div>
 
-  <div class="field form-group">
-    <p>Hora de inicio</p>
-    <%= f.datetime_select :start_time %>
+  <div class="collapse" id="colapsarNotas">
+    <div class="card card-block">
+      <div class="field form-group">
+        <%= f.label :titulo %>
+        <%= f.text_field :titulo, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :notas %>
+        <%= f.text_area :notas, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <p class="lead">Video de Clase</p>
+        <%= f.file_field :video %>
+      </div>
+      <label>
+        <%= f.check_box :remove_video %>
+        Quitar video
+      </label>
+    </div>
   </div>
-  <div class="field form-group">
-    <p>Hora de término</p>
-    <%= f.datetime_select :end_time %>
-  </div>
-
-  <h3>Después de la clase</h3>
-
-  <div class="field form-group">
-    <%= f.label :notas %>
-    <%= f.text_area :notas, class: "form-control" %>
-  </div>
-
-  <div class="field form-group">
-    <p class="lead">Video de Clase</p>
-    <%= f.file_field :video %>
-  </div>
-  <label>
-    <%= f.check_box :remove_video %>
-    Quitar video
-  </label>
 
   <div class="actions">
     <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary' %>
