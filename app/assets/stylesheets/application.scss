@@ -21,6 +21,12 @@
  /* @import "bootstrap-sprockets"; */
  @import "bootstrap";
 
+// Corrige el comportamiento de tablas responsive en Firefox
  @-moz-document url-prefix() {
    fieldset { display: table-cell; }
  }
+
+// Estilos para Turbolinks
+ .turbolinks-progress-bar {
+  background-color: $brand-primary;
+}

@@ -40,18 +40,22 @@
     <div class="card card-block">
       <%= f.text_field :bloggable_type, class: "hidden-xs-up" %>
       <%= f.text_field :bloggable_id, class: "hidden-xs-up" %>
-      <div class="field form-group">
-        <%# f.label :fecha %>
-        Fecha de inscripción:
-        <%= f.date_select :fecha, class: "form-control" %>
+      <div class="hidden-xs-up">
+        <%= f.date_select :fecha %>
       </div>
-      <div class="field form-group">
-        <p>Hora de inicio</p>
-        <%= f.datetime_select :start_time %>
-      </div>
-      <div class="field form-group">
-        <p>Hora de término</p>
-        <%= f.datetime_select :end_time %>
+      <div class="row">
+        <div class="col-md-6">
+          <div class="field form-group">
+            <p>Hora de inicio</p>
+            <%= f.datetime_select :start_time, {start_hour: 8, end_hour: 21, minute_step: 15}, class: "custom-select" %>
+          </div>
+        </div>
+        <div class="col-md-6">
+          <div class="field form-group">
+            <p>Hora de término</p>
+            <%= f.datetime_select :end_time %>
+          </div>
+        </div>
       </div>
       <div class="field form-group">
         <p>¿La clase está pagada?</p>
