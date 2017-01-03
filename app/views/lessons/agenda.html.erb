@@ -1,14 +1,30 @@
 <p id="notice"><%= notice %></p>
+
+<h3 class="my-1">Agenda Semanal</h3>
+<hr>
+
 <div class="card">
   <div class="card-block">
-    <p class="lead">Agenda semanal</p>
     <%= week_calendar events: @meetings do |date, meetings| %>
-      <%= date %>
-
+      <p class="lead text-xs-center"><%= l date %></p>
       <% meetings.each do |meeting| %>
-        <div>
-          <%= meeting.titulo %> <%= meeting.start_time %>
+      <div class="card">
+        <div class="card-block">
+          <h3><%= meeting.start_time.strftime("%H:%M") %></h3>
+          <% if meeting.bloggable_type == "Wedding" %>
+            <p class="p-1 p-matri">👰🏻 Matrimonio</p>
+            <p class="lead"><%= link_to meeting.bloggable.nombre1, edit_lesson_path(meeting) %> y <%= link_to meeting.bloggable.nombre2, edit_lesson_path(meeting) %></a></p>
+          <% elsif meeting.bloggable_type == "Couple" %>
+            <p class="p-1 p-parejas">👯 Baile en Pareja</p>
+            <p class="lead"><%= link_to meeting.bloggable.nombre1, edit_lesson_path(meeting) %> y <%= link_to meeting.bloggable.nombre2, edit_lesson_path(meeting) %></a></p>
+          <% elsif meeting.bloggable_type == "SpecialClass" %>
+            <p class="p-1 p-parejas">👯 Baile en Pareja</p>
+            <p class="lead"><%= link_to meeting.bloggable.nombre1, edit_lesson_path(meeting) %></a></p>
+          <% else %>
+            <p class="lead"><%= link_to meeting.bloggable.nombre1, edit_lesson_path(meeting) %></a></p>
+          <% end %>
         </div>
+      </div>
       <% end %>
 
     <% end %>

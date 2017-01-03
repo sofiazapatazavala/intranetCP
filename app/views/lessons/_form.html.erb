@@ -53,16 +53,18 @@
         <div class="col-md-6">
           <div class="field form-group">
             <p>Hora de término</p>
-            <%= f.datetime_select :end_time %>
+            <%= f.datetime_select :end_time, {start_hour: 8, end_hour: 21, minute_step: 15}, class: "custom-select" %>
           </div>
         </div>
       </div>
       <div class="field form-group">
         <p>¿La clase está pagada?</p>
-        <%= radio_button_tag(:clasepagada, true) %>
-        <%= label_tag(:clasepagada_true, "Sí, está pagada") %>
-        <%= radio_button_tag(:clasepagada, false) %>
-        <%= label_tag(:clasepagada_false, "No, debe pagarse") %>
+        <%= radio_button_tag(:clasepagada, "Si") %>
+        <%= label_tag(:clasepagada_si, "Sí, está pagada") %>
+        <%= radio_button_tag(:clasepagada, "No") %>
+        <%= label_tag(:clasepagada_no, "No, debe pagarse") %>
+        <%= radio_button_tag(:clasepagada, "50") %>
+        <%= label_tag(:clasepagada_50, "Está pagado el 50%. Debe pagarse el saldo.") %>
         <%# select_tag(:clasepagada, options_for_select([['Sí', true], ['No', false]], false), class: "form-control") %>
       </div>
     </div>

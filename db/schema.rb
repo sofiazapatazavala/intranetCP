@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20161223150323) do
+ActiveRecord::Schema.define(version: 20170103140142) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -48,7 +48,7 @@ ActiveRecord::Schema.define(version: 20161223150323) do
     t.string   "video"
     t.string   "bloggable_type"
     t.integer  "bloggable_id"
-    t.boolean  "clasepagada"
+    t.string   "clasepagada"
     t.index ["bloggable_type", "bloggable_id"], name: "index_lessons_on_bloggable_type_and_bloggable_id", using: :btree
     t.index ["wedding_id"], name: "index_lessons_on_wedding_id", using: :btree
   end

@@ -8,58 +8,32 @@ es-CL:
           has_one: No se puede eliminar el registro porque existe un %{record} dependiente
           has_many: No se puede eliminar el registro porque existen %{record} dependientes
   date:
-    abbr_day_names:
-    - dom
-    - lun
-    - mar
-    - mié
-    - jue
-    - vie
-    - sáb
-    abbr_month_names:
-    -
-    - ene
-    - feb
-    - mar
-    - abr
-    - may
-    - jun
-    - jul
-    - ago
-    - sep
-    - oct
-    - nov
-    - dic
-    day_names:
-    - domingo
-    - lunes
-    - martes
-    - miércoles
-    - jueves
-    - viernes
-    - sábado
     formats:
+      # Use the strftime parameters for formats.
+      # When no format has been given, it uses default.
+      # You can provide other formats here if you like!
       default: "%d/%m/%Y"
-      long: "%A %d de %B de %Y"
-      short: "%d de %b"
-    month_names:
-    -
-    - enero
-    - febrero
-    - marzo
-    - abril
-    - mayo
-    - junio
-    - julio
-    - agosto
-    - septiembre
-    - octubre
-    - noviembre
-    - diciembre
+      short: "%d/%b"
+      long: "%d de %B de %Y"
+
+    day_names: [domingo, lunes, martes, miércoles, jueves, viernes, sábado]
+    abbr_day_names: [dom, lun, mar, mie, jue, vie, sab]
+
+    # Don't forget the nil at the beginning; there's no such thing as a 0th month
+    month_names: [~, enero, febrero, marzo, abril, mayo, junio, julio, agosto, septiembre, octubre, noviembre, diciembre]
+    abbr_month_names: [~, ene, feb, mar, abr, may, jun, jul, ago, sep, oct, nov, dec]
+    # Used in date_select and datetime_select.
     order:
-    - :day
-    - :month
-    - :year
+      - day
+      - month
+      - year
+  time:
+    formats:
+      default: "%d/%b %H:%M"
+      short: "%H:%M"
+      long: "%a, %d/%b/%Y %H:%M:%S %z"
+    am: "am"
+    pm: "pm"
   datetime:
     distance_in_words:
       about_x_hours:
@@ -212,3 +186,6 @@ es-CL:
       long: "%A %d de %B de %Y %H:%M"
       short: "%d de %b %H:%M"
     pm: pm
+  simple_calendar:
+    previous: "Anterior"
+    next: "Siguiente"
