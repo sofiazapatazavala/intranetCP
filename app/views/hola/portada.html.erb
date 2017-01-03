@@ -9,6 +9,9 @@
 </div>
 <div class="row">
   <div class="col-md-6">
+    <%= render "lessons/agenda" %>
+  </div>
+  <div class="col-md-6">
     <div class="card">
       <div class="card-block">
         <p class="lead">¿Qué quieres hacer?</p>
@@ -21,8 +24,5 @@
         <%= link_to "Registrar nueva clase particular", new_special_class_path, class: "btn btn-block btn-outline-primary", role: "button" %>
       </div>
     </div>
-  </div>
-  <div class="col-md-6">
-    <%= render "lessons/agenda" %>
   </div>
 </div>

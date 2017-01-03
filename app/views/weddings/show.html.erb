@@ -123,10 +123,12 @@
                 <td><%= lesson.titulo %></td>
                 <td><%= lesson.start_time %></td>
                 <td>
-                  <% if lesson.clasepagada == true %>
-                  Sí
-                  <% else %>
-                  No
+                  <% if lesson.pago == "pagado" %>
+                    <p>Sí, está pagada.</p>
+                  <% elsif lesson.pago == "parcial" %>
+                    <p>Está pagado el 50%. Debe pagarse el saldo.</p>
+                  <% elsif lesson.pago == "pendiente" %>
+                    <p>No está pagada.</p>
                   <% end %>
                 </td>
                 <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
