@@ -62,3 +62,28 @@ body {
   font-size: 1.36rem;
   line-height: 2.1rem;
 }
+.nav-CP a:hover {
+  text-decoration: none;
+}
+
+@include media-breakpoint-up(md) {
+  .nav-CP a {
+    font-size: 1.5rem;
+    line-height: 2.25rem;
+  }
+}
+
+@include media-breakpoint-up(lg) {
+  .nav-CP a {
+    font-size: 2rem;
+    line-height: 2.75rem;
+  }
+}
+
+.nav-CP-logo {
+  background: rgb(255,255,255);
+  background: -moz-linear-gradient(top,  rgb(255,255,255) 0%, rgb(238,238,238) 100%);
+  background: -webkit-linear-gradient(top,  rgb(255,255,255) 0%,rgb(238,238,238) 100%);
+  background: linear-gradient(to bottom,  rgb(255,255,255) 0%,rgb(238,238,238) 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#eeeeee',GradientType=0 );
+}

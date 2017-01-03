@@ -22,54 +22,34 @@
 
   <body>
     <div class="container">
+      <% if user_signed_in? %>
       <div class="row">
         <div class="col-xs-12">
-          <%= notice %>
-          <%= alert %>
+          <div class="collapse" id="navbarSuperior">
+            <div class="text-muted p-1">
+              <div class="row">
+                <div class="col-md-8">
+                </div>
+                <div class="col-md-4">
+                  <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-block btn-lg btn-outline-danger", role: "button" %>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <% end %>
+      <div class="row">
+        <div class="col-xs-12">
+          <div class="nav-CP-logo mb-1">
+            <a role="button" data-toggle="collapse" data-target="#navbarSuperior" aria-controls="navbarSuperior" aria-expanded="false" aria-label="Ver más navigation"><%= image_tag 'logoCP-head.png', :class => "img-fluid d-block mx-auto" %></a>
+          </div>
         </div>
       </div>
       <div class="row">
         <div class="col-xs-12">
-          <div class="row">
-            <div class="col-lg-2">
-              <a href="<%= root_path %>"><%= image_tag 'logo.png', :class => "logo-CP img-fluid my-1" %></a>
-            </div>
-            <% if user_signed_in? %>
-              <div class="col-lg-10">
-                <nav class="navbar navbar-light bg-faded my-2">
-                  <button class="navbar-toggler hidden-lg-up" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation"></button>
-                  <div class="collapse navbar-toggleable-md" id="navbarResponsive">
-                    <ul class="nav navbar-nav">
-                      <li class="nav-item"><%= link_to 'Matrimonios', weddings_path, class: "nav-link" %></li>
-                      <li class="nav-item"><%= link_to 'Clases', lessons_path, class: "nav-link" %></li>
-                      <li class="nav-item"><%= link_to 'Agenda', agenda_path, class: "nav-link" %></li>
-                      <li class="nav-item"><%= link_to 'Cursos', courses_path, class: "nav-link" %></li>
-                      <li class="nav-item"><%= link_to 'Alumnas', students_path, class: "nav-link" %></li>
-                      <li class="nav-item"><%= link_to 'Bailes en Pareja', couples_path, class: "nav-link" %></li>
-                      <li class="nav-item"><%= link_to 'Clases Particulares', special_classes_path, class: "nav-link" %></li>
-                      <li class="nav-item float-lg-right"><%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-outline-danger", role: "button" %></li>
-                      <%
-                      #<li class="nav-item dropdown">
-                      #  <a class="nav-link dropdown-toggle" href="http://example.com" id="responsiveNavbarDropdown" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Dropdown</a>
-                      #  <div class="dropdown-menu" aria-labelledby="responsiveNavbarDropdown">
-                      #    <a class="dropdown-item" href="#">Action</a>
-                      #    <a class="dropdown-item" href="#">Another action</a>
-                      #    <a class="dropdown-item" href="#">Something else here</a>
-                      #  </div>
-                      #</li>
-                      %>
-                    </ul>
-                    <%
-                    #<form class="form-inline float-lg-right">
-                    #  <input class="form-control" type="text" placeholder="Search">
-                    #  <button class="btn btn-outline-success" type="submit">Search</button>
-                    #</form>
-                    %>
-                  </div>
-                </nav>
-              </div>
-            <% end %>
-          </div>
+          <%= notice %>
+          <%= alert %>
         </div>
       </div>
       <div class="row">

@@ -3,7 +3,7 @@
   "name": "Constanza Prieto",
   "icons": [
     {
-      "src": "images/apple-touch-icon.png",
+      "src": "apple-touch-icon.png",
       "type": "image/png",
       "sizes": "180x180"
     },
