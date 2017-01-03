@@ -59,13 +59,13 @@
       </div>
       <div class="field form-group">
         <p>¿La clase está pagada?</p>
-        <%= radio_button_tag(:clasepagada, "Si") %>
-        <%= label_tag(:clasepagada_si, "Sí, está pagada") %>
-        <%= radio_button_tag(:clasepagada, "No") %>
-        <%= label_tag(:clasepagada_no, "No, debe pagarse") %>
-        <%= radio_button_tag(:clasepagada, "50") %>
-        <%= label_tag(:clasepagada_50, "Está pagado el 50%. Debe pagarse el saldo.") %>
-        <%# select_tag(:clasepagada, options_for_select([['Sí', true], ['No', false]], false), class: "form-control") %>
+        <%# f.text_field :pago, class: "form-control" %>
+        <%= f.radio_button :pago, "pagado" %>
+        <%= label :pago_pagado, "Clase pagada" %>
+        <%= f.radio_button :pago, "parcial" %>
+        <%= label :pago_parcial, "50% de la clase pagada" %>
+        <%= f.radio_button :pago, "pendiente" %>
+        <%= label :pago_pendiente, "Pago pendiente" %>
       </div>
     </div>
   </div>
@@ -84,10 +84,6 @@
         <p class="lead">Video de Clase</p>
         <%= f.file_field :video %>
       </div>
-      <!-- <label>
-        <%# f.check_box :remove_video %>
-        Quitar video
-      </label> -->
     </div>
   </div>
 

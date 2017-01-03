@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170103140142) do
+ActiveRecord::Schema.define(version: 20170103164610) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -42,15 +42,13 @@ ActiveRecord::Schema.define(version: 20170103140142) do
     t.text     "notas"
     t.datetime "created_at",     null: false
     t.datetime "updated_at",     null: false
-    t.integer  "wedding_id"
     t.datetime "start_time"
     t.datetime "end_time"
     t.string   "video"
     t.string   "bloggable_type"
     t.integer  "bloggable_id"
-    t.string   "clasepagada"
+    t.string   "pago"
     t.index ["bloggable_type", "bloggable_id"], name: "index_lessons_on_bloggable_type_and_bloggable_id", using: :btree
-    t.index ["wedding_id"], name: "index_lessons_on_wedding_id", using: :btree
   end
 
   create_table "pg_search_documents", force: :cascade do |t|
