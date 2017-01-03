@@ -17,6 +17,7 @@
  $brand-info:                #00A1B2 !default;
  $brand-warning:             #F07A4C !default;
  $brand-danger:              #ED1C24 !default;
+ $enable-flex:               true;
 
  /* @import "bootstrap-sprockets"; */
  @import "bootstrap";
@@ -29,4 +30,15 @@
 // Estilos para Turbolinks
  .turbolinks-progress-bar {
   background-color: $brand-primary;
+}
+
+// Barra al fondo
+body {
+  margin-bottom: 4rem;
+}
+.nav-bottom {
+  position: fixed;
+  bottom: 0;
+  background-color: #963;
+  padding: 0 auto;
 }

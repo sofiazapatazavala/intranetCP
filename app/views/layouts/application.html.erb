@@ -78,5 +78,28 @@
         </div>
       </div>
     </div>
+    <% if user_signed_in? %>
+    <nav class="navbar navbar-fixed-bottom" style="background-color: #EEE; border-top: solid 1px #B21F87">
+      <div class="container">
+      <div class="row">
+        <div class="col-xs" style="background-color: #E5BDDA; text-align: center;">
+          <%= link_to '👰🏻', weddings_path, class: "my-2", style: "font-size: 1.36rem;" %>
+        </div>
+        <div class="col-xs" style="background-color: #B21F87; text-align: center;">
+          <%= link_to '🏫', courses_path, class: "my-2", style: "font-size: 1.36rem;" %>
+        </div>
+        <div class="col-xs" style="background-color: #ED1C24; text-align: center;">
+          <%= link_to '📆', agenda_path, class: "my-2", style: "font-size: 1.36rem;" %>
+        </div>
+        <div class="col-xs" style="background-color: #00A1B2; text-align: center;">
+          <%= link_to '👯🏻', couples_path, class: "my-2", style: "font-size: 1.36rem;" %>
+        </div>
+        <div class="col-xs" style="background-color: #66C7D1; text-align: center;">
+          <%= link_to '💃🏻', special_classes_path, class: "my-2", style: "font-size: 1.36rem;" %>
+        </div>
+      </div>
+      </div>
+    </nav>
+    <% end %>
   </body>
 </html>
