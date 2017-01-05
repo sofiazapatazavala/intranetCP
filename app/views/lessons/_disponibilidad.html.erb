@@ -1,7 +1,6 @@
 <div class="card">
   <div class="card-block">
-    <h1 class="display-3 text-xs-center">Hoy</h1>
-    <%= calendar number_of_days: 1, events: @meetings do |date, meetings| %>
+    <%= week_calendar number_of_weeks: 2, events: @meetings do |date, meetings| %>
       <% meetings.each do |meeting| %>
         <div class="card">
           <div class="card-block">
@@ -23,6 +22,5 @@
       <% end %>
 
     <% end %>
-    <p><%= link_to "Clases de la semana", agenda_path, class: "btn btn-block btn-primary", role: "button" %></p>
   </div>
 </div>

@@ -11,32 +11,6 @@
     </div>
   <% end %>
 
-  <div class="alert alert-info alert-dismissible fade in" role="alert">
-    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-      <span aria-hidden="true">&times;</span>
-    </button>
-    Estás trabajando con un <strong><%= cookies[:tipo_blog] %></strong> de <strong><%= lesson.bloggable.nombre1 %></strong>. Si no está correcto, vuelve donde corresponda.
-  </div>
-
-  <div class="card">
-    <div class="card-block">
-      <p class="lead">¿Qué vas a hacer?</p>
-      <div class="row">
-        <div class="col-md-6">
-          <button class="btn btn-outline-info btn-md btn-block" type="button" data-toggle="collapse" data-target="#colapsarAgenda" aria-expanded="false" aria-controls="colapsarAgenda">
-            Agendar esta clase
-          </button>
-        </div>
-        <div class="col-md-6">
-          <button class="btn btn-outline-success btn-md btn-block" type="button" data-toggle="collapse" data-target="#colapsarNotas" aria-expanded="false" aria-controls="colapsarNotas">
-            Agregar sus notas
-          </button>
-        </div>
-      </div>
-    </div>
-  </div>
-
-  <div class="collapse" id="colapsarAgenda">
     <div class="card card-block">
       <%= f.text_field :bloggable_type, class: "hidden-xs-up" %>
       <%= f.text_field :bloggable_id, class: "hidden-xs-up" %>
@@ -44,13 +18,13 @@
         <%= f.date_select :fecha %>
       </div>
       <div class="row">
-        <div class="col-md-6">
+        <div class="col-xs-12">
           <div class="field form-group">
             <p>Hora de inicio</p>
             <%= f.datetime_select :start_time, {start_hour: 8, end_hour: 21, minute_step: 15}, class: "custom-select" %>
           </div>
         </div>
-        <div class="col-md-6">
+        <div class="col-xs-12">
           <div class="field form-group">
             <p>Hora de término</p>
             <%= f.datetime_select :end_time, {start_hour: 8, end_hour: 21, minute_step: 15}, class: "custom-select" %>
@@ -68,8 +42,10 @@
         <%= label :pago_pendiente, "Pago pendiente" %>
       </div>
     </div>
-  </div>
 
+  <button class="btn btn-outline-success btn-md btn-block" type="button" data-toggle="collapse" data-target="#colapsarNotas" aria-expanded="false" aria-controls="colapsarNotas">
+      Ingresa las notas de la clase
+  </button>
   <div class="collapse" id="colapsarNotas">
     <div class="card card-block">
       <div class="field form-group">
@@ -88,6 +64,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary' %>
+    <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary my-2' %>
   </div>
 <% end %>

@@ -10,7 +10,7 @@
       <% meetings.each do |meeting| %>
       <div class="card">
         <div class="card-block">
-          <h3><%= meeting.start_time.strftime("%H:%M") %></h3>
+          <h3><%= meeting.start_time.strftime("%H:%M") %> - <%= meeting.end_time.strftime("%H:%M") %></h3>
           <% if meeting.bloggable_type == "Wedding" %>
             <p class="p-1 p-matri">👰🏻 Matrimonio</p>
             <p class="lead"><%= link_to meeting.bloggable.nombre1, edit_lesson_path(meeting) %> y <%= link_to meeting.bloggable.nombre2, edit_lesson_path(meeting) %></a></p>

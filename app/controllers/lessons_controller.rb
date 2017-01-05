@@ -20,8 +20,8 @@ class LessonsController < ApplicationController
 
   # GET /lessons/new
   def new
-    #@lesson = Lesson.new
     @lesson = Lesson.new(bloggable_id: cookies[:id_blog], bloggable_type: cookies[:tipo_blog])
+    @meetings = Lesson.all
   end
 
   # GET /lessons/1/edit
