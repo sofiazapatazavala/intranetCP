@@ -13,17 +13,17 @@
  */
 
  $brand-primary:             #B21F87 !default;
- $brand-success:             #134EBF !default;
+ $brand-success:             #78c14c !default;
  $brand-info:                #00A1B2 !default;
  $brand-warning:             #F07A4C !default;
  $brand-danger:              #ED1C24 !default;
 
  $enable-flex:               true;
- $color-matri:               #E5BDDA;
+ $color-matri:               lighten($brand-primary, 40%);
  $color-cursos:              $brand-primary;
- $color-agenda:              #ED1C24;
- $color-parejas:             #00A1B2;
- $color-particular:          #66C7D1;
+ $color-agenda:              $brand-danger;
+ $color-parejas:             $brand-info;
+ $color-particular:          lighten(adjust-hue($brand-info, 3%), 15%);
 
  /* @import "bootstrap-sprockets"; */
  @import "bootstrap";
@@ -74,15 +74,15 @@ body {
 
 @include media-breakpoint-up(md) {
   .nav-CP a {
-    font-size: 1.5rem;
-    line-height: 2.25rem;
+    font-size: 1.67rem;
+    line-height: 2.4rem;
   }
 }
 
 @include media-breakpoint-up(lg) {
   .nav-CP a {
-    font-size: 2rem;
-    line-height: 2.75rem;
+    font-size: 2.25rem;
+    line-height: 3rem;
   }
 }
 

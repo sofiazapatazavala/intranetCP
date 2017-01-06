@@ -41,7 +41,7 @@ gem "simple_calendar", "~> 2.0"
 # Búsqueda en la DB
 gem "pg_search"
 # Filterrific para implementar filtros a los matrimonios
-gem "filterrific"
+# gem "filterrific"
 # Will Paginate porque Filterrific la necesita para hacer su magia
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'

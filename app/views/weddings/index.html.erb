@@ -1,56 +1,56 @@
-<%#
-  Filterrific adds the `form_for_filterrific` view helper:
-  * adds dom id 'filterrific_filter'
-  * applies javascript behaviors:
-      * AJAX form submission on change
-      * AJAX spinner while AJAX request is being processed
-  * sets form_for options like :url, :method and input name prefix
-%>
+<h1>Todos los matrimonios</h1>
 
-<div class="row my-1">
-  <div class="col-xs-8">
-    <h3>Matrimonios</h3>
-  </div>
-  <div class="col-xs-4">
-    <%= link_to '➕ Nuevo', new_wedding_path, class: "btn btn-block btn-primary", role: "button"  %>
-  </div>
-</div>
-<div class="row">
-  <div class="col-xs-12">
-    <div class="card">
-      <div class="card-block">
-        <p class="lead">Pronto aquí: búsqueda</p>
-      </div>
-    </div>
-    <div class="card">
-      <div class="card-block">
-        <%= form_for_filterrific @filterrific do |f| %>
-        <div class="form-group">
-          <%# give the search field the 'filterrific-periodically-observed' class for live updates %>
-          <%= f.text_field(
-            :search_query,
-            class: 'filterrific-periodically-observed form-control form-control-lg',
-            placeholder: '[En construcción] Búsqueda instantánea según nombre de la novia o el novio',
-            # disabled: true,
-          ) %>
-        </div>
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre de la novia</th>
+      <th>Apellido de la novia</th>
+      <th>Teléfono de la novia</th>
+      <th>E-mail de la novia</th>
+      <th>Nombre del novio</th>
+      <th>Apellido del novio</th>
+      <th>Teléfono del novio</th>
+      <th>E-mail del novio</th>
+      <th>Nombre del contacto</th>
+      <th>Teléfono del contacto</th>
+      <th>E-mail del contacto</th>
+      <th>Fecha de matrimonio</th>
+      <th>Origen de pareja</th>
+      <th>Tipo de descuento</th>
+      <th>Comentarios</th>
+      <th>Diseño de piso (URL)</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
 
-        <div>
-          <%= link_to(
-            'Reset filters',
-            reset_filterrific_url,
-            class: "btn btn-sm btn-block btn-secondary",
-            role: "button"
-          ) %>
-        </div>
-        <%= render_filterrific_spinner %>
-      </div>
-    </div>
-  </div>
-</div>
-<% end %>
+  <tbody>
+    <% @weddings.each do |wedding| %>
+      <tr>
+        <td><%= wedding.nombre1 %></td>
+        <td><%= wedding.apellido1 %></td>
+        <td><%= wedding.telefono_novia %></td>
+        <td><%= wedding.email_novia %></td>
+        <td><%= wedding.nombre2 %></td>
+        <td><%= wedding.apellido2 %></td>
+        <td><%= wedding.telefono_novio %></td>
+        <td><%= wedding.email_novio %></td>
+        <td><%= wedding.nombre_contacto %></td>
+        <td><%= wedding.celular %></td>
+        <td><%= wedding.mail %></td>
+        <td><%= wedding.fecha_matri %></td>
+        <td><%= wedding.origen %></td>
+        <td><%= wedding.tipo_descuento %></td>
+        <td><%= wedding.comentarios %></td>
+        <td><%= wedding.floordesign %></td>
+        <td><%= link_to 'Ver', wedding, class: "btn btn-block btn-info" %></td><%# i18n!! %>
+        <td><%= link_to 'Editar', edit_wedding_path(wedding), class: "btn btn-block btn-primary" %></td>
+        <td><%= link_to 'Borrar', wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
 
-<%= render(
-  partial: 'weddings/list',
-  locals: { weddings: @weddings }
-) %>
+<br>
+
+<%= link_to 'Inscribir nuevo matrimonio', new_wedding_path, class: "btn btn-block btn-secondary", role: "button"  %>
+<%# i18n! %>
