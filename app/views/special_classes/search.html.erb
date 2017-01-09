@@ -1,22 +1,8 @@
 <div class="row my-1">
-  <div class="col-lg-5 col-xl-6 my-1">
+  <div class="col-md-8">
     <h3>Clases Particulares</h3>
   </div>
-  <div class="col-lg-5 col-xl-4 my-1">
-    <%= form_tag search_weddings_path, method: :get do %>
-      <div class="row">
-        <div class="col-sm-8 col-md-10 col-lg-8">
-          <div class="form-group">
-            <%= text_field_tag :buscar, params[:buscar], class: "form-control", placeholder: "Busca clases particulares:" %>
-          </div>
-        </div>
-        <div class="col-sm-4 col-md-2 col-lg-4">
-          <%= submit_tag "Buscar", class: "btn btn-info btn-block" %>
-        </div>
-      </div>
-    <% end %>
-  </div>
-  <div class="col-lg-2 my-1">
+  <div class="col-md-4">
     <%= link_to '➕ Nueva', new_special_class_path, class: "btn btn-block btn-primary", role: "button"  %>
   </div>
 </div>
@@ -44,6 +30,3 @@
   </tbody>
 </table>
 </div>
-<br>
-
-<%= link_to 'Nueva Clase Particular', new_special_class_path, class: "btn btn-block btn-secondary my-1", role: "button" %>

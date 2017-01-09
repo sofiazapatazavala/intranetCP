@@ -6,27 +6,39 @@ Rails.application.routes.draw do
 #  resources :lessons
 #  resources :weddings
   scope(path_names: { new: 'nueva', edit: 'editar' }) do
-    resources :couples, path: 'parejas'
+    resources :couples, path: 'parejas' do
+      get 'search', on: :collection
+    end
   end
 
   scope(path_names: { new: 'nueva', edit: 'editar' }) do
-    resources :special_classes, path: 'clasesparticulares'
+    resources :special_classes, path: 'clasesparticulares' do
+      get 'search', on: :collection
+    end
   end
 
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
-    resources :courses, path: 'cursos'
+    resources :courses, path: 'cursos' do
+      get 'search', on: :collection
+    end
   end
 
   scope(path_names: { new: 'nueva', edit: 'editar' }) do
-    resources :students, path: 'alumnas'
+    resources :students, path: 'alumnas' do
+      get 'search', on: :collection
+    end
   end
 
   scope(path_names: { new: 'nueva', edit: 'editar' }) do
-    resources :lessons, path: 'clases'
+    resources :lessons, path: 'clases' do
+      get 'search', on: :collection
+    end
   end
 
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
-    resources :weddings, path: 'matrimonios'
+    resources :weddings, path: 'matrimonios' do
+      get 'search', on: :collection
+    end
   end
 
   devise_for :users, controllers: { registrations: "registrations"}

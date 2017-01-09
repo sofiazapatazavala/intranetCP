@@ -8,6 +8,9 @@ class SpecialClassesController < ApplicationController
     @special_classes = SpecialClass.all
   end
 
+  def search
+    @weddings = Wedding.buscar(params[:buscar]).page(params[:page])
+  end
   # GET /special_classes/1
   # GET /special_classes/1.json
   def show
