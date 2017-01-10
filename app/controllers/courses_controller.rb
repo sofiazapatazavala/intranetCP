@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+    cookies[:id_curso] = @course.id
   end
 
   # GET /courses/new

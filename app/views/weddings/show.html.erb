@@ -97,7 +97,7 @@
 </button>
 <div class="collapse" id="colapsarInfo">
   <div class="row">
-    <div class="col-12 mb-1">
+    <div class="col-12 mb-3">
       <ul class="list-group">
         <li class="list-group-item">¿Cómo se enteraron de la Academia?: <%= @wedding.origen %></li>
         <li class="list-group-item">Descuento: <%= @wedding.tipo_descuento %></li>
@@ -121,7 +121,7 @@
               <% @wedding.lessons.each do |lesson| %>
               <tr>
                 <td><%= lesson.titulo %></td>
-                <td><%= lesson.start_time %></td>
+                <td><%= lesson.start_time.strftime("%d/%m/%Y %H:%M") %></td>
                 <td>
                   <% if lesson.pago == "pagado" %>
                     <p>Sí, está pagada.</p>

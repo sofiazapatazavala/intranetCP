@@ -1,19 +1,57 @@
+<div class="row my-3">
+  <div class="col-md-4">
+    <h3>Curso:</h3>
+    <p class="lead"><%= @course.nombre %></p>
+    <p><%= @course.estilo %> para <%= @course.edades %></p>
+  </div>
+  <div class="col-md-8">
+    <div class="row">
+      <div class="col-md-4">
+        <p><%= link_to '⬅ Volver', courses_path, class: "btn btn-block btn-secondary", role: "button" %></p>
+      </div>
+      <div class="col-md-4">
+        <p><%= link_to '✏ Editar clase', edit_course_path(@course), class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-md-4">
+        <p><%= link_to '🗑 Borrar', @course, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
+      </div>
+    </div>
+    <div class="row">
+      <div class="col-sm-12">
+        <%= link_to 'Agregar nueva alumna', new_student_path, class: "btn btn-block btn-primary", role: "button" %>
+      </div>
+    </div>
+  </div>
+</div>
+<hr>
+
 <p id="notice"><%= notice %></p>
 
-<p>
-  <strong>Nombre:</strong>
-  <%= @course.nombre %>
-</p>
-
-<p>
-  <strong>Estilo:</strong>
-  <%= @course.estilo %>
-</p>
-
-<p>
-  <strong>Edades:</strong>
-  <%= @course.edades %>
-</p>
+<div class="card">
+  <div class="card-block">
+    <h4>Información sobre alumnas:</h4>
+    <div class="table-responsive">
+      <table class="table">
+        <tr>
+          <th>Nombre</th>
+          <th>E-mail</th>
+          <th>Situación de pago</th>
+          <th colspan="3"></th>
+        </tr>
+        <% @course.students.each do |student| %>
+        <tr>
+          <td><%= student.nombre %></td>
+          <td><%= student.email %></td>
+          <td></td>
+          <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
+          <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-primary", role: "button" %></td>
+          <td><%= link_to 'Borrar', lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
+        </tr>
+        <% end %>
+      </table>
+    </div>
+  </div>
+</div>
 
 <%= link_to 'Edit', edit_course_path(@course) %> |
 <%= link_to 'Back', courses_path %>

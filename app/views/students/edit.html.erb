@@ -1,6 +1,10 @@
-<h1>Editing Student</h1>
+<h3 class="my-3">Editar Alumna</h3>
+<hr>
 
 <%= render 'form', student: @student %>
 
-<%= link_to 'Show', @student %> |
-<%= link_to 'Back', students_path %>
+<p><small>Otras acciones (no guardan los cambios realizados):</small></p>
+<div class="btn-group mb-3" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar ficha', @student, class: "btn btn-secondary", role: "button" %> |
+  <%= link_to 'Volver a lista', students_path, class: "btn btn-secondary", role: "button" %>
+</div>

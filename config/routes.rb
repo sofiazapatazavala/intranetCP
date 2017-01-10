@@ -1,10 +1,18 @@
 Rails.application.routes.draw do
+#  resources :archives
 #  resources :couples
 #  resources :special_classes
 #  resources :courses
 #  resources :students
 #  resources :lessons
 #  resources :weddings
+
+scope(path_names: { new: 'nuevo', edit: 'editar' }) do
+  resources :archives, path: 'archivos' do
+    get 'search', on: :collection
+  end
+end
+
   scope(path_names: { new: 'nueva', edit: 'editar' }) do
     resources :couples, path: 'parejas' do
       get 'search', on: :collection
