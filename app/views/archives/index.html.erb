@@ -1,8 +1,16 @@
 <p id="notice"><%= notice %></p>
 
-<h1>Archives</h1>
+<div class="row my-3">
+  <div class="col-8">
+    <h3>Archivos</h3>
+  </div>
+  <div class="col-4">
+    <%= link_to '🗃 Descargar CSV (PRONTO)', new_course_path, class: "btn btn-block btn-primary", role: "button"  %>
+  </div>
+</div>
 
-<table>
+<div class="table-responsive">
+<table class="table">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -22,14 +30,13 @@
         <td><%= archive.telefono %></td>
         <td><%= archive.procedencia %></td>
         <td><%= archive.comentarios %></td>
-        <td><%= link_to 'Show', archive %></td>
-        <td><%= link_to 'Edit', edit_archive_path(archive) %></td>
-        <td><%= link_to 'Destroy', archive, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Ver', archive, class: "btn btn-block btn-info" %></td>
+        <td><%= link_to 'Editar', edit_archive_path(archive), class: "btn btn-block btn-primary" %></td>
+        <td><%= link_to 'Borrar', archive, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
       </tr>
     <% end %>
   </tbody>
 </table>
+</div>
 
-<br>
-
-<%= link_to 'New Archive', new_archive_path %>
+<%= link_to 'New Archive', new_archive_path, class: "btn btn-block btn-secondary my-3", role: "button" %>

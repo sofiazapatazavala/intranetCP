@@ -1,6 +1,10 @@
-<h1>Editing Archive</h1>
+<h3 class="my-3">Editar archivo</h3>
+<hr>
 
 <%= render 'form', archive: @archive %>
 
-<%= link_to 'Show', @archive %> |
-<%= link_to 'Back', archives_path %>
+<p><small>Otras acciones (no guardan los cambios realizados):</small></p>
+<div class="btn-group mb-3" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar archivo', @archive, class: "btn btn-secondary", role: "button" %> |
+  <%= link_to 'Volver a lista', archives_path, class: "btn btn-secondary", role: "button" %>
+</div>
