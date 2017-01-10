@@ -9,7 +9,7 @@ class SpecialClassesController < ApplicationController
   end
 
   def search
-    @weddings = Wedding.buscar(params[:buscar]).page(params[:page])
+    @special_classes = SpecialClass.buscar(params[:buscar]).page(params[:page])
   end
   # GET /special_classes/1
   # GET /special_classes/1.json
