@@ -20,7 +20,7 @@
   <tbody>
     <% @special_classes.each do |special_class| %>
       <tr>
-        <td><%= link_to(special_class.nombre1, special_class(special_class)) %></td>
+        <td><%= link_to(special_class.nombre1, special_class) %></td>
         <td><%= special_class.nombre2 %></td>
         <td><%= link_to 'Ver', special_class, class: "btn btn-block btn-info" %></td>
         <td><%= link_to 'Editar', edit_special_class_path(special_class), class: "btn btn-block btn-primary" %></td>
