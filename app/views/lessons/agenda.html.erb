@@ -1,12 +1,12 @@
 <p id="notice"><%= notice %></p>
 
-<h3 class="my-1">Agenda Semanal</h3>
+<h3 class="my-3">Agenda Semanal</h3>
 <hr>
 
 <div class="card">
   <div class="card-block">
     <%= week_calendar events: @meetings do |date, meetings| %>
-      <p class="lead text-xs-center"><%= l date %></p>
+      <p class="lead text-center"><%= l date %></p>
       <% meetings.each do |meeting| %>
       <div class="card">
         <div class="card-block">

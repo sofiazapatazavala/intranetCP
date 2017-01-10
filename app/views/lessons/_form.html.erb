@@ -18,13 +18,13 @@
         <%= f.date_select :fecha %>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <div class="field form-group">
             <p>Hora de inicio</p>
             <%= f.datetime_select :start_time, {start_hour: 8, end_hour: 21, minute_step: 15}, class: "custom-select" %>
           </div>
         </div>
-        <div class="col-xs-12">
+        <div class="col-12">
           <div class="field form-group">
             <p>Hora de término</p>
             <%= f.datetime_select :end_time, {start_hour: 8, end_hour: 21, minute_step: 15}, class: "custom-select" %>
@@ -64,6 +64,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary my-2' %>
+    <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary my-4' %>
   </div>
 <% end %>

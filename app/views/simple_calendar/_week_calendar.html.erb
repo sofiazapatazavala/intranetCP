@@ -1,14 +1,14 @@
 <div class="simple-calendar">
   <div class="calendar-heading">
     <div class="row">
-      <div class="col-xs-4">
+      <div class="col-4">
         <%= link_to t('simple_calendar.previous', default: 'Previous'), calendar.url_for_previous_view, class: "btn btn-sm btn-secondary", role: "button" %>
       </div>
-      <div class="col-xs-4">
-        <p class="calendar-title text-xs-center">Semana <%= calendar.week_number %></p>
+      <div class="col-4">
+        <p class="calendar-title text-center">Semana <%= calendar.week_number %></p>
       </div>
-      <div class="col-xs-4">
-        <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: "btn btn-sm btn-secondary float-xs-right", role: "button" %>
+      <div class="col-4">
+        <%= link_to t('simple_calendar.next', default: 'Next'), calendar.url_for_next_view, class: "btn btn-sm btn-secondary float-right", role: "button" %>
       </div>
     </div>
   </div>

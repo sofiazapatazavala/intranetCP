@@ -24,7 +24,7 @@
     <div class="container">
       <% if user_signed_in? %>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <div class="collapse" id="navbarSuperior">
             <div class="text-muted p-1">
               <div class="row">
@@ -41,41 +41,41 @@
       </div>
       <% end %>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <div class="nav-CP-logo mb-1">
             <a role="button" data-toggle="collapse" data-target="#navbarSuperior" aria-controls="navbarSuperior" aria-expanded="false" aria-label="Ver más navigation"><%= image_tag 'logoCP-head.png', :class => "img-fluid d-block mx-auto" %></a>
           </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <%= notice %>
           <%= alert %>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12">
+        <div class="col-12">
           <%= yield %>
         </div>
       </div>
     </div>
     <% if user_signed_in? %>
-    <nav class="navbar navbar-fixed-bottom nav-CP">
+    <nav class="navbar fixed-bottom nav-CP">
       <div class="container">
       <div class="row">
-        <div class="col-xs">
+        <div class="col">
           <%= link_to '👰🏻', weddings_path %>
         </div>
-        <div class="col-xs">
+        <div class="col">
           <%= link_to '🏫', courses_path %>
         </div>
-        <div class="col-xs">
+        <div class="col">
           <%= link_to '📆', agenda_path %>
         </div>
-        <div class="col-xs">
+        <div class="col">
           <%= link_to '👯', couples_path %>
         </div>
-        <div class="col-xs">
+        <div class="col">
           <%= link_to '💃🏻', special_classes_path %>
         </div>
       </div>

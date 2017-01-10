@@ -1,4 +1,4 @@
-<div class="row my-1">
+<div class="row my-3">
   <div class="col-md-4">
     <h3>Matrimonio:</h3>
     <p class="lead"><%= @wedding.nombre1 %> y <%= @wedding.nombre2 %></p>
@@ -92,12 +92,12 @@
   </div>
 </div>
 
-<button class="btn btn-outline-warning btn-md btn-block my-1" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">
+<button class="btn btn-outline-warning btn-md btn-block my-3" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">
   Mostrar más información
 </button>
 <div class="collapse" id="colapsarInfo">
   <div class="row">
-    <div class="col-xs-12 mb-1">
+    <div class="col-12 mb-1">
       <ul class="list-group">
         <li class="list-group-item">¿Cómo se enteraron de la Academia?: <%= @wedding.origen %></li>
         <li class="list-group-item">Descuento: <%= @wedding.tipo_descuento %></li>
@@ -106,7 +106,7 @@
     </div>
   </div>
   <div class="row">
-    <div class="col-xs-12">
+    <div class="col-12">
       <div class="card">
         <div class="card-block">
           <h4>Información sobre clases</h4>

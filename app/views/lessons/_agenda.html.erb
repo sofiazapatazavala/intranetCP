@@ -1,6 +1,6 @@
 <div class="card">
   <div class="card-block">
-    <h1 class="display-3 text-xs-center">Hoy</h1>
+    <h1 class="display-3 text-center">Hoy</h1>
     <%= calendar number_of_days: 1, events: @meetings do |date, meetings| %>
       <% meetings.each do |meeting| %>
         <div class="card">
