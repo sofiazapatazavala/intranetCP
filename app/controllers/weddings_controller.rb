@@ -15,9 +15,13 @@ class WeddingsController < ApplicationController
   # GET /weddings/1
   # GET /weddings/1.json
   def show
-  # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda.
+  # Cookies para construir la relación bloggable y el llenado de archivos.
     cookies[:id_blog] = @wedding.id
     cookies[:tipo_blog] = "Wedding"
+    cookies[:arch_nombre] = @wedding.nombre1
+    cookies[:arch_email] = @wedding.email_novia
+    cookies[:arch_tel] = @wedding.telefono_novia
+    cookies[:arch_proc] = "Matrimonio"   
   end
 
   # GET /weddings/new

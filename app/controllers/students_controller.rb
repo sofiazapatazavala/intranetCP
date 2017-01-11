@@ -11,6 +11,10 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
+    cookies[:arch_nombre] = @student.nombre
+    cookies[:arch_email] = @student.email
+    cookies[:arch_tel] = @student.telefono
+    cookies[:arch_proc] = "Alumna"
   end
 
   # GET /students/new

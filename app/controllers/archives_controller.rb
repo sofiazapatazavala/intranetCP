@@ -21,7 +21,7 @@ class ArchivesController < ApplicationController
 
   # GET /archives/new
   def new
-    @archive = Archive.new
+    @archive = Archive.new(nombre: cookies[:arch_nombre], email: cookies[:arch_email], telefono: cookies[:arch_tel], procedencia: cookies[:arch_proc])
   end
 
   # GET /archives/1/edit
