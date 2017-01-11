@@ -1,10 +1,10 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row my-3">
-  <div class="col-lg-5 col-xl-6 my-3">
+  <div class="col-lg-5 col-xl-6">
     <h3>Matrimonios</h3>
   </div>
-  <div class="col-lg-5 col-xl-4 my-3">
+  <div class="col-lg-5 col-xl-4">
     <%= form_tag search_weddings_path, method: :get do %>
       <div class="row">
         <div class="col-sm-8 col-md-10 col-lg-8">
@@ -18,7 +18,7 @@
       </div>
     <% end %>
   </div>
-  <div class="col-lg-2 my-3">
+  <div class="col-lg-2">
     <%= link_to '➕ Nuevo', new_wedding_path, class: "btn btn-block btn-primary", role: "button"  %>
   </div>
 </div>

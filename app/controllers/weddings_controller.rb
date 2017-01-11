@@ -21,7 +21,7 @@ class WeddingsController < ApplicationController
     cookies[:arch_nombre] = @wedding.nombre1
     cookies[:arch_email] = @wedding.email_novia
     cookies[:arch_tel] = @wedding.telefono_novia
-    cookies[:arch_proc] = "Matrimonio"   
+    cookies[:arch_proc] = "Matrimonio"
   end
 
   # GET /weddings/new
@@ -81,6 +81,6 @@ class WeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
-      params.require(:wedding).permit(:created_at, :updated_at, :nombre1, :nombre2, :fecha_matri, :celular, :mail, :origen, :url_vals, :comentarios, :nombre_contacto, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia, :maspersonas)
+      params.require(:wedding).permit(:nombre1, :nombre2, :fecha_matri, :origen, :url_vals, :comentarios, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia, :maspersonas, :contacto, :comentarios_pago)
     end
 end

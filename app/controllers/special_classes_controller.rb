@@ -17,7 +17,7 @@ class SpecialClassesController < ApplicationController
   # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda.
     cookies[:id_blog] = @special_class.id
     cookies[:tipo_blog] = "SpecialClass"
-    cookies[:arch_nombre] = @special_class.nombre
+    cookies[:arch_nombre] = @special_class.nombre1
     cookies[:arch_email] = @special_class.email
     cookies[:arch_tel] = @special_class.telefono
     cookies[:arch_proc] = "Clase particular"

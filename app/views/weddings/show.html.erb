@@ -26,9 +26,15 @@
 
 <p id="notice"><%= notice %></p>
 
-<div class="row">
-  <div class="col-sm-6">
-    <div class="card">
+<div class="card card-inverse card-info mb-3">
+  <div class="card-block">
+    <h6 class="card-subtitle text-center">Fecha de Matrimonio:</h6>
+    <h3 class="card-title text-center"><%= l @wedding.fecha_matri %></h3>
+  </div>
+</div>
+
+<div class="card-group">
+    <div class="card mb-3">
       <div class="card-block">
         <p>Novia:</p>
         <p class="lead"><%= @wedding.nombre1 %></p>
@@ -39,9 +45,8 @@
         <p class="lead"><%= @wedding.instagram_novia %></p>
       </div>
     </div>
-  </div>
-  <div class="col-sm-6">
-    <div class="card">
+
+    <div class="card mb-3">
       <div class="card-block">
         <p>Novio:</p>
         <p class="lead"><%= @wedding.nombre2 %></p>
@@ -49,67 +54,22 @@
         <p class="lead"><%= link_to @wedding.telefono_novio, "tel:#{@wedding.telefono_novio}" %></p>
       </div>
     </div>
-  </div>
-</div>
-<div class="row">
-  <div class="col-sm-6 col-lg-4">
-    <div class="card">
-      <div class="card-block">
-        <p>Fecha de matrimonio:</p>
-        <p class="lead"><%= @wedding.fecha_matri %></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-lg-4">
-    <div class="card">
-      <div class="card-block">
-        <p>Correo:</p>
-        <p class="lead"><%= @wedding.email_novia %></p>
-      </div>
-    </div>
-  </div>
-
-  <div class="col-sm-6 col-lg-4">
-    <div class="card">
-      <div class="card-block">
-        <p>Teléfono:</p>
-        <p class="lead"><%= @wedding.telefono_novia %></p>
-      </div>
-    </div>
-  </div>
-
-
-</div>
-<div class="row">
-  <div class="col-md-12">
-    <div class="card">
-      <div class="card-block">
-        <p class="lead">Diseño de Piso</p>
-      </div>
-      <%= image_tag @wedding.floordesign, class: "img-fluid d-block mx-auto" %>
-    </div>
-  </div>
 </div>
 
-<button class="btn btn-outline-warning btn-md btn-block my-3" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">
-  Mostrar más información
+<div class="card mb-3">
+  <div class="card-block">
+    <p class="lead">Diseño de Piso</p>
+  </div>
+  <%= image_tag @wedding.floordesign, class: "img-fluid d-block mx-auto" %>
+</div>
+
+<button class="btn btn-outline-info btn-md btn-block my-3" type="button" data-toggle="collapse" data-target="#colapsarPago" aria-expanded="false" aria-controls="colapsarPago">
+  Información sobre clases
 </button>
-<div class="collapse" id="colapsarInfo">
-  <div class="row">
-    <div class="col-12 mb-3">
-      <ul class="list-group">
-        <li class="list-group-item">¿Cómo se enteraron de la Academia?: <%= @wedding.origen %></li>
-        <li class="list-group-item">Descuento: <%= @wedding.tipo_descuento %></li>
-        <li class="list-group-item">Comentarios: <%= @wedding.comentarios %></li>
-      </ul>
-    </div>
-  </div>
-  <div class="row">
-    <div class="col-12">
-      <div class="card">
+<div class="collapse" id="colapsarPago">
+      <div class="card mb-3">
         <div class="card-block">
-          <h4>Información sobre clases</h4>
+          <h4 class="card-title">Información sobre clases</h4>
           <div class="table-responsive">
             <table class="table">
               <tr>
@@ -139,6 +99,19 @@
           </div>
         </div>
       </div>
+</div>
+
+<button class="btn btn-outline-warning btn-md btn-block my-3" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">
+  Más información
+</button>
+<div class="collapse" id="colapsarInfo">
+  <div class="row">
+    <div class="col-12 mb-3">
+      <ul class="list-group">
+        <li class="list-group-item">¿Cómo se enteraron de la Academia?: <%= @wedding.origen %></li>
+        <li class="list-group-item">Descuento: <%= @wedding.tipo_descuento %></li>
+        <li class="list-group-item">Comentarios: <%= @wedding.comentarios %></li>
+      </ul>
     </div>
   </div>
 </div>

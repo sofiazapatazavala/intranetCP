@@ -45,6 +45,7 @@ body {
 .nav-CP {
   background-color: $gray-lighter;
   border-top: solid 1px $brand-primary;
+  display: inherit;
 }
 .nav-CP .col {
   text-align: center;
@@ -67,6 +68,7 @@ body {
 .nav-CP a {
   font-size: 1.36rem;
   line-height: 2.1rem;
+  min-width: 20%;
 }
 .nav-CP a:hover {
   text-decoration: none;
