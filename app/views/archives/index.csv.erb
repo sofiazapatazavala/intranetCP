@@ -1,0 +1,5 @@
+<%- headers = ['Creado', 'Nombre', 'E-Mail', 'Teléfono', 'Procedencia', 'Comentarios'] -%>
+<%= CSV.generate_line headers %>
+<%- @archives.each do |archive| -%>
+<%= CSV.generate_line([archive.created_at, archive.nombre, archive.email, archive.telefono, archive.procedencia, archive.comentarios]) -%>
+<%- end -%>

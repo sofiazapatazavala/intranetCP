@@ -5,6 +5,13 @@ class ArchivesController < ApplicationController
   # GET /archives.json
   def index
     @archives = Archive.all
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"datos-plataforma-CP.csv\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
   end
 
   # GET /archives/1
