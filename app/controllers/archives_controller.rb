@@ -14,6 +14,10 @@ class ArchivesController < ApplicationController
     end
   end
 
+  def search
+    @weddings = Wedding.buscar(params[:buscar]).page(params[:page])
+  end
+
   # GET /archives/1
   # GET /archives/1.json
   def show

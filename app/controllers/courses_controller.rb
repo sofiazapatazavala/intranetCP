@@ -8,6 +8,10 @@ class CoursesController < ApplicationController
     @courses = Course.all
   end
 
+  def search
+    @weddings = Wedding.buscar(params[:buscar]).page(params[:page])
+  end
+
   # GET /courses/1
   # GET /courses/1.json
   def show

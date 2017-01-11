@@ -1,0 +1,35 @@
+<div class="row my-3">
+  <div class="col-md-8">
+    <h3>Resultados de búsqueda: Cursos</h3>
+  </div>
+  <div class="col-md-4">
+    <%= link_to '➕ Nuevo', new_course_path, class: "btn btn-block btn-primary", role: "button"  %>
+  </div>
+</div>
+
+<div class="table-responsive">
+<table class="table">
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Estilo</th>
+      <th>Edades</th>
+      <th colspan="3"></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @courses.each do |course| %>
+      <tr>
+        <td><%= link_to(course.nombre, course_path(course)) %></td>
+        <td><%= course.estilo %></td>
+        <td><%= course.edades %></td>
+        <td><%= link_to 'Ver', course, class: "btn btn-block btn-info" %></td><%# i18n!! %>
+        <td><%= link_to 'Editar', edit_course_path(course), class: "btn btn-block btn-primary" %></td>
+        <td><%= link_to 'Borrar', course, class: "btn btn-block btn-danger", method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+<%= will_paginate @courses %>
+</div>

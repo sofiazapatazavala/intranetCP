@@ -1,10 +1,24 @@
 <p id="notice"><%= notice %></p>
 
 <div class="row my-3">
-  <div class="col-8">
+  <div class="col-lg-5 col-xl-6 my-3">
     <h3>Cursos</h3>
   </div>
-  <div class="col-4">
+  <div class="col-lg-5 col-xl-4 my-3">
+    <%= form_tag search_courses_path, method: :get do %>
+      <div class="row">
+        <div class="col-sm-8 col-md-10 col-lg-8">
+          <div class="form-group">
+            <%= text_field_tag :buscar, params[:buscar], class: "form-control", placeholder: "Busca cursos:" %>
+          </div>
+        </div>
+        <div class="col-sm-4 col-md-2 col-lg-4">
+          <%= submit_tag "Buscar", class: "btn btn-info btn-block" %>
+        </div>
+      </div>
+    <% end %>
+  </div>
+  <div class="col-lg-2 my-3">
     <%= link_to '➕ Nuevo', new_course_path, class: "btn btn-block btn-primary", role: "button"  %>
   </div>
 </div>
