@@ -73,6 +73,6 @@ class CouplesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def couple_params
-      params.require(:couple).permit(:nombre1, :nombre2, :contacto, :email, :telefono, :comoseenteraron, :descuento, :comentarios)
+      params.require(:couple).permit(:nombre1, :nombre2, :contacto, :email, :telefono, :comoseenteraron, :descuento, :comentarios, :comentarios_pago)
     end
 end

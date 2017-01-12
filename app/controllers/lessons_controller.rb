@@ -13,6 +13,12 @@ class LessonsController < ApplicationController
     @meetings = Lesson.all
   end
 
+  # Para bloquear horario construiré un formulario nuevo
+  def bloquear
+    @lesson = Lesson.new(titulo: "Horario bloqueado")
+    @meetings = Lesson.all
+  end
+
   # GET /lessons/1
   # GET /lessons/1.json
   def show
@@ -76,6 +82,6 @@ class LessonsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def lesson_params
-      params.require(:lesson).permit(:fecha, :titulo, :notas, :start_time, :end_time, :video, :pago, :bloggable_type, :bloggable_id)
+      params.require(:lesson).permit(:fecha, :titulo, :notas, :start_time, :end_time, :video, :pago, :bloggable_type, :bloggable_id, {videos: []})
     end
 end

@@ -3,4 +3,6 @@ class Course < ApplicationRecord
 # Incluye buscador
   include PgSearch
   pg_search_scope :buscar, against: [:nombre]
+# Uploader
+  mount_uploaders :photos, PhotoUploader
 end

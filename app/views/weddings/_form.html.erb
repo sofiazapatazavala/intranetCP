@@ -55,91 +55,87 @@
         </div>
       </div>
     </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <p></p>
-        <p>
-          <button class="btn btn-primary" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
-            ¿Necesitas agregar a más personas?
-          </button>
-        </p>
-        <div class="collapse" id="collapseExample">
-          <div class="row">
-            <div class="col-sm-12">
-              <div class="card card-block">
-                <div class="field form-group">
-                  <%= f.text_area :maspersonas, class: 'form-control', placeholder: 'Agrega a las personas que sean necesarias.' %>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <p class="lead">¿La persona que hizo el contacto no es la novia ni el novio?</p>
+    <button class="btn btn-primary my-3" type="button" data-toggle="collapse" data-target="#collapseExample" aria-expanded="false" aria-controls="collapseExample">
+      ¿Necesitas agregar a más personas?
+    </button>
+    <div class="collapse" id="collapseExample">
+      <div class="card card-block">
         <div class="field form-group">
-          <%= f.text_area :contacto, class: 'form-control', placeholder: 'Ingresa todos los datos del contacto (nombre, teléfono y correo electrónico)' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-lg-12">
-        <div class="field form-group">
-          <%# f.label :fecha_matri %>
-          <p>Fecha del Matrimonio:</p>
-          <%= f.date_select :fecha_matri, class: 'form-control' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="field form-group origen">
-          <%= f.text_field :origen, class: 'form-control', placeholder: '¿Cómo se enteraron de la academia?' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="field form-group">
-          <%# f.label :url_vals %>
-          <%= f.text_field :tipo_descuento, class: 'form-control', placeholder: '¿Tienen un descuento? Indicar aquí' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="field form-group">
-          <%= f.label :comentarios %>
-          <%= f.text_area :comentarios, class: 'form-control', placeholder: 'Comentarios (pueden agregarse más adelante):' %>
-        </div>
-        <div class="field form-group">
-          <%= f.label :comentarios_pago %>
-          <%= f.text_area :comentarios_pago, class: 'form-control', placeholder: 'Comentarios respecto al pago (pueden agregarse más adelante):' %>
-        </div>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="field form-group">
-          <p class="lead">Diseño de Piso</p>
-          <%= f.file_field :floordesign %>
-        </div>
-        <label>
-          <%= f.check_box :remove_floordesign %>
-          Quitar diseño de piso
-        </label>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <div class="actions">
-          <%= f.submit 'Inscribir matrimonio', :class => 'btn btn-block btn-primary' %>
-          <%# Debe arreglarse esto, una vez implementado el I18n %>
+          <%= f.text_area :maspersonas, class: 'form-control', placeholder: 'Agrega a las personas que sean necesarias.' %>
         </div>
       </div>
     </div>
 
+    <p class="lead">¿La persona que hizo el contacto no es la novia ni el novio?</p>
+    <div class="field form-group">
+      <%= f.text_area :contacto, class: 'form-control', placeholder: 'Ingresa todos los datos del contacto (nombre, teléfono y correo electrónico)' %>
+    </div>
+
+    <div class="field form-group">
+      <p>Fecha del Matrimonio:</p>
+      <%= f.date_select :fecha_matri, class: 'form-control' %>
+    </div>
+
+    <div class="field form-group origen">
+      <%= f.text_field :origen, class: 'form-control', placeholder: '¿Cómo se enteraron de la academia?' %>
+    </div>
+
+    <div class="field form-group">
+      <%= f.text_field :tipo_descuento, class: 'form-control', placeholder: '¿Tienen un descuento? Indicar aquí' %>
+    </div>
+
+    <p class="lead">Foto de novios</p>
+    <div class="field form-group">
+      <%= f.file_field :avatar %>
+      <label>
+        <%= f.check_box :remove_avatar %>
+        Quitar diseño de piso
+      </label>
+    </div>
+
+    <p class="lead">Diseño de Piso</p>
+    <div class="field form-group">
+      <%= f.file_field :floordesign %>
+      <label>
+        <%= f.check_box :remove_floordesign %>
+        Quitar diseño de piso
+      </label>
+    </div>
+
+    <p class="lead">¿Qué canción van a usar?</p>
+    <div class="card-group">
+      <div class="card mb-3">
+        <div class="card-block">
+          <p class="card-text">Link de YouTube:</p>
+          <div class="field form-group">
+            <%= f.text_field :url_vals, class: 'form-control', placeholder: 'Pega la URL del video de YouTube:' %>
+          </div>
+        </div>
+      </div>
+      <div class="card mb-3">
+        <div class="card-block">
+          <p class="card-text">Subir canción:</p>
+          <div class="field form-group">
+            <%= f.file_field :song %>
+            <label>
+              <%= f.check_box :remove_song %>
+              Quitar canción
+            </label>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <p class="lead">Comentarios (pueden agregarse más adelante)</p>
+    <div class="field form-group">
+      <%= f.text_area :comentarios, class: 'form-control', placeholder: 'Comentarios generales:' %>
+    </div>
+    <div class="field form-group">
+      <%= f.text_area :comentarios_pago, class: 'form-control', placeholder: 'Comentarios respecto al pago:' %>
+    </div>
+
+    <div class="actions">
+      <%= f.submit 'Inscribir matrimonio', :class => 'btn btn-block btn-primary' %>
+    </div>
 
 <% end %>

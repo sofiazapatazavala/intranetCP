@@ -26,6 +26,11 @@
     <%= f.text_field :edades, class: 'form-control', placeholder: 'Edades del curso' %>
   </div>
 
+  <div class="field form-group">
+    <p class="lead">Fotos de curso</p>
+    <%= f.file_field :photos, multiple: true %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Inscribir curso', :class => 'btn btn-block btn-primary' %>
   </div>

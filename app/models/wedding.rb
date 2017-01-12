@@ -3,12 +3,11 @@ class Wedding < ApplicationRecord
   self.per_page = 30
 # Relación para las clases
   has_many :lessons, as: :bloggable
-# Configura el uploader del diseño de piso
+# Configura uploaders
   mount_uploader :floordesign, DisenoDePisoUploader
+  mount_uploader :song, SongUploader
+  mount_uploader :avatar, PhotoUploader
 # Incluye buscador
   include PgSearch
-# Sí usaremos scopes
   pg_search_scope :buscar, against: [:nombre1, :nombre2]
-# NO usaremos multisearchable
-# multisearchable :against => [:nombre1, :nombre2]
 end

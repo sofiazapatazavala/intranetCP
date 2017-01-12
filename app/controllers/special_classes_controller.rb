@@ -80,6 +80,6 @@ class SpecialClassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_class_params
-      params.require(:special_class).permit(:nombre1, :nombre2, :nombre3, :nombre4, :nombre5, :nombre6, :contacto, :email, :telefono, :comoseenteraron, :descuento, :comentarios)
+      params.require(:special_class).permit(:nombre1, :nombre2, :nombre3, :nombre4, :nombre5, :nombre6, :contacto, :email, :telefono, :comoseenteraron, :descuento, :comentarios, :comentarios_pago)
     end
 end

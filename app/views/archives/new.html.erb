@@ -1,5 +1,11 @@
 <h3 class="my-3">Nuevo archivo</h3>
 <hr>
+<div class="alert alert-warning alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  Si vas a borrar un registro, debes hacerlo <strong>luego de archivar</strong>.
+</div>
 
 <%= render 'form', archive: @archive %>
 

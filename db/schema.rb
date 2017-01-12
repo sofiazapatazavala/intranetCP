@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170111163153) do
+ActiveRecord::Schema.define(version: 20170112032330) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -34,8 +34,9 @@ ActiveRecord::Schema.define(version: 20170111163153) do
     t.string   "comoseenteraron"
     t.string   "descuento"
     t.string   "comentarios"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "comentarios_pago"
   end
 
   create_table "courses", force: :cascade do |t|
@@ -44,6 +45,7 @@ ActiveRecord::Schema.define(version: 20170111163153) do
     t.string   "edades"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.json     "photos"
   end
 
   create_table "lessons", force: :cascade do |t|
@@ -58,6 +60,7 @@ ActiveRecord::Schema.define(version: 20170111163153) do
     t.string   "bloggable_type"
     t.integer  "bloggable_id"
     t.string   "pago"
+    t.json     "videos"
     t.index ["bloggable_type", "bloggable_id"], name: "index_lessons_on_bloggable_type_and_bloggable_id", using: :btree
   end
 
@@ -83,8 +86,9 @@ ActiveRecord::Schema.define(version: 20170111163153) do
     t.string   "comoseenteraron"
     t.string   "descuento"
     t.string   "comentarios"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
+    t.text     "comentarios_pago"
   end
 
   create_table "students", force: :cascade do |t|
@@ -94,9 +98,11 @@ ActiveRecord::Schema.define(version: 20170111163153) do
     t.string   "comoseenteraron"
     t.string   "descuento"
     t.string   "comentarios"
-    t.datetime "created_at",      null: false
-    t.datetime "updated_at",      null: false
+    t.datetime "created_at",       null: false
+    t.datetime "updated_at",       null: false
     t.integer  "course_id"
+    t.string   "pago"
+    t.text     "comentarios_pago"
     t.index ["course_id"], name: "index_students_on_course_id", using: :btree
   end
 
@@ -138,6 +144,8 @@ ActiveRecord::Schema.define(version: 20170111163153) do
     t.text     "maspersonas"
     t.text     "contacto"
     t.text     "comentarios_pago"
+    t.string   "song"
+    t.string   "avatar"
   end
 
 end

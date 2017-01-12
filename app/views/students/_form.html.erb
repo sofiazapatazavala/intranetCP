@@ -41,6 +41,21 @@
     <%= f.text_area :comentarios, class: "form-control", placeholder: "Comentarios:" %>
   </div>
 
+  <div class="field form-group">
+    <p>¿El curso está pagado?</p>
+    <%# f.text_field :pago, class: "form-control" %>
+    <%= f.radio_button :pago, "pagado" %>
+    <%= label :pago_pagado, "Sí, está pagado" %>
+    <%= f.radio_button :pago, "parcial" %>
+    <%= label :pago_parcial, "Está parcialmente pagado" %>
+    <%= f.radio_button :pago, "pendiente" %>
+    <%= label :pago_pendiente, "No, está pendiente" %>
+  </div>
+
+  <div class="field form-group">
+    <%= f.text_area :comentarios_pago, class: "form-control", placeholder: "En caso de haber comentarios respecto al pago, indicar aquí:" %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Inscribir', :class => 'btn btn-block btn-primary my-3' %>
   </div>

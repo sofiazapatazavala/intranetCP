@@ -14,6 +14,10 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require bootstrap-sprockets
+//= require jquery.oembed
 //= require_tree .
 
 /* En caso de error en js, dejar tal como te lo piden */
+$(function(){
+   $("a.embed").oembed();
+});

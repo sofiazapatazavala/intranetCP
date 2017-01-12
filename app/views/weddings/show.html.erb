@@ -1,23 +1,26 @@
 <div class="row my-3">
-  <div class="col-md-4">
+  <div class="col-lg-4">
     <h3>Matrimonio:</h3>
     <p class="lead"><%= @wedding.nombre1 %> y <%= @wedding.nombre2 %></p>
   </div>
-  <div class="col-md-8">
+  <div class="col-lg-8">
     <div class="row">
-      <div class="col-sm-4">
+      <div class="col-md-6 col-lg-3">
         <p><%= link_to '⬅ Volver', weddings_path, class: "btn btn-block btn-secondary", role: "button" %></p>
       </div>
-      <div class="col-sm-4">
-        <p><%= link_to '✏ Editar', edit_wedding_path(@wedding), class: "btn btn-block btn-warning", role: "button" %></p>
+      <div class="col-md-6 col-lg-3">
+        <p><%= link_to '✏ Editar', edit_wedding_path(@wedding), class: "btn btn-block btn-info", role: "button" %></p>
       </div>
-      <div class="col-sm-4">
+      <div class="col-md-6 col-lg-3">
+        <p><%= link_to '📦 Archivar', new_archive_path, class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-md-6 col-lg-3">
         <p><%= link_to '🗑 Borrar', @wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
       </div>
     </div>
     <div class="row">
       <div class="col-sm-12">
-        <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
+        <%= link_to '➕ Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
       </div>
     </div>
   </div>
@@ -56,11 +59,19 @@
     </div>
 </div>
 
-<div class="card mb-3">
-  <div class="card-block">
-    <p class="lead">Diseño de Piso</p>
+<div class="card-group">
+  <div class="card mb-3">
+    <div class="card-block">
+      <p class="lead">Diseño de Piso</p>
+    </div>
+    <%= image_tag @wedding.floordesign, class: "img-fluid d-block mx-auto" %>
   </div>
-  <%= image_tag @wedding.floordesign, class: "img-fluid d-block mx-auto" %>
+  <div class="card mb-3">
+    <div class="card-block">
+      <p class="lead">Canción</p>
+    </div>
+    <%= link_to @wedding.url_vals, @wedding.url_vals, class: 'embed' %>
+  </div>
 </div>
 
 <button class="btn btn-outline-info btn-md btn-block my-3" type="button" data-toggle="collapse" data-target="#colapsarPago" aria-expanded="false" aria-controls="colapsarPago">
@@ -70,6 +81,7 @@
       <div class="card mb-3">
         <div class="card-block">
           <h4 class="card-title">Información sobre clases</h4>
+          <p class="card-text">Comentarios del pago: <%= @wedding.comentarios_pago %></li>
           <div class="table-responsive">
             <table class="table">
               <tr>

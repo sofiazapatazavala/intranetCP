@@ -51,6 +51,10 @@
     <%= f.text_field :comentarios, class: 'form-control', placeholder: '¿Comentarios sobre la pareja? Indicar aquí.' %>
   </div>
 
+  <div class="field form-group">
+    <%= f.text_area :comentarios_pago, class: "form-control", placeholder: "En caso de haber comentarios respecto al pago, indicar aquí:" %>
+  </div>
+
   <div class="actions">
     <%= f.submit 'Inscribir baile en pareja', :class => 'btn btn-block btn-primary' %>
   </div>

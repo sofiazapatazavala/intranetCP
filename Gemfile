@@ -40,17 +40,15 @@ gem 'bootstrap', '~> 4.0.0.alpha5'
 gem "simple_calendar", "~> 2.0"
 # Búsqueda en la DB
 gem "pg_search"
-# Filterrific para implementar filtros a los matrimonios
-# gem "filterrific"
-# Will Paginate porque Filterrific la necesita para hacer su magia
+# Will Paginate
 gem 'will_paginate'
 gem 'will_paginate-bootstrap'
 # Carrierwave para manejar la subida de archivos (fotos y videos)
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierwave'
 # fog-aws para dejar los archivos subidos en S3
 gem 'fog-aws'
-# Soporte oEmbed con ruby-oembed
-# gem 'ruby-oembed'
+# Soporte oEmbed usando jQuery
+gem 'jquery-oembed-rails'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console

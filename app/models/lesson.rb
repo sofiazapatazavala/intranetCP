@@ -1,5 +1,6 @@
 class Lesson < ApplicationRecord
   belongs_to :bloggable, polymorphic: true
-  # Uploader de video
+# Registra uploaders
   mount_uploader :video, VideoDeClaseUploader
+  mount_uploaders :videos, VideoDeClaseUploader
 end

@@ -54,6 +54,7 @@ end
   get 'hola/index'
   get 'hola/portada'
   get 'agenda' => 'lessons#agenda'
+  get 'bloquearhorario' => 'lessons#bloquear'
 
   authenticated :user do
     root to: 'hola#portada', as: :authenticated_root
