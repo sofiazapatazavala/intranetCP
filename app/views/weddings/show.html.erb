@@ -70,7 +70,8 @@
     <div class="card-block">
       <p class="lead">Canción</p>
     </div>
-    <%= link_to @wedding.url_vals, @wedding.url_vals, class: 'embed' %>
+    <%= link_to @wedding.url_vals, "", class: 'embed' %>
+    <%= audio_tag(@wedding.song, controls: true) %>
   </div>
 </div>
 
