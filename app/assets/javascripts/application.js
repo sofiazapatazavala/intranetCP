@@ -21,7 +21,7 @@
 
 $(function(){
    $("a.embed").oembed();
-   $(".oembedall-closehide").hide();
-   $(".oembedall-container").addClass("embed-responsive embed-responsive-16by9 mb-2");
-   $(".oembedall-container iframe").addClass("embed-responsive-item");
+//   $(".oembedall-closehide").hide();
+//   $(".oembedall-container").addClass("embed-responsive embed-responsive-16by9 mb-2");
+//   $(".oembedall-container iframe").addClass("embed-responsive-item");
 });
