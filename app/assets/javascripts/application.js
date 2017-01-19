@@ -18,6 +18,10 @@
 //= require_tree .
 
 /* En caso de error en js, dejar tal como te lo piden */
+
 $(function(){
    $("a.embed").oembed();
+   $(".oembedall-closehide").hide();
+   $(".oembedall-container").addClass("embed-responsive embed-responsive-16by9 mb-2");
+   $(".oembedall-container iframe").addClass("embed-responsive-item");
 });

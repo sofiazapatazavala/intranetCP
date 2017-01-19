@@ -65,15 +65,12 @@
     </div>
     <%= image_tag @wedding.floordesign, class: "img-fluid d-block mx-auto" %>
   </div>
-  <div class="card mb-3">
+  <div class="card mb-3 card-song">
     <div class="card-block">
       <p class="lead">Canción</p>
     </div>
-    <div>
       <%= link_to "", @wedding.url_vals, class: "embed" %>
-    </div>
-    <div>
-      <%= audio_tag(@wedding.song, controls: true) %>
+      <%= audio_tag(@wedding.song, controls: true, class: "mb-2") %>
     </div>
   </div>
 </div>
