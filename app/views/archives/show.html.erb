@@ -5,11 +5,14 @@
   </div>
   <div class="col-sm-6">
     <div class="row">
-      <div class="col-md-6">
+      <div class="col-md-4">
         <p><%= link_to '⬅ Volver', archives_path, class: "btn btn-block btn-secondary", role: "button" %></p>
       </div>
-      <div class="col-md-6">
+      <div class="col-md-4">
         <p><%= link_to '✏ Editar', edit_archive_path(@archive), class: "btn btn-block btn-warning", role: "button" %></p>
+      </div>
+      <div class="col-md-4">
+        <p><%= link_to 'Nuevo Matrimonio', new_wedding_path, class: "btn btn-block btn-success", role: "button" %></p>
       </div>
     </div>
     <div class="row">

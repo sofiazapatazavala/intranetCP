@@ -5,16 +5,13 @@
   </div>
   <div class="col-lg-8">
     <div class="row">
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <p><%= link_to '⬅ Volver', weddings_path, class: "btn btn-block btn-secondary", role: "button" %></p>
       </div>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <p><%= link_to '✏ Editar', edit_wedding_path(@wedding), class: "btn btn-block btn-info", role: "button" %></p>
       </div>
-      <div class="col-md-6 col-lg-3">
-        <p><%= link_to '📦 Archivar', new_archive_path, class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-      <div class="col-md-6 col-lg-3">
+      <div class="col-md-4">
         <p><%= link_to '🗑 Borrar', @wedding, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
       </div>
     </div>
@@ -72,8 +69,12 @@
     <div class="card-block">
       <p class="lead">Canción</p>
     </div>
-    <%= link_to @wedding.url_vals, "", class: 'embed' %>
-    <%= audio_tag(@wedding.song, controls: true) %>
+    <div>
+      <%= link_to "", @wedding.url_vals, class: "embed" %>
+    </div>
+    <div>
+      <%= audio_tag(@wedding.song, controls: true) %>
+    </div>
   </div>
 </div>
 

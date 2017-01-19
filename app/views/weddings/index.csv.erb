@@ -1,0 +1,5 @@
+<%- headers = ['Fecha de registro', 'Nombre de la novia', 'E-Mail de la novia', 'Teléfono de la novia', 'RUT de la novia', 'Instagram de la novia', 'Nombre del novio', 'E-mail del novio', 'Teléfono del novio', 'RUT del novio', '¿Hubo más personas?', 'Fecha de matrimonio', 'Origen', 'Descuento', 'Comentarios', 'Comentarios de pago'] -%>
+<%= CSV.generate_line headers %>
+<%- @wedding_archives.each do |archive| -%>
+<%= CSV.generate_line([archive.created_at, archive.nombre1, archive.email_novia, archive.telefono_novia, archive.rut_novia, archive.instagram_novia, archive.nombre2, archive.email_novio, archive.telefono_novio, archive.rut_novio, archive.maspersonas, archive.fecha_matri.strftime("%d/%m/%Y"), archive.origen, archive.tipo_descuento, archive.comentarios, archive.comentarios_pago]) -%>
+<%- end -%>

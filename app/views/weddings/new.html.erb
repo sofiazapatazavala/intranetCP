@@ -1,5 +1,11 @@
 <h3 class="my-3">Nuevo Matrimonio</h3>
 <hr>
+<div class="alert alert-info alert-dismissible fade show" role="alert">
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  Si es que se agregaron datos desde el archivo, verifica que estén correctos.
+</div>
 <%= render 'form', wedding: @wedding %>
 <hr>
 <%= link_to 'Volver', weddings_path, class: 'btn btn-block btn-secondary' %><%# i18n!!! %>

@@ -15,12 +15,15 @@ class ArchivesController < ApplicationController
   end
 
   def search
-    @weddings = Wedding.buscar(params[:buscar]).page(params[:page])
+    @archives = Archive.buscar(params[:buscar]).page(params[:page])
   end
 
   # GET /archives/1
   # GET /archives/1.json
   def show
+    cookies[:arch_nombre] = @archive.nombre
+    cookies[:arch_email] = @archive.email
+    cookies[:arch_tel] = @archive.telefono
   end
 
   # GET /archives/new

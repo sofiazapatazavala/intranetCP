@@ -5,6 +5,20 @@ class WeddingsController < ApplicationController
   # GET /weddings
   # GET /weddings.json
   def index
+  # Muestra en la página los matrimonios con fecha de realización mayor o igual que ayer.
+    @weddings = Wedding.where("fecha_matri >= ?", 3.days.ago)
+  # En el CSV, tira todos los matrimonios
+    @wedding_archives = Wedding.all
+    respond_to do |format|
+      format.html
+      format.csv do
+        headers['Content-Disposition'] = "attachment; filename=\"datos-plataforma-CP.csv\""
+        headers['Content-Type'] ||= 'text/csv'
+      end
+    end
+  end
+
+  def todos
     @weddings = Wedding.all
   end
 
@@ -18,15 +32,11 @@ class WeddingsController < ApplicationController
   # Cookies para construir la relación bloggable y el llenado de archivos.
     cookies[:id_blog] = @wedding.id
     cookies[:tipo_blog] = "Wedding"
-    cookies[:arch_nombre] = @wedding.nombre1
-    cookies[:arch_email] = @wedding.email_novia
-    cookies[:arch_tel] = @wedding.telefono_novia
-    cookies[:@rch_proc] = "Matrimonio"
   end
 
   # GET /weddings/new
   def new
-    @wedding = Wedding.new
+    @wedding = Wedding.new(nombre1: cookies[:arch_nombre], email_novia: cookies[:arch_email], telefono_novia: cookies[:arch_tel])
   end
 
   # GET /weddings/1/edit
@@ -40,6 +50,9 @@ class WeddingsController < ApplicationController
 
     respond_to do |format|
       if @wedding.save
+        cookies.delete(:arch_nombre)
+        cookies.delete(:arch_email)
+        cookies.delete(:arch_tel)
         format.html { redirect_to @wedding, notice: 'Wedding was successfully created.' }
         format.json { render :show, status: :created, location: @wedding }
       else

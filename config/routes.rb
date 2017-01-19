@@ -46,6 +46,7 @@ end
   scope(path_names: { new: 'nuevo', edit: 'editar' }) do
     resources :weddings, path: 'matrimonios' do
       get 'search', on: :collection
+      get 'todos', on: :collection
     end
   end
 
