@@ -1,19 +1,31 @@
 <div class="row">
-  <div class="col-md-6">
+  <div class="col-md-6 mb-3">
     <%= render "lessons/agenda" %>
   </div>
-  <div class="col-md-6">
+  <div class="col-md-6 mb-3">
     <div class="card">
       <div class="card-block">
-        <p class="lead">¿Qué quieres hacer?</p>
-        <%= link_to "Registrar nuevo matrimonio", new_wedding_path, class: "btn btn-block btn-outline-primary", role: "button" %>
-        <hr>
-        <%= link_to "Registrar alumna de curso", new_student_path, class: "btn btn-block btn-outline-primary", role: "button" %>
-        <%= link_to "Registrar nuevo curso", new_course_path, class: "btn btn-block btn-outline-primary", role: "button" %>
-        <hr>
-        <%= link_to "Registrar nuevo baile en pareja", new_couple_path, class: "btn btn-block btn-outline-primary", role: "button" %>
-        <%= link_to "Registrar nueva clase particular", new_special_class_path, class: "btn btn-block btn-outline-primary", role: "button" %>
+        <p class="lead">Inscribe un nuevo:</p>
+          <%= link_to "👰🏻 Matrimonio", new_wedding_path, class: "btn btn-block btn-outline-info", role: "button" %>
+          <%= link_to "💃🏻 Clase particular", new_special_class_path, class: "btn btn-block btn-outline-info", role: "button" %>
+          <%= link_to "🏫 Curso", new_course_path, class: "btn btn-block btn-outline-info", role: "button" %>
+          <%= link_to "📦 Interesada", new_couple_path, class: "btn btn-block btn-outline-info", role: "button" %>
       </div>
+    </div>
+  </div>
+</div>
+<div class="card-group">
+    <div class="card mb-3">
+      <h3 class="display-4 text-center card-title"><%= @matrimonios %></h3>
+      <p class="small card-text text-center">matrimonios</p>
+    </div>
+    <div class="card mb-3">
+      <h3 class="display-4 text-center card-title"><%= @clases %></h3>
+      <p class="small card-text text-center">clases realizadas y agendadas</p>
+    </div>
+    <div class="card mb-3">
+      <h3 class="display-4 text-center card-title"><%= @alumnas %></h3>
+      <p class="small card-text text-center">alumnas en cursos controlados</p>
     </div>
   </div>
 </div>

@@ -3,7 +3,13 @@ class HolaController < ApplicationController
 
   def portada
     @meetings = Lesson.all
-    @hola = PgSearch.multisearch( params[:q] ).paginate( :page => params[:page] )
+  # Si usamos multisearch, se activará esto
+  # @hola = PgSearch.multisearch( params[:q] ).paginate( :page => params[:page] )
+    @matrimonios = Wedding.count
+    @clasesparticulares = SpecialClass.count
+    @cursos = Course.count
+    @alumnas = Student.count
+    @clases = Lesson.count
   end
 
   def index

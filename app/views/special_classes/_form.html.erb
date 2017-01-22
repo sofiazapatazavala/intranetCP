@@ -12,62 +12,54 @@
   <% end %>
 
   <div class="field form-group">
-    <%# f.label :nombre1 %>
     <%= f.text_field :nombre1, class: 'form-control', placeholder: 'Nombre de la 1° persona' %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :nombre2 %>
     <%= f.text_field :nombre2, class: 'form-control', placeholder: 'Nombre de la 2° persona' %>
   </div>
 
-  <div class="field form-group">
-    <%# f.label :nombre3 %>
-    <%= f.text_field :nombre3, class: 'form-control', placeholder: 'Nombre de la 3° persona' %>
+  <button class="btn btn-block btn-primary my-3" type="button" data-toggle="collapse" data-target="#collapseClases" aria-expanded="false" aria-controls="collapseClases">
+    ¿Necesitas agregar a más personas?
+  </button>
+  <div class="collapse" id="collapseClases">
+    <div class="card card-block mb-3">
+      <div class="field form-group">
+        <%= f.text_field :nombre3, class: 'form-control', placeholder: 'Nombre de la 3° persona' %>
+      </div>
+      <div class="field form-group">
+        <%= f.text_field :nombre4, class: 'form-control', placeholder: 'Nombre de la 4° persona' %>
+      </div>
+      <div class="field form-group">
+        <%= f.text_field :nombre5, class: 'form-control', placeholder: 'Nombre de la 5° persona' %>
+      </div>
+      <div class="field form-group">
+        <%= f.text_field :nombre6, class: 'form-control', placeholder: 'Nombre de la 6° persona' %>
+      </div>
+    </div>
   </div>
 
   <div class="field form-group">
-    <%# f.label :nombre4 %>
-    <%= f.text_field :nombre4, class: 'form-control', placeholder: 'Nombre de la 4° persona' %>
-  </div>
-
-  <div class="field form-group">
-    <%# f.label :nombre5 %>
-    <%= f.text_field :nombre5, class: 'form-control', placeholder: 'Nombre de la 5° persona' %>
-  </div>
-
-  <div class="field form-group">
-    <%# f.label :nombre6 %>
-    <%= f.text_field :nombre6, class: 'form-control', placeholder: 'Nombre de la 6° persona' %>
-  </div>
-
-  <div class="field form-group">
-    <%# f.label :contacto %>
     <%= f.text_field :contacto, class: 'form-control', placeholder: 'Contacto (si es que es un tercero)' %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :email %>
     <%= f.text_field :email, class: 'form-control', placeholder: 'E-mail de contacto', type: "email" %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :telefono %>
     <%= f.text_field :telefono, class: 'form-control', placeholder: 'Teléfono de contacto', type: "tel" %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :comoseenteraron %>
     <%= f.text_field :comoseenteraron, class: 'form-control', placeholder: '¿Cómo supieron de la academia?' %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :descuento %>
     <%= f.text_field :descuento, class: 'form-control', placeholder: '¿Tienen un descuento? Indicar aquí' %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :comentarios %>
     <%= f.text_field :comentarios, class: 'form-control', placeholder: '¿Tienes comentarios? Indicar aquí' %>
   </div>
 
@@ -76,6 +68,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Inscribir clase particular', :class => 'btn btn-block btn-primary' %>
+    <%= f.submit 'Inscribir clase particular', :class => 'btn btn-block btn-primary mb-3' %>
   </div>
 <% end %>
