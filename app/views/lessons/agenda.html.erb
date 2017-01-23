@@ -13,13 +13,13 @@
           <h3><%= meeting.start_time.strftime("%H:%M") %> - <%= meeting.end_time.strftime("%H:%M") %></h3>
           <% if meeting.bloggable_type == "Wedding" %>
             <p class="p-1 p-matri">👰🏻 Matrimonio</p>
-            <p class="lead"><%= link_to meeting.bloggable.nombre1?, edit_lesson_path(meeting) %> y <%= link_to meeting.bloggable.nombre2, edit_lesson_path(meeting) %></a></p>
+            <p class="lead"><%= link_to meeting.bloggable.try(:nombre1), edit_lesson_path(meeting) %> y <%= link_to meeting.bloggable.nombre2, edit_lesson_path(meeting) %></a></p>
 
           <% elsif meeting.bloggable_type == "SpecialClass" %>
             <p class="p-1 p-particular">💃🏻 Clase particular</p>
-            <p class="lead"><%= link_to meeting.bloggable.nombre1?, edit_lesson_path(meeting) %></a></p>
+            <p class="lead"><%= link_to meeting.bloggable.try(:nombre1), edit_lesson_path(meeting) %></a></p>
           <% else %>
-            <p class="lead"><%= link_to meeting.bloggable.nombre1?, edit_lesson_path(meeting) %></a></p>
+            <p class="lead">No hay eventos disponibles</a></p>
           <% end %>
         </div>
       </div>
