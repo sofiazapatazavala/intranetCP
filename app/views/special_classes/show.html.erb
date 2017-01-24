@@ -1,23 +1,20 @@
-<div class="row my-3">
-  <div class="col-lg-4">
-    <h3>Clase particular:</h3>
+<div class="row">
+  <div class="col-md-8 col-lg-9 col-xl-10 mb-3 mb-md-0">
+    <h3 class="p-2 p-particular">💃🏻 Clase particular:</h3>
     <p class="lead"><%= @special_class.nombre1 %></p>
+    <%= link_to '➕ Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
   </div>
-  <div class="col-lg-8">
-    <div class="row">
-      <div class="col-lg-4">
-        <p><%= link_to '✏ Editar', edit_special_class_path(@special_class), class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-      <div class="col-lg-4">
-        <p><%= link_to '⬅ Volver', special_classes_path, class: "btn btn-block btn-secondary", role: "button" %></p>
-      </div>
-      <div class="col-lg-4">
-        <p><%= link_to '📦 Archivar', new_archive_path, class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <%= link_to 'Agregar nueva clase', new_lesson_path, class: "btn btn-block btn-primary", role: "button" %>
+  <div class="col-md-4 col-lg-3 col-xl-2">
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-subtitle text-center hidden-md-up">Acciones:</h5>
+        <div class="d-flex justify-content-center">
+          <div class="btn-group-vertical" role="group" aria-label="Acciones para esta clase">
+            <%= link_to '⬅ Volver', special_classes_path, class: "btn btn-secondary", role: "button" %>
+            <%= link_to '✏ Editar', edit_special_class_path(@special_class), class: "btn btn-warning", role: "button" %>
+            <%= link_to '🗑 Borrar', @special_class, class: "btn btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -25,7 +22,6 @@
 <hr>
 
 <p id="notice"><%= notice %></p>
-
 
 <ul class="list-group">
   <li class="list-group-item">1° persona: <strong><%= @special_class.nombre1 %></strong></li>

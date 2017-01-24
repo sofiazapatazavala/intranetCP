@@ -1,27 +1,24 @@
-<div class="row my-3">
-  <div class="col-lg-4">
-    <h3>Alumna:</h3>
+<div class="row">
+  <div class="col-md-8 col-lg-9 col-xl-10 mb-3 mb-md-0">
+    <h3 class="py-2">Alumna:</h3>
     <p class="lead"><%= @student.nombre %></p>
+    <%= link_to 'Agregar nueva alumna', new_student_path, class: "btn btn-block btn-primary", role: "button" %>
   </div>
-  <div class="col-lg-8">
-    <div class="row">
-      <div class="col-lg-4">
-        <p><%= link_to '⬅ Volver', students_path, class: "btn btn-block btn-secondary", role: "button" %></p>
-      </div>
-      <div class="col-lg-4">
-        <p><%= link_to '✏ Editar', edit_student_path(@student), class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-      <div class="col-lg-4">
-        <p><%= link_to '📦 Archivar', new_archive_path, class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-12">
-        <%= link_to 'Borrar', @student, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+  <div class="col-md-4 col-lg-3 col-xl-2">
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-subtitle text-center hidden-md-up">Acciones:</h5>
+        <div class="d-flex justify-content-center">
+          <div class="btn-group-vertical" role="group" aria-label="Acciones para esta clase">
+            <%= link_to '⬅ Volver', students_path, class: "btn btn-secondary", role: "button" %>
+            <%= link_to '✏ Editar', edit_student_path(@student), class: "btn btn-warning", role: "button" %>
+            <%= link_to '🗑 Borrar', @student, class: "btn btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<hr>
 
 <p id="notice"><%= notice %></p>
 

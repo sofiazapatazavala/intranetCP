@@ -1,25 +1,45 @@
-<div class="row my-3">
-  <div class="col-sm-6">
-    <h3>Clase:</h3>
-    <p class="lead"><%= @lesson.bloggable.nombre1 %></strong></p>
-    <small>Registrada el día <%= @lesson.fecha %></small>
+<div class="row">
+  <div class="col-md-8 col-lg-9 col-xl-10">
+    <h3>Clase</h3>
+    <% if @lesson.bloggable_type == "Wedding" %>
+      <p class="p-1 p-matri">👰🏻 Matrimonio</p>
+      <p class="lead"><%= link_to @lesson.bloggable.try(:nombre1), edit_lesson_path(@lesson) %> y <%= link_to @lesson.bloggable.try(:nombre2), edit_lesson_path(@lesson) %></a></p>
+      <% elsif @lesson.bloggable_type == "Couple" %>
+        <p class="p-1 p-parejas">👯 Baile en Pareja</p>
+        <p class="lead"><%= link_to @lesson.bloggable.try(:nombre1), edit_lesson_path(@lesson) %> y <%= link_to @lesson.bloggable.nombre2, edit_lesson_path(@lesson) %></a></p>
+    <% elsif @lesson.bloggable_type == "SpecialClass" %>
+      <p class="p-1 p-particular">💃🏻 Clase particular</p>
+      <p class="lead"><%= link_to @lesson.bloggable.try(:nombre1), edit_lesson_path(@lesson) %></a></p>
+    <% else %>
+      <p class="lead">Horario bloqueado</a></p>
+    <% end %>
+    <p class="small text-center bg-faded hidden-sm-down">Registrada el día <%= l @lesson.fecha %></p>
   </div>
-  <div class="col-sm-6">
-    <div class="row">
-      <div class="col-sm-6">
-        <p><%= link_to '✏ Editar', edit_lesson_path(@lesson), class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-      <div class="col-sm-6">
-        <p><%= link_to '⬅ Volver', lessons_path, class: "btn btn-block btn-secondary", role: "button" %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <%= link_to 'Borrar', @lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+  <div class="col-md-4 col-lg-3 col-xl-2">
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-subtitle text-center hidden-md-up">Acciones:</h5>
+        <div class="d-flex justify-content-center">
+          <div class="btn-group-vertical" role="group" aria-label="Acciones para esta clase">
+            <% if @lesson.bloggable_type == "Wedding" %>
+              <%= link_to '⬅ Volver', wedding_path(@lesson.bloggable.id), class: "btn btn-secondary", role: "button" %>
+            <% elsif @lesson.bloggable_type == "Couple" %>
+              <%= link_to '⬅ Volver', couple_path(@lesson.bloggable.id), class: "btn btn-secondary", role: "button" %>
+            <% elsif @lesson.bloggable_type == "SpecialClass" %>
+              <%= link_to '⬅ Volver', special_class_path(@lesson.bloggable.id), class: "btn btn-secondary", role: "button" %>
+            <% else %>
+              <%= link_to '⬅ Volver', lessons_path, class: "btn btn-secondary", role: "button" %>
+            <% end %>
+            <%= link_to '✏ Editar', edit_lesson_path(@lesson), class: "btn btn-warning", role: "button" %>
+            <%= link_to '🗑 Borrar', @lesson, class: "btn btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+          </div>
+        </div>
+        <p class="card-text small text-center hidden-md-up">Registrada el día <%= l @lesson.fecha %></p>
       </div>
     </div>
   </div>
 </div>
+<hr>
 
 <p id="notice"><%= notice %></p>
 

@@ -8,7 +8,7 @@ Rails.application.routes.draw do
 #  resources :weddings
 
 scope(path_names: { new: 'nuevo', edit: 'editar' }) do
-  resources :archives, path: 'archivos' do
+  resources :archives, path: 'interesados' do
     get 'search', on: :collection
   end
 end

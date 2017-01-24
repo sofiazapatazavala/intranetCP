@@ -1,22 +1,20 @@
-<div class="row my-3">
-  <div class="col-md-4">
-    <h3>Detalle de curso</h3>
+<div class="row">
+  <div class="col-md-8 col-lg-9 col-xl-10 mb-3 mb-md-0">
+    <h3 class="p-2 p-cursos text-white">🏫 Detalle de Curso</h3>
+    <p class="lead"><%= @course.nombre %></p>
+    <%= link_to 'Agregar nueva alumna', new_student_path, class: "btn btn-block btn-outline-primary", role: "button" %>
   </div>
-  <div class="col-md-8">
-    <div class="row">
-      <div class="col-md-4">
-        <p><%= link_to '⬅ Volver', courses_path, class: "btn btn-block btn-secondary", role: "button" %></p>
-      </div>
-      <div class="col-md-4">
-        <p><%= link_to '✏ Editar clase', edit_course_path(@course), class: "btn btn-block btn-warning", role: "button" %></p>
-      </div>
-      <div class="col-md-4">
-        <p><%= link_to '🗑 Borrar', @course, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></p>
-      </div>
-    </div>
-    <div class="row">
-      <div class="col-sm-12">
-        <%= link_to 'Agregar nueva alumna', new_student_path, class: "btn btn-block btn-primary", role: "button" %>
+  <div class="col-md-4 col-lg-3 col-xl-2">
+    <div class="card">
+      <div class="card-block">
+        <h5 class="card-subtitle text-center hidden-md-up">Acciones:</h5>
+        <div class="d-flex justify-content-center">
+          <div class="btn-group-vertical" role="group" aria-label="Acciones para esta clase">
+            <%= link_to '⬅ Volver', courses_path, class: "btn btn-secondary", role: "button" %>
+            <%= link_to '✏ Editar curso', edit_course_path(@course), class: "btn btn-warning", role: "button" %>
+            <%= link_to '🗑 Borrar', @course, class: "btn btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
+          </div>
+        </div>
       </div>
     </div>
   </div>
@@ -27,8 +25,8 @@
 
 <div class="card">
   <div class="card-block">
-    <h2 class="card-title text-center"><%= @course.nombre %></h1>
     <ul class="list-group">
+      <h2 class="card-title text-center"><%= @course.nombre %></h2>
       <li class="list-group-item">Estilo: <%= @course.estilo %></li>
       <li class="list-group-item">Edades: <%= @course.edades %></li>
     </ul>

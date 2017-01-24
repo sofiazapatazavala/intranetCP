@@ -5,14 +5,14 @@ class WeddingsController < ApplicationController
   # GET /weddings
   # GET /weddings.json
   def index
-  # Muestra en la página los matrimonios con fecha de realización mayor o igual que ayer.
+  # Muestra en la página los matrimonios con fecha de realización mayor o igual que hace 3 días.
     @weddings = Wedding.where("fecha_matri >= ?", 3.days.ago)
   # En el CSV, tira todos los matrimonios
     @wedding_archives = Wedding.all
     respond_to do |format|
       format.html
       format.csv do
-        headers['Content-Disposition'] = "attachment; filename=\"datos-plataforma-CP.csv\""
+        headers['Content-Disposition'] = "attachment; filename=\"matrimonios-plataforma-CP.csv\""
         headers['Content-Type'] ||= 'text/csv'
       end
     end
