@@ -66,7 +66,7 @@
     <div class="card-block">
       <p class="lead">Canción</p>
     </div>
-    <%= link_to "", @wedding.url_vals, class: "embed" %>
+    <%= link_to @wedding.url_vals, @wedding.url_vals, class: 'embed' %>
     <%= audio_tag(@wedding.song, controls: true, class: "mb-2") %>
   </div>
 </div>
@@ -75,40 +75,40 @@
   Información sobre clases
 </button>
 <div class="collapse" id="colapsarPago">
-      <div class="card mb-3">
-        <div class="card-block">
-          <h4 class="card-title">Información sobre clases</h4>
-          <p class="card-text">Comentarios del pago: <%= @wedding.comentarios_pago %></li>
-          <div class="table-responsive">
-            <table class="table">
-              <tr>
-                <th>Clase</th>
-                <th>Hora</th>
-                <th>¿Está pagada?</th>
-                <th colspan="3"></th>
-              </tr>
-              <% @wedding.lessons.each do |lesson| %>
-              <tr>
-                <td><%= lesson.titulo %></td>
-                <td><%= lesson.start_time.strftime("%d/%m/%Y %H:%M") %></td>
-                <td>
-                  <% if lesson.pago == "pagado" %>
-                    <p>Sí, está pagada.</p>
-                  <% elsif lesson.pago == "parcial" %>
-                    <p>Está pagado el 50%. Debe pagarse el saldo.</p>
-                  <% elsif lesson.pago == "pendiente" %>
-                    <p>No está pagada.</p>
-                  <% end %>
-                </td>
-                <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
-                <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-warning", role: "button" %></td>
-                <td><%= link_to 'Borrar', lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
-              </tr>
+  <div class="card mb-3">
+    <div class="card-block">
+      <h4 class="card-title">Información sobre clases</h4>
+      <p class="card-text">Comentarios del pago: <%= @wedding.comentarios_pago %></li>
+      <div class="table-responsive">
+        <table class="table">
+          <tr>
+            <th>Clase</th>
+            <th>Hora</th>
+            <th>¿Está pagada?</th>
+            <th colspan="3"></th>
+          </tr>
+          <% @wedding.lessons.each do |lesson| %>
+          <tr>
+            <td><%= lesson.titulo %></td>
+            <td><%= lesson.start_time.strftime("%d/%m/%Y %H:%M") %></td>
+            <td>
+              <% if lesson.pago == "pagado" %>
+                <p>Sí, está pagada.</p>
+              <% elsif lesson.pago == "parcial" %>
+                <p>Está pagado el 50%. Debe pagarse el saldo.</p>
+              <% elsif lesson.pago == "pendiente" %>
+                <p>No está pagada.</p>
               <% end %>
-            </table>
-          </div>
-        </div>
+            </td>
+            <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
+            <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-warning", role: "button" %></td>
+            <td><%= link_to 'Borrar', lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
+          </tr>
+          <% end %>
+        </table>
       </div>
+    </div>
+  </div>
 </div>
 
 <button class="btn btn-outline-warning btn-md btn-block my-3" type="button" data-toggle="collapse" data-target="#colapsarInfo" aria-expanded="false" aria-controls="colapsarInfo">

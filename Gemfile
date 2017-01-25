@@ -49,6 +49,7 @@ gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierw
 gem 'fog-aws'
 # Soporte oEmbed usando jQuery
 gem 'jquery-oembed-rails'
+gem 'ruby-oembed'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
