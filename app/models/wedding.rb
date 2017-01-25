@@ -10,4 +10,8 @@ class Wedding < ApplicationRecord
 # Incluye buscador
   include PgSearch
   pg_search_scope :buscar, against: [:nombre1, :nombre2]
+  # Separador de código
+    def code
+      self.url_vals.split('/').last if self.url_vals
+    end
 end

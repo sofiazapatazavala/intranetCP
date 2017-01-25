@@ -67,9 +67,11 @@
     <div class="card-block">
       <p class="lead">Canción</p>
     </div>
-    <% if @youtube != nil %>
-      <%= @youtube.html.html_safe %>
-    <% end %>
+
+    <div class="embed-responsive embed-responsive-16by9">
+      <iframe class="embed-responsive-item" src="//www.youtube.com/embed/<%= @wedding.code %>" allowfullscreen></iframe>
+    </div>
+
     <%= audio_tag(@wedding.song, controls: true) %>
   </div>
 </div>
