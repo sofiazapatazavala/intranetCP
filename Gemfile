@@ -47,8 +47,7 @@ gem 'will_paginate-bootstrap'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierwave'
 # fog-aws para dejar los archivos subidos en S3
 gem 'fog-aws'
-# Soporte oEmbed usando jQuery
-gem 'jquery-oembed-rails'
+# Soporte oEmbed usando ruby-oembed (pendiente para Instagram)
 gem 'ruby-oembed'
 
 group :development, :test do
