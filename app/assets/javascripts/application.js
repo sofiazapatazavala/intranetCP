@@ -17,9 +17,3 @@
 //= require_tree .
 
 /* En caso de error en js, dejar tal como te lo piden */
-/* jQuery para videos compartidos EN EL FORMATO INDICADO (desde el computador), funciona en local al menos. */
-$(function(){
-  $('iframe.embed-responsive-item').each(function(){
-          this.src = this.src.replace('/watch?v=', '/embed/');
-      });
-});
