@@ -15,43 +15,34 @@
       <div class="col-sm-6">
         <p>Datos de la novia</p>
         <div class="field form-group">
-          <%# f.label :nombre1 %>
           <%= f.text_field :nombre1, class: 'form-control', placeholder: 'Nombre de la novia' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :telefono_novia, class: 'form-control', placeholder: 'Teléfono de la novia' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :email_novia, class: 'form-control', placeholder: 'E-mail de la novia' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :rut_novia, class: 'form-control', placeholder: 'RUT de la novia' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :instagram_novia, class: 'form-control', placeholder: 'Cuenta en Instagram de la novia (URL)', type: "url" %>
         </div>
       </div>
       <div class="col-sm-6">
         <p>Datos del novio</p>
         <div class="field form-group">
-          <%# f.label :nombre2 %>
           <%= f.text_field :nombre2, class: 'form-control', placeholder: 'Nombre del novio' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :telefono_novio, class: 'form-control', placeholder: 'Teléfono del novio' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
           <%= f.text_field :email_novio, class: 'form-control', placeholder: 'E-mail del novio' %>
         </div>
         <div class="field form-group">
-          <%# f.label :apellido1 %>
-          <%= f.text_field :rut_novia, class: 'form-control', placeholder: 'RUT del novio' %>
+          <%= f.text_field :rut_novio, class: 'form-control', placeholder: 'RUT del novio' %>
         </div>
       </div>
     </div>
@@ -73,7 +64,7 @@
 
     <div class="field form-group">
       <p>Fecha del Matrimonio:</p>
-      <%= f.date_select :fecha_matri, class: 'form-control' %>
+      <%= f.date_select :fecha_matri, class: 'custom-select' %>
     </div>
 
     <div class="field form-group origen">
@@ -108,7 +99,7 @@
         <div class="card-block">
           <p class="card-text">Link de YouTube:</p>
           <div class="field form-group">
-            <%= f.text_field :url_vals, class: 'form-control', placeholder: 'URL de YouTube ("www.youtube.com" o "youtu.be"):' %>
+            <%= f.text_field :url_vals, class: 'form-control', placeholder: 'URL de YouTube (formato: http://youtu.be/xxxxxxxxx):' %>
           </div>
         </div>
       </div>

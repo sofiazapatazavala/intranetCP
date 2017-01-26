@@ -15,10 +15,6 @@ class StudentsController < ApplicationController
   # GET /students/1
   # GET /students/1.json
   def show
-    cookies[:arch_nombre] = @student.nombre
-    cookies[:arch_email] = @student.email
-    cookies[:arch_tel] = @student.telefono
-    cookies[:arch_proc] = "Alumna"
   end
 
   # GET /students/new
@@ -79,6 +75,6 @@ class StudentsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def student_params
-      params.require(:student).permit(:nombre, :telefono, :email, :comoseenteraron, :descuento, :comentarios, :pago, :comentarios_pago)
+      params.require(:student).permit(:nombre, :telefono, :email, :email2, :comoseenteraron, :descuento, :comentarios, :pago, :comentarios_pago)
     end
 end

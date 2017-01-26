@@ -39,7 +39,6 @@
       <p class="lead"><%= mail_to @wedding.email_novia %></p>
       <p class="lead"><%= link_to @wedding.telefono_novia, "tel:#{@wedding.telefono_novia}" %></p>
       <p class="lead"><%= @wedding.rut_novia %></p>
-      <p class="lead"><%= @wedding.instagram_novia %></p>
       <p class="lead"><%= link_to "Instagram", @wedding.instagram_novia, class: "btn btn-sm btn-block btn-outline-success", role: "button" %>
     </div>
   </div>
@@ -99,10 +98,13 @@
             <td>
               <% if lesson.pago == "pagado" %>
                 <p>Sí, está pagada.</p>
+                <p class="lead"><small>Valor a pagar:</small> $<%= lesson.valor_clase %></p>
               <% elsif lesson.pago == "parcial" %>
                 <p>Está pagado el 50%. Debe pagarse el saldo.</p>
+                <p class="lead"><small>Valor a pagar:</small> $<%= lesson.valor_clase %></p>
               <% elsif lesson.pago == "pendiente" %>
                 <p>No está pagada.</p>
+                <p class="lead"><small>Valor a pagar:</small> $<%= lesson.valor_clase %></p>
               <% end %>
             </td>
             <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>

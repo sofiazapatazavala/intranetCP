@@ -17,10 +17,6 @@ class SpecialClassesController < ApplicationController
   # Cookies para construir la relación bloggable. Reemplazar id_blog y tipo_blog según corresponda.
     cookies[:id_blog] = @special_class.id
     cookies[:tipo_blog] = "SpecialClass"
-    cookies[:arch_nombre] = @special_class.nombre1
-    cookies[:arch_email] = @special_class.email
-    cookies[:arch_tel] = @special_class.telefono
-    cookies[:arch_proc] = "Clase particular"
   end
 
   # GET /special_classes/new
@@ -80,6 +76,6 @@ class SpecialClassesController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def special_class_params
-      params.require(:special_class).permit(:nombre1, :nombre2, :nombre3, :nombre4, :nombre5, :nombre6, :contacto, :email, :telefono, :comoseenteraron, :descuento, :comentarios, :comentarios_pago)
+      params.require(:special_class).permit(:nombre1, :nombre2, :nombre3, :nombre4, :nombre5, :nombre6, :contacto, :email, :email2, :telefono, :comoseenteraron, :descuento, :comentarios, :comentarios_pago)
     end
 end

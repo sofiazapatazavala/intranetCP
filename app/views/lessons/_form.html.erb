@@ -33,7 +33,11 @@
       </div>
       <div class="field form-group">
         <p>¿La clase está pagada?</p>
-        <%# f.text_field :pago, class: "form-control" %>
+        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
+          <div class="input-group-addon">$</div>
+          <%= f.text_field :valor_clase, placeholder: "Valor a pagar:", class: "form-control" %>
+        </div>
+        <hr>
         <%= f.radio_button :pago, "pagado" %>
         <%= label :pago_pagado, "Clase pagada" %>
         <%= f.radio_button :pago, "parcial" %>
@@ -43,7 +47,7 @@
       </div>
     </div>
 
-  <button class="btn btn-outline-success btn-md btn-block" type="button" data-toggle="collapse" data-target="#colapsarNotas" aria-expanded="false" aria-controls="colapsarNotas">
+  <button class="btn btn-outline-success btn-md btn-block my-2" type="button" data-toggle="collapse" data-target="#colapsarNotas" aria-expanded="false" aria-controls="colapsarNotas">
       Ingresa las notas de la clase
   </button>
   <div class="collapse" id="colapsarNotas">
@@ -64,6 +68,6 @@
   </div>
 
   <div class="actions">
-    <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary my-4' %>
+    <%= f.submit 'Registrar clase', :class => 'btn btn-block btn-primary my-2' %>
   </div>
 <% end %>
