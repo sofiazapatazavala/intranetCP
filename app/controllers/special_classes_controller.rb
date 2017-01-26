@@ -21,7 +21,7 @@ class SpecialClassesController < ApplicationController
 
   # GET /special_classes/new
   def new
-    @special_class = SpecialClass.new
+    @special_class = SpecialClass.new(nombre1: cookies[:arch_nombre], email: cookies[:arch_email], telefono: cookies[:arch_tel])
   end
 
   # GET /special_classes/1/edit
@@ -35,6 +35,9 @@ class SpecialClassesController < ApplicationController
 
     respond_to do |format|
       if @special_class.save
+        cookies.delete(:arch_nombre)
+        cookies.delete(:arch_email)
+        cookies.delete(:arch_tel)
         format.html { redirect_to @special_class, notice: 'Special class was successfully created.' }
         format.json { render :show, status: :created, location: @special_class }
       else

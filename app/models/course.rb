@@ -1,5 +1,5 @@
 class Course < ApplicationRecord
-  has_many :students
+  has_many :students, , dependent: :destroy
 # Incluye buscador
   include PgSearch
   pg_search_scope :buscar, against: [:nombre]

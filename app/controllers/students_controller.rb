@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new
+    @student = Student.new(nombre1: cookies[:arch_nombre], email: cookies[:arch_email], telefono: cookies[:arch_tel])
   end
 
   # GET /students/1/edit
@@ -34,6 +34,9 @@ class StudentsController < ApplicationController
 
     respond_to do |format|
       if @student.save
+        cookies.delete(:arch_nombre)
+        cookies.delete(:arch_email)
+        cookies.delete(:arch_tel)
         format.html { redirect_to @student, notice: 'Student was successfully created.' }
         format.json { render :show, status: :created, location: @student }
       else

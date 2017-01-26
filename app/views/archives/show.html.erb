@@ -2,6 +2,13 @@
   <div class="col-md-8 col-lg-9 col-xl-10 mb-3 mb-md-0">
     <h3 class="p-2 p-parejas text-white">🙋🏻 Persona interesada:</h3>
     <p class="lead"><%= @archive.nombre %></p>
+      <% if @archive.procedencia == "Matrimonio" %>
+        <%= link_to 'Inscribir en matrimonio', new_wedding_path, class: "btn btn-block btn-lg btn-primary", role: "button" %>
+      <% elsif @archive.procedencia == "Clase particular" %>
+        <%= link_to 'Inscribir en clase particular', new_special_class_path, class: "btn btn-block btn-lg btn-primary", role: "button" %>
+      <% elsif @archive.procedencia == "Curso" %>
+        <%= link_to 'Ver lista de cursos e inscribir', courses_path, class: "btn btn-block btn-lg btn-primary", role: "button" %>
+      <% end %>
     <%# Agregar una acción diferenciada según el interés demostrado %>
   </div>
   <div class="col-md-4 col-lg-3 col-xl-2">

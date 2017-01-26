@@ -27,12 +27,16 @@
   </div>
 
   <div class="field form-group">
-    <% f.label :procedencia %>
-    <%= f.text_field :procedencia, class: "form-control", placeholder: "¿De dónde vienen sus datos? e.g. Interesada en clases particulares" %>
+    <p>¿Cuál es el interés de la persona?</p>
+    <%= f.radio_button :procedencia, "Matrimonio" %>
+    <%= label :procedencia_matrimonio, "Matrimonio" %>
+    <%= f.radio_button :procedencia, "Clase particular" %>
+    <%= label :procedencia_particular, "Clase particular" %>
+    <%= f.radio_button :procedencia, "Curso" %>
+    <%= label :procedencia_curso, "Curso" %>
   </div>
 
   <div class="field form-group">
-    <%# f.label :comentarios %>
     <%= f.text_area :comentarios, class: "form-control", placeholder: "Comentarios:" %>
   </div>
 

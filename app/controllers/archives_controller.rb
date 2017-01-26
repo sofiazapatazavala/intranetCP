@@ -28,7 +28,7 @@ class ArchivesController < ApplicationController
 
   # GET /archives/new
   def new
-    @archive = Archive.new(nombre: cookies[:arch_nombre], email: cookies[:arch_email], telefono: cookies[:arch_tel], procedencia: cookies[:arch_proc])
+    @archive = Archive.new
   end
 
   # GET /archives/1/edit
@@ -42,6 +42,9 @@ class ArchivesController < ApplicationController
 
     respond_to do |format|
       if @archive.save
+        cookies.delete(:arch_nombre)
+        cookies.delete(:arch_email)
+        cookies.delete(:arch_tel)
         format.html { redirect_to @archive, notice: 'Archive was successfully created.' }
         format.json { render :show, status: :created, location: @archive }
       else
