@@ -32,7 +32,7 @@ class CouplesController < ApplicationController
 
     respond_to do |format|
       if @couple.save
-        format.html { redirect_to @couple, notice: 'Couple was successfully created.' }
+        format.html { redirect_to @couple, notice: 'Se creó el baile en pareja.' }
         format.json { render :show, status: :created, location: @couple }
       else
         format.html { render :new }
@@ -46,7 +46,7 @@ class CouplesController < ApplicationController
   def update
     respond_to do |format|
       if @couple.update(couple_params)
-        format.html { redirect_to @couple, notice: 'Couple was successfully updated.' }
+        format.html { redirect_to @couple, notice: 'Se actualizó el baile en pareja.' }
         format.json { render :show, status: :ok, location: @couple }
       else
         format.html { render :edit }
@@ -60,7 +60,7 @@ class CouplesController < ApplicationController
   def destroy
     @couple.destroy
     respond_to do |format|
-      format.html { redirect_to couples_url, notice: 'Couple was successfully destroyed.' }
+      format.html { redirect_to couples_url, notice: 'Se borró el baile en pareja.' }
       format.json { head :no_content }
     end
   end

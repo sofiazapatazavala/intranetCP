@@ -19,7 +19,7 @@ class StudentsController < ApplicationController
 
   # GET /students/new
   def new
-    @student = Student.new(nombre1: cookies[:arch_nombre], email: cookies[:arch_email], telefono: cookies[:arch_tel])
+    @student = Student.new(nombre: cookies[:arch_nombre], email: cookies[:arch_email], telefono: cookies[:arch_tel])
   end
 
   # GET /students/1/edit
@@ -37,7 +37,7 @@ class StudentsController < ApplicationController
         cookies.delete(:arch_nombre)
         cookies.delete(:arch_email)
         cookies.delete(:arch_tel)
-        format.html { redirect_to @student, notice: 'Student was successfully created.' }
+        format.html { redirect_to @student, notice: 'Se creó el registro de alumna satisfactoriamente.' }
         format.json { render :show, status: :created, location: @student }
       else
         format.html { render :new }
@@ -51,7 +51,7 @@ class StudentsController < ApplicationController
   def update
     respond_to do |format|
       if @student.update(student_params)
-        format.html { redirect_to @student, notice: 'Student was successfully updated.' }
+        format.html { redirect_to @student, notice: 'Se actualizó el registro de alumna satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @student }
       else
         format.html { render :edit }
@@ -65,7 +65,7 @@ class StudentsController < ApplicationController
   def destroy
     @student.destroy
     respond_to do |format|
-      format.html { redirect_to students_url, notice: 'Student was successfully destroyed.' }
+      format.html { redirect_to students_url, notice: 'Se borró el registro de alumna satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

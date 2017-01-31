@@ -13,7 +13,7 @@ class LessonsController < ApplicationController
     @meetings = Lesson.all
   end
 
-  # Para bloquear horario construiré un formulario nuevo
+  # Formulario nuevo para bloquear horario
   def bloquear
     @lesson = Lesson.new(titulo: "Horario bloqueado")
     @meetings = Lesson.all
@@ -41,7 +41,7 @@ class LessonsController < ApplicationController
 
     respond_to do |format|
       if @lesson.save
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully created.' }
+        format.html { redirect_to @lesson, notice: 'Se creó la clase satisfactoriamente.' }
         format.json { render :show, status: :created, location: @lesson }
       else
         format.html { render :new }
@@ -55,7 +55,7 @@ class LessonsController < ApplicationController
   def update
     respond_to do |format|
       if @lesson.update(lesson_params)
-        format.html { redirect_to @lesson, notice: 'Lesson was successfully updated.' }
+        format.html { redirect_to @lesson, notice: 'Se actualizó la clase satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @lesson }
       else
         format.html { render :edit }
@@ -69,7 +69,7 @@ class LessonsController < ApplicationController
   def destroy
     @lesson.destroy
     respond_to do |format|
-      format.html { redirect_to lessons_url, notice: 'Lesson was successfully destroyed.' }
+      format.html { redirect_to lessons_url, notice: 'Se borró la clase satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

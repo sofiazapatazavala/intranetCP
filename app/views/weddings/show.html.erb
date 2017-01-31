@@ -35,7 +35,6 @@
     <div class="card-block">
       <p>Novia:</p>
       <p class="lead"><%= @wedding.nombre1 %></p>
-      <%# Mostrar link al teléfono y mail de novia, novio y contacto %>
       <p class="lead"><%= mail_to @wedding.email_novia %></p>
       <p class="lead"><%= link_to @wedding.telefono_novia, "tel:#{@wedding.telefono_novia}" %></p>
       <p class="lead"><%= @wedding.rut_novia %></p>
@@ -51,6 +50,7 @@
       <p class="lead"><%= @wedding.nombre2 %></p>
       <p class="lead"><%= mail_to @wedding.email_novio %></p>
       <p class="lead"><%= link_to @wedding.telefono_novio, "tel:#{@wedding.telefono_novio}" %></p>
+      <p class="lead"><%= @wedding.rut_novio %></p>
     </div>
   </div>
 </div>

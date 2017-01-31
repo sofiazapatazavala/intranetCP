@@ -38,7 +38,7 @@ class SpecialClassesController < ApplicationController
         cookies.delete(:arch_nombre)
         cookies.delete(:arch_email)
         cookies.delete(:arch_tel)
-        format.html { redirect_to @special_class, notice: 'Special class was successfully created.' }
+        format.html { redirect_to @special_class, notice: 'Se creó la clase particular satisfactoriamente.' }
         format.json { render :show, status: :created, location: @special_class }
       else
         format.html { render :new }
@@ -52,7 +52,7 @@ class SpecialClassesController < ApplicationController
   def update
     respond_to do |format|
       if @special_class.update(special_class_params)
-        format.html { redirect_to @special_class, notice: 'Special class was successfully updated.' }
+        format.html { redirect_to @special_class, notice: 'Se actualizó la clase particular satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @special_class }
       else
         format.html { render :edit }
@@ -66,7 +66,7 @@ class SpecialClassesController < ApplicationController
   def destroy
     @special_class.destroy
     respond_to do |format|
-      format.html { redirect_to special_classes_url, notice: 'Special class was successfully destroyed.' }
+      format.html { redirect_to special_classes_url, notice: 'Se borró la clase particular satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

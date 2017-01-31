@@ -21,9 +21,9 @@ class ArchivesController < ApplicationController
   # GET /archives/1
   # GET /archives/1.json
   def show
-    cookies[:arch_nombre] = @archive.nombre
-    cookies[:arch_email] = @archive.email
-    cookies[:arch_tel] = @archive.telefono
+    cookies[:arch_nombre] = { value: @archive.nombre, expires: 10.minutes.from_now }
+    cookies[:arch_email] = { value: @archive.email, expires: 10.minutes.from_now }
+    cookies[:arch_tel] = { value: @archive.telefono, expires: 10.minutes.from_now }
   end
 
   # GET /archives/new
@@ -45,7 +45,7 @@ class ArchivesController < ApplicationController
         cookies.delete(:arch_nombre)
         cookies.delete(:arch_email)
         cookies.delete(:arch_tel)
-        format.html { redirect_to @archive, notice: 'Archive was successfully created.' }
+        format.html { redirect_to @archive, notice: 'Se creó el registro satisfactoriamente.' }
         format.json { render :show, status: :created, location: @archive }
       else
         format.html { render :new }
@@ -59,7 +59,7 @@ class ArchivesController < ApplicationController
   def update
     respond_to do |format|
       if @archive.update(archive_params)
-        format.html { redirect_to @archive, notice: 'Archive was successfully updated.' }
+        format.html { redirect_to @archive, notice: 'Se actualizó el registro satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @archive }
       else
         format.html { render :edit }
@@ -73,7 +73,7 @@ class ArchivesController < ApplicationController
   def destroy
     @archive.destroy
     respond_to do |format|
-      format.html { redirect_to archives_url, notice: 'Archive was successfully destroyed.' }
+      format.html { redirect_to archives_url, notice: 'Se borró el registro satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

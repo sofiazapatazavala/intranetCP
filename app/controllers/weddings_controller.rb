@@ -53,7 +53,7 @@ class WeddingsController < ApplicationController
         cookies.delete(:arch_nombre)
         cookies.delete(:arch_email)
         cookies.delete(:arch_tel)
-        format.html { redirect_to @wedding, notice: 'Wedding was successfully created.' }
+        format.html { redirect_to @wedding, notice: 'Se creó el matrimonio satisfactoriamente.' }
         format.json { render :show, status: :created, location: @wedding }
       else
         format.html { render :new }
@@ -67,7 +67,7 @@ class WeddingsController < ApplicationController
   def update
     respond_to do |format|
       if @wedding.update(wedding_params)
-        format.html { redirect_to @wedding, notice: 'Wedding was successfully updated.' }
+        format.html { redirect_to @wedding, notice: 'Se actualizó el matrimonio satisfactoriamente.' }
         format.json { render :show, status: :ok, location: @wedding }
       else
         format.html { render :edit }
@@ -81,7 +81,7 @@ class WeddingsController < ApplicationController
   def destroy
     @wedding.destroy
     respond_to do |format|
-      format.html { redirect_to weddings_url, notice: 'Wedding was successfully destroyed.' }
+      format.html { redirect_to weddings_url, notice: 'Se borró el matrimonio satisfactoriamente.' }
       format.json { head :no_content }
     end
   end

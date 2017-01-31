@@ -3,5 +3,7 @@
 
 <%= render 'form', lesson: @lesson %>
 
-<%= link_to 'Show', @lesson %> |
-<%= link_to 'Back', lessons_path %>
+<div class="btn-group mb-3" role="group" aria-label="Otras acciones:">
+  <%= link_to 'Mostrar clase', @lesson, class: "btn btn-secondary", role: "button" %>
+  <%= link_to 'Volver', lessons_path, class: "btn btn-secondary", role: "button" %>
+</div>
