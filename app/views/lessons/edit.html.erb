@@ -5,5 +5,12 @@
 
 <div class="btn-group mb-3" role="group" aria-label="Otras acciones:">
   <%= link_to 'Mostrar clase', @lesson, class: "btn btn-secondary", role: "button" %>
+  <% if @lesson.bloggable_type == "Wedding" %>
+    <%= link_to 'Mostrar matrimonio', wedding_path(@lesson.bloggable.id), class: "btn btn-secondary", role: "button" %>
+  <% elsif @lesson.bloggable_type == "Couple" %>
+    <%= link_to 'Mostrar baile en pareja', couple_path(@lesson.bloggable.id), class: "btn btn-secondary", role: "button" %>
+  <% elsif @lesson.bloggable_type == "SpecialClass" %>
+    <%= link_to 'Mostrar clase particular', special_class_path(@lesson.bloggable.id), class: "btn btn-secondary", role: "button" %>
+  <% end %>
   <%= link_to 'Volver', lessons_path, class: "btn btn-secondary", role: "button" %>
 </div>
