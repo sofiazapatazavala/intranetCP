@@ -57,9 +57,9 @@
           <td><%= student.nombre %></td>
           <td><%= student.email %></td>
           <td></td>
-          <td><%= link_to "Ver", lesson, class: "btn btn-block btn-info", role: "button" %></td>
-          <td><%= link_to "Editar", edit_lesson_path(lesson), class: "btn btn-block btn-primary", role: "button" %></td>
-          <td><%= link_to 'Borrar', lesson, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
+          <td><%= link_to "Ver", student, class: "btn btn-block btn-info", role: "button" %></td>
+          <td><%= link_to "Editar", edit_student_path(student), class: "btn btn-block btn-primary", role: "button" %></td>
+          <td><%= link_to 'Borrar', student, class: "btn btn-block btn-danger", method: :delete, data: { confirm: '¿Segura?' } %></td>
         </tr>
         <% end %>
       </table>
