@@ -22,18 +22,25 @@
 
   <body>
     <div class="container">
+      <% if user_signed_in? && current_user.admin? %>
+      <div class="alert alert-warning alert-dismissible fade show" role="alert">
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+        ⚠ <strong>HOLA, ADMIN.</strong> Recuerda que tienes todos los permisos sobre todos los usuarios. ⚠
+      </div>
+      <% end %>
       <% if user_signed_in? %>
       <div class="row">
         <div class="col-12">
           <div class="collapse" id="navbarSuperior">
             <div class="text-muted p-1">
               <div class="row">
-                <div class="col-md-8">
-                  <%= link_to 'Inicio', root_path, class: "btn btn-lg btn-secondary", role: "button" %>
-                  <%= link_to 'Bloquear horario', bloquearhorario_path, class: "btn btn-lg btn-outline-primary", role: "button" %>
-                </div>
-                <div class="col-md-4">
-                  <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-block btn-lg btn-outline-danger", role: "button" %>
+                <div class="col">
+                  <%= link_to 'Inicio', root_path, class: "btn btn-block btn-primary", role: "button" %>
+                  <%= link_to 'Bloquear horario', bloquearhorario_path, class: "btn btn-block btn-secondary", role: "button" %>
+                  <%= link_to 'Editar usuario', edit_user_registration_path, class: "btn btn-block btn-outline-warning", role: "button" %>
+                  <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-block btn-outline-danger", role: "button" %>
                 </div>
               </div>
             </div>
@@ -44,7 +51,20 @@
       <div class="row">
         <div class="col-12">
           <div class="nav-CP-logo mb-3">
-            <a role="button" data-toggle="collapse" data-target="#navbarSuperior" aria-controls="navbarSuperior" aria-expanded="false" aria-label="Ver más navigation"><%= image_tag 'logoCP-head.png', :class => "img-fluid d-block mx-auto" %></a>
+            <div class="row justify-content-end">
+              <% if user_signed_in? %>
+              <div class="col-8">
+              <% else %>
+              <div class="col-12">
+              <% end %>
+                <a href="/"><%= image_tag 'logoCP-head.png', :class => "img-fluid d-block mx-auto" %></a>
+              </div>
+              <% if user_signed_in? %>
+              <div class="col-2">
+                <a role="button" data-toggle="collapse" data-target="#navbarSuperior" aria-controls="navbarSuperior" aria-expanded="false" aria-label="Ver más navigation"><h3 class="text-center emoji-icon my-3 my-md-2 my-lg-1">⚙️</h3></a>
+              </div>
+              <% end %>
+            </div>
           </div>
         </div>
       </div>
