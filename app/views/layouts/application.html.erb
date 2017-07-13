@@ -38,7 +38,9 @@
               <div class="row">
                 <div class="col">
                   <%= link_to 'Inicio', root_path, class: "btn btn-block btn-primary", role: "button" %>
+                  <% if can? :manage, :all %>
                   <%= link_to 'Bloquear horario', bloquearhorario_path, class: "btn btn-block btn-secondary", role: "button" %>
+                  <% end %>
                   <%= link_to 'Editar usuario', edit_user_registration_path, class: "btn btn-block btn-outline-warning", role: "button" %>
                   <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-block btn-outline-danger", role: "button" %>
                 </div>
@@ -70,6 +72,7 @@
       </div>
       <div class="row">
         <div class="col-12">
+          <%# Tarea pendiente: integrar con Bootstrap. %>
           <%= notice %>
           <%= alert %>
         </div>
@@ -84,6 +87,7 @@
     <nav class="navbar fixed-bottom navbar-light bg-faded nav-CP">
       <div class="container">
       <div class="row">
+        <% if can? :manage, :all %>
         <div class="col">
           <%= link_to '👰', weddings_path %>
         </div>
@@ -99,6 +103,11 @@
         <div class="col">
           <%= link_to '💃', special_classes_path %>
         </div>
+        <% else %>
+        <div class="col">
+          <p>Estamos trabajando para que puedas ver tus progresos.</p>
+        </div>
+        <% end %>
       </div>
       </div>
     </nav>

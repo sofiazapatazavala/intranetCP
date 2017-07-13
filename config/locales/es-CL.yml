@@ -189,3 +189,6 @@ es-CL:
   simple_calendar:
     previous: "Anterior"
     next: "Siguiente"
+  unauthorized:
+    manage:
+      all: "No tienes acceso a esta página."

@@ -1,6 +1,7 @@
 class SpecialClass < ApplicationRecord
-# Relación para las clases
+# Relaciones con usuarios y con clases
   has_many :lessons, as: :bloggable, dependent: :destroy
+  belongs_to :user
 # Incluye buscador
   include PgSearch
 # Usaremos scopes
