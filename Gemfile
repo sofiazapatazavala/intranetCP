@@ -39,7 +39,7 @@ gem 'cancancan', '~> 1.10'
 gem 'mailchimp-api', require: 'mailchimp'
 # Bootstrap para el diseño base
 gem 'sprockets-rails'
-gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 # Simple Calendar para el calendario de clases
 gem "simple_calendar", "~> 2.0"
 # Búsqueda en la DB

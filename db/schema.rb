@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170713152535) do
+ActiveRecord::Schema.define(version: 20170725195459) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -37,8 +37,8 @@ ActiveRecord::Schema.define(version: 20170713152535) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.text "comentarios_pago"
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_couples_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_couples_on_user_id"
   end
 
   create_table "courses", id: :serial, force: :cascade do |t|
@@ -93,8 +93,8 @@ ActiveRecord::Schema.define(version: 20170713152535) do
     t.datetime "updated_at", null: false
     t.text "comentarios_pago"
     t.string "email2"
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_special_classes_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_special_classes_on_user_id"
   end
 
   create_table "students", id: :serial, force: :cascade do |t|
@@ -155,8 +155,8 @@ ActiveRecord::Schema.define(version: 20170713152535) do
     t.text "comentarios_pago"
     t.string "song"
     t.string "avatar"
-    t.bigint "users_id"
-    t.index ["users_id"], name: "index_weddings_on_users_id"
+    t.bigint "user_id"
+    t.index ["user_id"], name: "index_weddings_on_user_id"
   end
 
 end

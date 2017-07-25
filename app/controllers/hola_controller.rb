@@ -7,8 +7,8 @@ class HolaController < ApplicationController
   # @hola = PgSearch.multisearch( params[:q] ).paginate( :page => params[:page] )
     @matrimonios = Wedding.count
     @clasesparticulares = SpecialClass.count
-    @cursos = Course.count
-    @alumnas = Student.count
+#   @cursos = Course.count
+#   @alumnas = Student.count
     @clases = Lesson.count
   end
 

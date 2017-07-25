@@ -10,15 +10,7 @@ class UsersController < ApplicationController
   # GET /users/1
   # GET /users/1.json
   def show
-  end
-
-  # Métodos para crear nuevos clientes (usuarios que no son admin) estando una con la sesión iniciada?
-  # GET /nuevo_usuario
-  def new_client
-  end
-
-  # POST /nuevo_usuario
-  def create_client
+    cookies[:uidfu] = { value: @user.id, expires: 10.minutes.from_now }
   end
 
   private
