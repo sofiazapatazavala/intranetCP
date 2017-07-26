@@ -1,43 +1,62 @@
-<h2>Edit <%= resource_name.to_s.humanize %></h2>
+<h2>Editar <%= resource_name.to_s.humanize %></h2>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name), html: { method: :put }) do |f| %>
   <%= devise_error_messages! %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true %>
+    <%= f.email_field :email, autofocus: true, class: "form-control" %>
   </div>
 
   <% if devise_mapping.confirmable? && resource.pending_reconfirmation? %>
     <div>Currently waiting confirmation for: <%= resource.unconfirmed_email %></div>
   <% end %>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password %> <i>(leave blank if you don't want to change it)</i><br />
-    <%= f.password_field :password, autocomplete: "off" %>
+    <%= f.password_field :password, autocomplete: "off", class: "form-control" %>
     <% if @minimum_password_length %>
       <br />
       <em><%= @minimum_password_length %> characters minimum</em>
     <% end %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "off" %>
+    <%= f.password_field :password_confirmation, autocomplete: "off", class: "form-control" %>
   </div>
 
-  <div class="field">
+  <div class="field form-group">
     <%= f.label :current_password %> <i>(we need your current password to confirm your changes)</i><br />
-    <%= f.password_field :current_password, autocomplete: "off" %>
+    <%= f.password_field :current_password, autocomplete: "off", class: "form-control" %>
   </div>
+
+  <div class="field form-group">
+    <%= f.label :name %><br />
+    <%= f.text_field :name, class: "form-control" %>
+  </div>
+
+  <div class="field form-group">
+    <% if current_user.admin? %>
+      HOLI
+    <% end %>
+  </div>
+
 
   <div class="actions">
-    <%= f.submit "Update" %>
+    <%= f.submit "Actualizar", class: "btn btn-block btn-primary btn-lg" %>
   </div>
 <% end %>
 
-<h3>Cancel my account</h3>
+<div class="card my-5">
+  <div class="card-header card-outline-danger">
+    <h4 class="text-danger">Cerrar cuenta</h4>
+  </div>
+  <div class="card-body">
+    <p>Si quieres cerrar esta cuenta, haz click aquí: <%= button_to "Cerrar cuenta", registration_path(resource_name), data: { confirm: "¿De verdad quieres hacerlo?" }, method: :delete, class: "btn btn-block btn-danger" %></p>
+  </div>
+</div>
 
-<p>Unhappy? <%= button_to "Cancel my account", registration_path(resource_name), data: { confirm: "Are you sure?" }, method: :delete %></p>
 
-<%= link_to "Back", :back %>
+
+<%= link_to "Volver", :back, class: "btn btn-secondary btn-block mb-3", role: "button" %>

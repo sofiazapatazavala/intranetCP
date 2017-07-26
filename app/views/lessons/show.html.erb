@@ -17,7 +17,7 @@
   </div>
   <div class="col-md-4 col-lg-3 col-xl-2">
     <div class="card">
-      <div class="card-block">
+      <div class="card-body">
         <h5 class="card-subtitle text-center hidden-md-up">Acciones:</h5>
         <div class="d-flex justify-content-center">
           <div class="btn-group-vertical" role="group" aria-label="Acciones para esta clase">
@@ -46,7 +46,7 @@
 <div class="row mb-3">
   <div class="col-sm-6">
     <div class="card">
-      <div class="card-block">
+      <div class="card-body">
         <p>Inicio:</p>
         <p class="lead"><%= @lesson.start_time.strftime("%d/%m/%Y %H:%M") %></p>
       </div>
@@ -54,7 +54,7 @@
   </div>
   <div class="col-sm-6">
     <div class="card">
-      <div class="card-block">
+      <div class="card-body">
         <p>Término:</p>
         <p class="lead"><%= @lesson.end_time.strftime("%d/%m/%Y %H:%M") %></p>
       </div>
@@ -65,13 +65,13 @@
   <div class="col-12">
     <div class="card-group">
       <div class="card mb-3">
-        <div class="card-block">
+        <div class="card-body">
           <h4 class="card-title"><%= @lesson.titulo %></h4>
           <%= @lesson.notas %>
         </div>
       </div>
       <div class="card mb-3">
-        <div class="card-block">
+        <div class="card-body">
           <p class="lead card-title">Videos de la clase</p>
           <% @lesson.videos.each do |video| %>
           <div class="embed-responsive embed-responsive-16by9 mb-2">

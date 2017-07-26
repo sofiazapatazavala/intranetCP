@@ -11,10 +11,10 @@
     </div>
   <% end %>
 
-    <div class="card card-block">
-      <%= f.text_field :bloggable_type, class: "hidden-xs-up" %>
-      <%= f.text_field :bloggable_id, class: "hidden-xs-up" %>
-      <div class="hidden-xs-up">
+    <div class="card card-body">
+      <%= f.text_field :bloggable_type, class: "d-none" %>
+      <%= f.text_field :bloggable_id, class: "d-none" %>
+      <div class="d-none">
         <%= f.date_select :fecha %>
       </div>
       <div class="row">
@@ -51,7 +51,7 @@
       Ingresa las notas de la clase
   </button>
   <div class="collapse" id="colapsarNotas">
-    <div class="card card-block">
+    <div class="card card-body">
       <div class="field form-group">
         <%= f.label :titulo %>
         <%= f.text_field :titulo, class: "form-control" %>

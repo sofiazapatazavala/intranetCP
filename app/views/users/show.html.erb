@@ -1,0 +1,32 @@
+<div class="row">
+  <div class="col py-3">
+    <h3>Ficha de Usuario</h3>
+  </div>
+</div>
+<div class="row">
+  <div class="col-md-6">
+    <ul class="list-group mb-3">
+      <li class="list-group-item">Nombre: <%= @user.name %></li>
+      <li class="list-group-item">Email: <%= @user.email %></li>
+    </ul>
+  </div>
+  <div class="col-md-6">
+    <div class="card">
+      <div class="card-body">
+        <h4>Inscribir:</h4>
+        <%= link_to 'Matrimonio', new_wedding_path, class: "btn btn-block btn-primary", role: "button"  %>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="row">
+  <div class="col">
+    <h5>Matrimonios</h5>
+    <% @user.weddings.each do |wedding| %>
+    <div class="list-group-item flex-column align-items-start">
+      <h5><%= link_to "Matrimonio", wedding %></h5>
+      <p>Fecha: <strong><%= l wedding.fecha_matri %></strong></p>
+    </div>
+    <% end %>
+  </div>
+</div>

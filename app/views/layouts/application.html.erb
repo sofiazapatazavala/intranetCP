@@ -22,36 +22,47 @@
 
   <body>
     <div class="container">
-      <% if user_signed_in? %>
       <div class="row">
-        <div class="col-12">
-          <div class="collapse" id="navbarSuperior">
-            <div class="text-muted p-1">
-              <div class="row">
-                <div class="col-md-8">
-                  <%= link_to 'Inicio', root_path, class: "btn btn-lg btn-secondary", role: "button" %>
-                  <%= link_to 'Bloquear horario', bloquearhorario_path, class: "btn btn-lg btn-outline-primary", role: "button" %>
-                </div>
-                <div class="col-md-4">
-                  <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "btn btn-block btn-lg btn-outline-danger", role: "button" %>
-                </div>
-              </div>
+        <div class="col">
+          <nav class="navbar navbar-expand-md navbar-light bg-light bg-faded">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarCP2" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="navbar-brand" href="<%= root_path %>">
+              <%= image_tag 'logoCP-head.png', :width => 30, :height => 30, :class => "d-inline-block align-top" %>
+              Constanza Prieto
+            </a>
+            <% if user_signed_in? %>
+            <div class="collapse navbar-collapse" id="navbarCP2">
+              <ul class="navbar-nav ml-auto">
+                <% if current_user.admin? %>
+                <li class="nav-item"><%= link_to '👰', weddings_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to '🏫', courses_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to '📆', agenda_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to '🙋', archives_path, class: "nav-link" %></li>
+                <li class="nav-item"><%= link_to '💃', special_classes_path, class: "nav-link" %></li>
+                <% end %>
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    ⚙️
+                  </a>
+                  <div class="dropdown-menu dropdown-menu-right" aria-labelledby="navbarDropdownMenuLink">
+                    <%= link_to 'Portada', root_path, class: "dropdown-item" %>
+                      <%= link_to 'Editar perfil', edit_user_registration_path, class: "dropdown-item", role: "button" %>
+                      <%= link_to 'Cerrar Sesión', destroy_user_session_path, method: :delete, class: "dropdown-item", role: "button" %>
+                  </div>
+                </li>
+              </ul>
             </div>
-          </div>
-        </div>
-      </div>
-      <% end %>
-      <div class="row">
-        <div class="col-12">
-          <div class="nav-CP-logo mb-3">
-            <a role="button" data-toggle="collapse" data-target="#navbarSuperior" aria-controls="navbarSuperior" aria-expanded="false" aria-label="Ver más navigation"><%= image_tag 'logoCP-head.png', :class => "img-fluid d-block mx-auto" %></a>
-          </div>
+            <% end %>
+          </nav>
         </div>
       </div>
       <div class="row">
         <div class="col-12">
-          <%= notice %>
-          <%= alert %>
+            <%# Tarea pendiente: integrar con Bootstrap. %>
+            <%= notice %>
+            <%= alert %>
         </div>
       </div>
       <div class="row">
@@ -59,29 +70,6 @@
           <%= yield %>
         </div>
       </div>
-    </div>
-    <% if user_signed_in? %>
-    <nav class="navbar fixed-bottom navbar-light bg-faded nav-CP">
-      <div class="container">
-      <div class="row">
-        <div class="col">
-          <%= link_to '👰', weddings_path %>
-        </div>
-        <div class="col">
-          <%= link_to '🏫', courses_path %>
-        </div>
-        <div class="col">
-          <%= link_to '📆', agenda_path %>
-        </div>
-        <div class="col">
-          <%= link_to '🙋', archives_path %>
-        </div>
-        <div class="col">
-          <%= link_to '💃', special_classes_path %>
-        </div>
-      </div>
-      </div>
-    </nav>
-    <% end %>
+    </div><%# /.container %>
   </body>
 </html>

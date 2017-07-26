@@ -1,6 +1,8 @@
 class LessonsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_lesson, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
+  skip_authorize_resource :agenda, :only => :read
 
   # GET /lessons
   # GET /lessons.json

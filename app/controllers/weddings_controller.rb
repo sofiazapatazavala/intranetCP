@@ -1,6 +1,7 @@
 class WeddingsController < ApplicationController
   before_action :authenticate_user!
   before_action :set_wedding, only: [:show, :edit, :update, :destroy]
+  load_and_authorize_resource
 
   # GET /weddings
   # GET /weddings.json
@@ -38,7 +39,7 @@ class WeddingsController < ApplicationController
 
   # GET /weddings/new
   def new
-    @wedding = Wedding.new(nombre1: cookies[:arch_nombre], email_novia: cookies[:arch_email], telefono_novia: cookies[:arch_tel])
+    @wedding = Wedding.new(user_id: cookies[:uidfu], nombre1: cookies[:arch_nombre], email_novia: cookies[:arch_email], telefono_novia: cookies[:arch_tel])
   end
 
   # GET /weddings/1/edit
@@ -52,6 +53,7 @@ class WeddingsController < ApplicationController
 
     respond_to do |format|
       if @wedding.save
+        cookies.delete(:uidfu)
         cookies.delete(:arch_nombre)
         cookies.delete(:arch_email)
         cookies.delete(:arch_tel)
@@ -96,6 +98,6 @@ class WeddingsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def wedding_params
-      params.require(:wedding).permit(:nombre1, :nombre2, :fecha_matri, :origen, :url_vals, :comentarios, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia, :maspersonas, :contacto, :comentarios_pago, :song, :avatar)
+      params.require(:wedding).permit(:nombre1, :nombre2, :fecha_matri, :origen, :url_vals, :comentarios, :telefono_novia, :telefono_novio, :email_novia, :email_novio, :tipo_descuento, :floordesign, :rut_novia, :rut_novio, :instagram_novia, :maspersonas, :contacto, :comentarios_pago, :song, :avatar, :user_id)
     end
 end

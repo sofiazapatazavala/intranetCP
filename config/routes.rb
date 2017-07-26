@@ -52,6 +52,7 @@ end
 
   devise_for :users, controllers: { registrations: "registrations"}
 
+  resources :users, only: [:index, :show]
   get 'hola/index'
   get 'hola/portada'
   get 'agenda' => 'lessons#agenda'

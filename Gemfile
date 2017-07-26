@@ -2,7 +2,7 @@ source 'https://rubygems.org'
 ruby RUBY_VERSION
 
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
-gem 'rails', '~> 5.0.0'
+gem 'rails', '~> 5.1.1'
 # Use postgres as the database for Active Record
 gem 'pg'
 gem 'rails_12factor', group: :production
@@ -33,9 +33,13 @@ gem 'jbuilder', '~> 2.5'
 
 # Devise para controlar las sesiones
 gem 'devise'
+# Cancancan para los permisos
+gem 'cancancan', '~> 1.10'
+# Gema que ve el ingreso de correos a Mailchimp
+gem 'mailchimp-api', require: 'mailchimp'
 # Bootstrap para el diseño base
 gem 'sprockets-rails'
-gem 'bootstrap', '~> 4.0.0.alpha5'
+gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
 # Simple Calendar para el calendario de clases
 gem "simple_calendar", "~> 2.0"
 # Búsqueda en la DB

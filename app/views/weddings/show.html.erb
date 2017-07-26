@@ -6,7 +6,7 @@
   </div>
   <div class="col-md-4 col-lg-3 col-xl-2">
     <div class="card">
-      <div class="card-block">
+      <div class="card-body">
         <h5 class="card-subtitle text-center hidden-md-up">Acciones:</h5>
         <div class="d-flex justify-content-center">
           <div class="btn-group-vertical" role="group" aria-label="Acciones para esta clase">
@@ -24,7 +24,7 @@
 <p id="notice"><%= notice %></p>
 
 <div class="card card-inverse card-info mb-3">
-  <div class="card-block p-1 pt-3">
+  <div class="card-body p-1 pt-3">
     <h6 class="card-subtitle text-center">Fecha de Matrimonio:</h6>
     <h3 class="card-title text-center"><%= l @wedding.fecha_matri %></h3>
   </div>
@@ -32,7 +32,7 @@
 
 <div class="card-group">
   <div class="card mb-3">
-    <div class="card-block">
+    <div class="card-body">
       <p>Novia:</p>
       <p class="lead"><%= @wedding.nombre1 %></p>
       <p class="lead"><%= mail_to @wedding.email_novia %></p>
@@ -45,7 +45,7 @@
     <%= image_tag @wedding.avatar, class: "card-img-top img-fluid" %>
   </div>
   <div class="card mb-3">
-    <div class="card-block">
+    <div class="card-body">
       <p>Novio:</p>
       <p class="lead"><%= @wedding.nombre2 %></p>
       <p class="lead"><%= mail_to @wedding.email_novio %></p>
@@ -57,13 +57,13 @@
 
 <div class="card-group">
   <div class="card mb-3">
-    <div class="card-block">
+    <div class="card-body">
       <p class="lead">Diseño de Piso</p>
     </div>
     <%= image_tag @wedding.floordesign, class: "img-fluid d-block mx-auto" %>
   </div>
   <div class="card mb-3 card-song">
-    <div class="card-block">
+    <div class="card-body">
       <p class="lead">Canción</p>
     </div>
 
@@ -81,7 +81,7 @@
 </button>
 <div class="collapse" id="colapsarPago">
   <div class="card mb-3">
-    <div class="card-block">
+    <div class="card-body">
       <h4 class="card-title">Información sobre clases</h4>
       <p class="card-text">Comentarios del pago: <%= @wedding.comentarios_pago %></li>
       <div class="table-responsive">

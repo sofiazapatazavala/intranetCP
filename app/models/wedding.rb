@@ -1,8 +1,9 @@
 class Wedding < ApplicationRecord
 # will_paginate
   self.per_page = 30
-# Relación para las clases
+# Relaciones con usuarios y con clases
   has_many :lessons, as: :bloggable, dependent: :destroy
+  belongs_to :user
 # Configura uploaders
   mount_uploader :floordesign, DisenoDePisoUploader
   mount_uploader :song, SongUploader

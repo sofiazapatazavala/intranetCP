@@ -1,16 +1,61 @@
-<div class="row">
-  <div class="col-md-6 mb-3">
-    <%= render "lessons/agenda" %>
+<% if user_signed_in? && current_user.admin? %>
+  <h3 class="text-center my-3">¡Hola, <%= current_user.name %>!</h3>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+    ⚠ Recuerda que tienes todos los permisos sobre todos los usuarios. ⚠
   </div>
-  <div class="col-md-6 mb-3">
-    <div class="card">
-      <div class="card-block">
-        <p class="lead">Inscribe un nuevo:</p>
-          <%= link_to "👰🏻 Matrimonio", new_wedding_path, class: "btn btn-block btn-outline-info", role: "button" %>
-          <%= link_to "💃🏻 Clase particular", new_special_class_path, class: "btn btn-block btn-outline-info", role: "button" %>
-          <%= link_to "🏫 Curso", new_course_path, class: "btn btn-block btn-outline-info", role: "button" %>
-          <%= link_to "🙋🏻 Interesada", new_archive_path, class: "btn btn-block btn-outline-info", role: "button" %>
+  <hr>
+  <div class="row justify-content-center mt-3">
+    <div class="col-lg-6 mb-3">
+      <%= render "lessons/agenda" %>
+    </div>
+    <div class="col-lg-4">
+      <h5>¡Ahora debes registrar un usuario antes de inscribir un matrimonio!</h5>
+      <p>Para registrar un usuario, debes cerrar tu sesión como administrador y clickear en "registro". Para ver la lista de usuarios y revisar sus productos y clases, haz click en el botón.</p>
+      <%= link_to "Ver usuarios", users_path, class: "btn btn-block btn-outline-info", role: "button" %>
+      <hr>
+      <h5>¿Quieres bloquear un horario?</h5>
+      <% if can? :manage, :all %>
+      <%= link_to 'Bloquear horario', bloquearhorario_path, class: "btn btn-block btn-secondary", role: "button" %>
+      <% end %>
+      <hr>
+      <h5>En esta plataforma hay registro de:</h5>
+      <p class="small"><%= @matrimonios %> matrimonios, <%= @clasesparticulares %> clases particulares y <%= @clases %> clases realizadas en total</p>
+    </div>
+  </div>
+<% else %>
+  <h3 class="text-center my-3">¡Hola, <%= current_user.name %>!</h3>
+  <hr>
+  <div class="row justify-content-center">
+    <div class="col-md-5 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h4>Mis cursos</h4>
+          <hr>
+          <div class="list-group">
+            <% current_user.weddings.each do |wedding| %>
+            <div class="list-group-item flex-column align-items-start">
+              <h5><%= link_to "Matrimonio", wedding %></h5>
+              <p>Fecha: <strong><%= l wedding.fecha_matri %></strong></p>
+            </div>
+            <% end %>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-md-5 mb-3">
+      <div class="card">
+        <div class="card-body">
+          <h4>Mis datos</h4>
+          <hr>
+          <p><strong>Nombre</strong>: <%= current_user.name %></p>
+          <p><strong>Correo electrónico</strong>: <%= current_user.email %></p>
+          <p class="small">Si quieres cambiar tus datos, puedes hacerlo clickeando en:</p>
+          <%= link_to 'Editar perfil', edit_user_registration_path, class: "btn btn-primary btn-block", role: "button" %>
+        </div>
       </div>
     </div>
   </div>
-</div>
+<% end %>

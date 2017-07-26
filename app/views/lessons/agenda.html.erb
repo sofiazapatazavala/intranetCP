@@ -4,12 +4,12 @@
 <hr>
 
 <div class="card">
-  <div class="card-block">
+  <div class="card-body">
     <%= week_calendar events: @meetings do |date, meetings| %>
       <p class="lead text-center"><%= l date %></p>
       <% meetings.each do |meeting| %>
       <div class="card">
-        <div class="card-block">
+        <div class="card-body">
           <h3><%= meeting.start_time.strftime("%H:%M") %> - <%= meeting.end_time.strftime("%H:%M") %></h3>
           <% if meeting.bloggable_type == "Wedding" %>
             <p class="p-1 p-matri">👰🏻 Matrimonio</p>

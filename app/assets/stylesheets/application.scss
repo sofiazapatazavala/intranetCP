@@ -43,7 +43,7 @@ body {
   margin-bottom: 4rem;
 }
 .nav-CP {
-  background-color: $gray-lighter;
+  background-color: $gray-200;
   border-top: solid 1px $brand-primary;
   display: inherit;
   padding: 0.5rem;
@@ -66,24 +66,24 @@ body {
 .nav-CP .col:nth-of-type(5), .p-particular {
   background-color: $color-particular;
 }
-.nav-CP a {
+.nav-CP a, .emoji-icon {
   font-size: 1.36rem;
   line-height: 2.1rem;
   min-width: 20%;
 }
-.nav-CP a:hover {
+.nav-CP a:hover, .emoji-icon:hover {
   text-decoration: none;
 }
 
 @include media-breakpoint-up(md) {
-  .nav-CP a {
+  .nav-CP a, .emoji-icon {
     font-size: 1.67rem;
     line-height: 2.4rem;
   }
 }
 
 @include media-breakpoint-up(lg) {
-  .nav-CP a {
+  .nav-CP a, .emoji-icon {
     font-size: 2.25rem;
     line-height: 3rem;
   }
