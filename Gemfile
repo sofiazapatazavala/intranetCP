@@ -51,12 +51,14 @@ gem 'will_paginate-bootstrap'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierwave'
 # fog-aws para dejar los archivos subidos en S3
 gem 'fog-aws'
+# Necesito convertir los videos (por espacio y carga), agrego conversor
+gem 'carrierwave-video'
 # Soporte oEmbed usando ruby-oembed (pendiente para Instagram)
 gem 'ruby-oembed'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug', platforms: [:mri, :mswin]
 end
 
 group :development do
