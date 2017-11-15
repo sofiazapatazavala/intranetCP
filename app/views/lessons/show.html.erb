@@ -14,6 +14,7 @@
       <p class="lead">Horario bloqueado</a></p>
     <% end %>
     <p class="small text-center bg-faded hidden-sm-down">Registrada el día <%= l @lesson.fecha %></p>
+    <p class="card-text small text-center hidden-md-up">Clase realizada por <%= @lesson.profesora %></p>
   </div>
   <div class="col-md-4 col-lg-3 col-xl-2">
     <div class="card">
@@ -34,7 +35,6 @@
             <%= link_to '🗑 Borrar', @lesson, class: "btn btn-danger", method: :delete, data: { confirm: '¿Segura?' } %>
           </div>
         </div>
-        <p class="card-text small text-center hidden-md-up">Registrada el día <%= l @lesson.fecha %></p>
       </div>
     </div>
   </div>

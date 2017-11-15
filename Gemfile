@@ -34,11 +34,13 @@ gem 'jbuilder', '~> 2.5'
 gem 'devise'
 # Cancancan para los permisos
 gem 'cancancan', '~> 1.10'
+# ActiveAdmin para manejar los usuarios
+gem 'activeadmin'
 # Gema que ve el ingreso de correos a Mailchimp
 gem 'mailchimp-api', require: 'mailchimp'
 # Bootstrap para el diseño base
 gem 'sprockets-rails'
-gem 'bootstrap', git: 'https://github.com/twbs/bootstrap-rubygem'
+gem 'bootstrap'
 # Simple Calendar para el calendario de clases
 gem "simple_calendar", "~> 2.0"
 # Búsqueda en la DB
@@ -50,12 +52,14 @@ gem 'will_paginate-bootstrap'
 gem 'carrierwave', '>= 1.0.0.rc', '< 2.0', github: 'carrierwaveuploader/carrierwave'
 # fog-aws para dejar los archivos subidos en S3
 gem 'fog-aws'
+# Necesito convertir los videos (por espacio y carga), agrego conversor
+gem 'carrierwave-video'
 # Soporte oEmbed usando ruby-oembed (pendiente para Instagram)
 gem 'ruby-oembed'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platform: :mri
+  gem 'byebug', platforms: [:mri, :mswin]
 end
 
 group :development do

@@ -33,6 +33,7 @@ class WeddingsController < ApplicationController
   # Cookies para construir la relación bloggable y el llenado de archivos.
     cookies[:id_blog] = @wedding.id
     cookies[:tipo_blog] = "Wedding"
+    cookies[:mailusuaria] = @wedding.email_novia
     @cancion = @wedding.song?
     @youtube = @wedding.url_vals?
   end
