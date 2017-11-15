@@ -31,20 +31,6 @@
           </div>
         </div>
       </div>
-      <div class="field form-group">
-        <p>¿La clase está pagada?</p>
-        <div class="input-group mb-2 mr-sm-2 mb-sm-0">
-          <div class="input-group-addon">$</div>
-          <%= f.text_field :valor_clase, placeholder: "Valor a pagar:", class: "form-control" %>
-        </div>
-        <hr>
-        <%= f.radio_button :pago, "pagado" %>
-        <%= label :pago_pagado, "Clase pagada" %>
-        <%= f.radio_button :pago, "parcial" %>
-        <%= label :pago_parcial, "50% de la clase pagada" %>
-        <%= f.radio_button :pago, "pendiente" %>
-        <%= label :pago_pendiente, "Pago pendiente" %>
-      </div>
     </div>
 
   <button class="btn btn-outline-success btn-md btn-block my-2" type="button" data-toggle="collapse" data-target="#colapsarNotas" aria-expanded="false" aria-controls="colapsarNotas">
@@ -55,6 +41,10 @@
       <div class="field form-group">
         <%= f.label :titulo %>
         <%= f.text_field :titulo, class: "form-control" %>
+      </div>
+      <div class="field form-group">
+        <%= f.label :profesora %>
+        <%= f.text_field :profesora, class: "form-control" %>
       </div>
       <div class="field form-group">
         <%= f.label :notas %>
