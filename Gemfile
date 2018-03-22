@@ -59,7 +59,7 @@ gem 'ruby-oembed'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
-  gem 'byebug', platforms: [:mri, :mswin]
+  gem 'byebug'
 end
 
 group :development do
